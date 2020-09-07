@@ -6,7 +6,7 @@ function NavBar(props) {
   let hiddenNavBar = props.navStatus;
 
   return (
-    <div>
+    <div  >
       <div className={hiddenNavBar ? "navbar hidden" : "navbar"}>
         <div className="menu-items">
           <Link to="/#" className="menu-item">

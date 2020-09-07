@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header/Header.js";
 import NavBar from "./components/NavBar/NavBar.js";
 import { BrowserRouter as Router } from "react-router-dom";
+import MainView from "./components/MainView/MainView.js";
+import "./App.scss"
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
@@ -23,6 +25,7 @@ function App() {
       <div className="App">
         <Header hideNavbar={hideNavbar} />
         <NavBar navStatus={hiddenNavBar} />
+        <MainView/>
       </div>
     </Router>
   );
