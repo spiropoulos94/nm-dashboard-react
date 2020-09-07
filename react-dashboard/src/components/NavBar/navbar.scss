@@ -14,6 +14,13 @@
   justify-content: space-between;
 }
 
+
+.navbar-open {
+    transform: translateX(calc(0vh));
+    transform: translate3d(0vw, 0, 0);
+    transition: transform 0.35s ease-in;
+}
+
 .menu-items {
   display: flex;
   flex-direction: column;
