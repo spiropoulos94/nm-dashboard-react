@@ -4,19 +4,16 @@
 
 .navbar {
     background-color:$nav-background-color;
-    width:20%;
+    width:15%;
     height:92vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
-    
 }
 
 .menu-items {
     display: flex;
     flex-direction: column;
-    
     
 }
 
@@ -27,9 +24,41 @@
     width:100%;
     margin-top:5%;
     border-bottom:1px solid $border-color;
+    text-decoration:none ;
+    color:white;    
 }
 
 footer {
     text-align:center;
-    padding:20px;
+    padding-bottom:10%;
+    font-size:0.9rem;
+
+}
+
+@media screen and (max-width: $md) {
+
+    .navbar {
+        width:30 
+    }
+
+    .footer {
+        font-size:0.65rem;
+        padding-bottom:10%;
+    }    
+}
+
+@media screen and (max-width: $sm) {
+
+    .navbar {
+        width:70%; 
+    }
+
+    .menu-item {
+        font-size:1rem;
+    }
+
+    .footer {
+        font-size:0.45rem;
+        padding-bottom:10%;
+    }    
 }
