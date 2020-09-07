@@ -8,8 +8,9 @@ function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
 
   function hideNavbar() {
-    setHiddenNavBar(!hiddenNavBar);
     console.log('nav hidden')
+    setHiddenNavBar(!hiddenNavBar);
+    
   }
 
   return (
