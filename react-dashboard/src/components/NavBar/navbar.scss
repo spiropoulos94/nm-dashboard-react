@@ -15,8 +15,7 @@
 }
 
 .hidden {
-//   display: none;
-  transform: translate3d(-40vw, 0, 0);
+  transform: translate3d(-30vw, 0, 0);
 }
 
 .menu-items {
@@ -52,7 +51,7 @@ footer {
 @media screen and (max-width: $md) {
   .navbar {
     width: 30%;
-    display: none;
+    
   }
 
   .title {
@@ -68,6 +67,10 @@ footer {
 @media screen and (max-width: $sm) {
   .navbar {
     width: 70%;
+  }
+
+  .hidden {
+    transform: translate3d(-70vw, 0, 0);
   }
 
   .title {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.scss";
 
-function NavBar() {
+function NavBar(props) {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
 
   function hideNavbar() {
