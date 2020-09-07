@@ -1,5 +1,6 @@
 import React from 'react'
 import style from "./header.module.scss"
+import logoPlaceholder from "../../../src/images/logo-placeholder"
 
 function Header() {
     return (
@@ -11,7 +12,7 @@ function Header() {
             <h1>Dashboard</h1>
             <div>
                 <span>LOGOUT</span>
-                <img></img>
+                <img src={logoPlaceholder} />
             </div>
         </div>
     )
