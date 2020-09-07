@@ -17,6 +17,10 @@
 .menu-items {
   display: flex;
   flex-direction: column;
+  :hover{
+    background:$nav-accent;
+}
+  
 }
 
 .menu-item {
@@ -24,10 +28,10 @@
   border-bottom: 1px solid var(--border-color);
   padding: 7% 10%;
   width: 100%;
-  margin-top: 5%;
   border-bottom: 1px solid $border-color;
   text-decoration: none;
   color: white;
+  
 }
 
 footer {
@@ -40,12 +44,18 @@ footer {
   .navbar {
     width: 20%;
   }
+ 
+
 }
 
 @media screen and (max-width: $md) {
   .navbar {
     width: 30%;
   }
+
+  .title {
+    margin:0;
+}
 
   .footer {
     font-size: 0.65rem;
