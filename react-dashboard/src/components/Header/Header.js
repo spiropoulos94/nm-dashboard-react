@@ -13,7 +13,7 @@ function Header() {
             <h2>Dashboard</h2>
             <div className="header-right">
                 <span>LOGOUT</span>
-                <img src={Avatar} />
+                <img src={Avatar} alt="avatar" />
             </div>
         </div>
     )

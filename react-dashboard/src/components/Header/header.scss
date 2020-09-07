@@ -2,20 +2,28 @@
 
 .header-logo{
     width:50px;
+    background:white;
    }
 
 .header-wrapper {
-       background:$lightblue;
+       background:$primary;
        display:flex;
        justify-content:space-between;
        align-items: center;
+       padding:0 30px;
+       
    }
 
 .header-left{
     display:flex;
     align-items: center;
-    background:var(--primary);
-    width:25%;
+    width:20%;
+    span {
+        padding-left:10px;
+        @media screen and (max-width: $sm) {
+            display:none;
+          }
+    }
      
 }
 
@@ -23,9 +31,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width:12%;
+    width:7%;
+    @media screen and (max-width: $md) {
+        width:20%;
+      }
+
+    span{
+        @media screen and (max-width: $sm) {
+            display:none;
+          }
+    }
+    
+    img{
+        background:white;
+        border-radius:50%;
+    }
 }
 
 h2 {
     margin-right:auto;
 }
+
+
