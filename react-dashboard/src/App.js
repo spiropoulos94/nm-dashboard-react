@@ -1,17 +1,26 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header/Header.js";
 import NavBar from "./components/NavBar/NavBar.js";
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
-
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
 
   function hideNavbar() {
-    console.log('nav hidden')
     setHiddenNavBar(!hiddenNavBar);
+  }
+
+  function normalizeNavbar() {
+    if(window.innerWidth > 700){
+      setHiddenNavBar(false);
+    }
+    else(
+      setHiddenNavBar(true)
+    )
     
   }
+
+  window.addEventListener("resize", normalizeNavbar);
 
   return (
     <Router>

@@ -3,12 +3,10 @@ import { Link } from "react-router-dom";
 import "./navbar.scss";
 
 function NavBar(props) {
-
-  let hiddenNavBar= props.navStatus;
+  let hiddenNavBar = props.navStatus;
 
   return (
     <div>
-      {/* <button onClick={hideNavbar}>Show/Hide Navbar</button> */}
       <div className={hiddenNavBar ? "navbar hidden" : "navbar"}>
         <div className="menu-items">
           <Link to="/#" className="menu-item">
@@ -22,7 +20,6 @@ function NavBar(props) {
       </div>
     </div>
   );
-  
 }
 
 export default NavBar;
