@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
   transform: translate3d(0, 0, 0);
     transition-property: transform;
     transition-duration: 0.45s;
@@ -51,7 +52,7 @@ footer {
 
 @media screen and (max-width: $md) {
   .navbar {
-    width: 30vw;
+    width: 25vw;
     
   }
 
