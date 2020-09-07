@@ -1,13 +1,16 @@
-import React from 'react';
-import Header from "./components/Header/Header.js"
-import NavBar from './components/NavBar/NavBar.js';
+import React from "react";
+import Header from "./components/Header/Header.js";
+import NavBar from "./components/NavBar/NavBar.js";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <NavBar/>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <NavBar />
+      </div>
+    </Router>
   );
 }
 

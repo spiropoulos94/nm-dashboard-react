@@ -1,27 +1,31 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./navbar.scss";
 
 function NavBar() {
+  let [hiddenNavBar, setHiddenNavBar] = useState(false);
 
-  let [hiddenNavBar, setHiddenNavBar] = useState(true)
-
-  function hideNavbar(){
-
+  function hideNavbar() {
+    setHiddenNavBar(!hiddenNavBar);
   }
-
 
   return (
     <div>
-    <div className="navbar ">
-      <div class="menu-items">
-        <a href="#" className="menu-item">Colours</a>
-        <a href="#" className="menu-item">Users</a>
+      <button onClick={hideNavbar}>Show/Hide Navbar</button>
+      <div className={hiddenNavBar ? "navbar hidden" : "navbar"}>
+        <div class="menu-items">
+          <Link to="/#" className="menu-item">
+            Colours
+          </Link>
+          <Link to="/#" className="menu-item">
+            Users
+          </Link>
+        </div>
+        <footer class="footer">© 2020 Netmechanics</footer>
       </div>
-      <footer class="footer">© 2020 Netmechanics</footer>
-    </div>
-    <button onClick={()=>{console.log("click")}}>Show/Hide Navbar</button>
     </div>
   );
+  
 }
 
 export default NavBar;

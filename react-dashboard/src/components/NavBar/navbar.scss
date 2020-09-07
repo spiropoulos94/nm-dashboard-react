@@ -1,10 +1,5 @@
 @import "../../scss/variables";
 
-//TODO ASK if the below is possible be applying it simply on the global scss
-//  * {
-//      box-sizing: border-box;
-//  }
-
 .navbar {
   background-color: $nav-background-color;
   width: 15%;
@@ -12,26 +7,24 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-
-.navbar-open {
-    transform: translateX(calc(0vh));
-    transform: translate3d(0vw, 0, 0);
-    transition: transform 0.35s ease-in;
+  transform: translate3d(0, 0, 0);
+    transition-property: transform;
+    transition-duration: 0.45s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;
 }
 
 .hidden {
-    display:none;
+//   display: none;
+  transform: translate3d(-40vw, 0, 0);
 }
 
 .menu-items {
   display: flex;
   flex-direction: column;
-  :hover{
-    background:$nav-accent;
-}
-  
+  :hover {
+    background: $nav-accent;
+  }
 }
 
 .menu-item {
@@ -42,7 +35,6 @@
   border-bottom: 1px solid $border-color;
   text-decoration: none;
   color: white;
-  
 }
 
 footer {
@@ -55,18 +47,17 @@ footer {
   .navbar {
     width: 20%;
   }
- 
-
 }
 
 @media screen and (max-width: $md) {
   .navbar {
     width: 30%;
+    display: none;
   }
 
   .title {
-    margin:0;
-}
+    margin: 0;
+  }
 
   .footer {
     font-size: 0.65rem;
@@ -80,17 +71,16 @@ footer {
   }
 
   .title {
-      font-size:1.2rem;
+    font-size: 1.2rem;
   }
 
   .menu-item {
     font-size: 1.1rem;
-    padding:5% 10%;
+    padding: 5% 10%;
   }
 
   .footer {
     font-size: 0.75rem;
     padding-bottom: 10%;
-    
   }
 }
