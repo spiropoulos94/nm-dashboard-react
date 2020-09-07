@@ -21,6 +21,10 @@
     transition: transform 0.35s ease-in;
 }
 
+.hidden {
+    display:none;
+}
+
 .menu-items {
   display: flex;
   flex-direction: column;
