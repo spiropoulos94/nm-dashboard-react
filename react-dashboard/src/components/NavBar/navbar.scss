@@ -1,66 +1,75 @@
 @import "../../scss/variables";
 
-* {
-    box-sizing: border-box;
-}
+//TODO ASK if the below is possible be applying it simply on the global scss
+//  * {
+//      box-sizing: border-box;
+//  }
 
 .navbar {
-    background-color:$nav-background-color;
-    width:15%;
-    height:92vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  background-color: $nav-background-color;
+  width: 15%;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .menu-items {
-    display: flex;
-    flex-direction: column;   
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-item {
-    font-size: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-    padding: 7% 0;
-    
-    width:100%;
-    margin-top:5%;
-    border-bottom:1px solid $border-color;
-    text-decoration:none ;
-    color:white;    
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding: 7% 10%;
+  width: 100%;
+  margin-top: 5%;
+  border-bottom: 1px solid $border-color;
+  text-decoration: none;
+  color: white;
 }
 
 footer {
-    text-align:center;
-    padding-bottom:10%;
-    font-size:0.9rem;
+  text-align: center;
+  padding-bottom: 10%;
+  font-size: 0.9rem;
+}
 
+@media screen and (max-width: $lg) {
+  .navbar {
+    width: 20%;
+  }
 }
 
 @media screen and (max-width: $md) {
+  .navbar {
+    width: 30%;
+  }
 
-    .navbar {
-        width:30 
-    }
-
-    .footer {
-        font-size:0.65rem;
-        padding-bottom:10%;
-    }    
+  .footer {
+    font-size: 0.65rem;
+    padding-bottom: 10%;
+  }
 }
 
 @media screen and (max-width: $sm) {
+  .navbar {
+    width: 70%;
+  }
 
-    .navbar {
-        width:70%; 
-    }
+  .title {
+      font-size:1.2rem;
+  }
 
-    .menu-item {
-        font-size:1rem;
-    }
+  .menu-item {
+    font-size: 1.1rem;
+    padding:5% 10%;
+  }
 
-    .footer {
-        font-size:0.45rem;
-        padding-bottom:10%;
-    }    
+  .footer {
+    font-size: 0.75rem;
+    padding-bottom: 10%;
+    
+  }
 }
