@@ -13,14 +13,14 @@
 
 .menu-items {
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;   
 }
 
 .menu-item {
     font-size: 1.5rem;
     border-bottom: 1px solid var(--border-color);
-    padding: 7% 0%;
+    padding: 7% 0;
+    
     width:100%;
     margin-top:5%;
     border-bottom:1px solid $border-color;
