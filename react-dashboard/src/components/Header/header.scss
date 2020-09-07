@@ -1,75 +1,80 @@
 @import "../../scss/variables";
 
-.header-logo{
-    width:50px;
-    background:white;
-   }
+.header-logo {
+  width: 50px;
+  background: white;
+}
 
 .header-wrapper {
-       background:$primary;
-       display:flex;
-       justify-content:space-between;
-       align-items: center;
-       padding:0.8vw 20px;
-       
-   }
+  background: $header-background;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 8vh;
+}
 
-   .burger-btn {
-        margin-right:10px;
-        display: none;
-    .menu-icon {
-            margin:auto;
-       }
-   }
+.burger-btn {
+  margin-right: 10px;
+  display: none;
+  :hover {
+    cursor: pointer;
+  }
+  .menu-icon {
+    margin: auto;
+  }
+}
 
-.header-left{
-    display:flex;
-    align-items: center;
-    width:20%;
-    
-    .logo-txt {
-        padding-left:10px;
-    }
+.header-left {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  :hover {
+    cursor: pointer;
+  }
+
+  .logo-txt {
+    padding-left: 10px;
+  }
 }
 
 .header-right {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-    span{
-        padding-right:8%;
-        font-size:0.8rem
-     }
-    
-    img{
-        background:white;
-        border-radius:50%;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    padding-right: 8%;
+    font-size: 0.8rem;
+  }
+
+  img {
+    background: white;
+    border-radius: 50%;
+  }
 }
 
 .title {
-    margin-right:auto;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  margin-right: auto;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-
 @media screen and (max-width: $sm) {
-    .header-wrapper{
-        padding: 2% 5%;
-    }
-
-    .title {
-        margin-right:0;
-    }
-
-    .logo-txt,.logout-txt{
-        display: none;
-    }
-
-    .burger-btn {
-        display:block;
-    }
-    
+  .header-wrapper {
+    padding: 2% 5%;
   }
+
+  .title {
+    margin-right: 0;
+  }
+
+  .logo-txt,
+  .logout-txt {
+    display: none;
+  }
+
+  .burger-btn {
+    display: block;
+  }
+}
