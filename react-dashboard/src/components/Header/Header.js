@@ -10,7 +10,7 @@ function Header() {
                 <img className="header-logo" src={LogoPlaceholder} alt="logo" />
                 <span>LOGO</span>
             </div>
-            <h2>Dashboard</h2>
+            <span className="title">Dashboard</span>
             <div className="header-right">
                 <span>LOGOUT</span>
                 <img src={Avatar} alt="avatar" />
