@@ -5,12 +5,18 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
 
+  let [hiddenNavBar, setHiddenNavBar] = useState(false);
+
+  function hideNavbar() {
+    setHiddenNavBar(!hiddenNavBar);
+    console.log('nav hidden')
+  }
 
   return (
     <Router>
       <div className="App">
-        <Header />
-        <NavBar />
+        <Header hideNavbar={hideNavbar} />
+        <NavBar navStatus={hiddenNavBar} />
       </div>
     </Router>
   );

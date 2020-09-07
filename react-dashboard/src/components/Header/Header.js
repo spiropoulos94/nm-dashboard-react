@@ -3,7 +3,8 @@ import "./header.scss";
 import LogoPlaceholder from "../../images/logoplaceholder.png";
 import Avatar from "../../images/accountPhoto.png";
 
-function Header() {
+function Header(props) {
+  console.log(props)
   return (
     <div className="header-wrapper">
       <div className="header-left">
@@ -15,6 +16,7 @@ function Header() {
       </div>
 
       <span className="title">Dashboard</span>
+      <button onClick={props.hideNavBar}>Show/Hide Navbar</button> 
       <div className="header-right">
         <span className="logout-txt">LOGOUT</span>
         <img src={Avatar} alt="avatar" />

@@ -3,17 +3,14 @@ import { Link } from "react-router-dom";
 import "./navbar.scss";
 
 function NavBar(props) {
-  let [hiddenNavBar, setHiddenNavBar] = useState(false);
 
-  function hideNavbar() {
-    setHiddenNavBar(!hiddenNavBar);
-  }
+  let hiddenNavBar= props.navStatus;
 
   return (
     <div>
-      <button onClick={hideNavbar}>Show/Hide Navbar</button>
+      {/* <button onClick={hideNavbar}>Show/Hide Navbar</button> */}
       <div className={hiddenNavBar ? "navbar hidden" : "navbar"}>
-        <div class="menu-items">
+        <div className="menu-items">
           <Link to="/#" className="menu-item">
             Colours
           </Link>
@@ -21,7 +18,7 @@ function NavBar(props) {
             Users
           </Link>
         </div>
-        <footer class="footer">© 2020 Netmechanics</footer>
+        <footer className="footer">© 2020 Netmechanics</footer>
       </div>
     </div>
   );
