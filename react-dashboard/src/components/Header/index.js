@@ -1,18 +1,19 @@
 import React from 'react'
 import style from "./header.module.scss"
-import logoPlaceholder from "../../../src/images/logo-placeholder"
+import LogoPlaceholder from "../../images/logoplaceholder.png"
+import Avatar from "../../images/accountPhoto.png"
 
 function Header() {
     return (
-        <div>
-            <div>
-                <img></img>
+        <div className={style["header-wrapper"]}>
+            <div className={style["header-left"]}>
+                <img className={style["header-logo"]} src={LogoPlaceholder} alt="logo" />
                 <span>LOGO</span>
             </div>
-            <h1>Dashboard</h1>
-            <div>
+            <h2>Dashboard</h2>
+            <div className={style["header-right"]}>
                 <span>LOGOUT</span>
-                <img src={logoPlaceholder} />
+                <img src={Avatar} />
             </div>
         </div>
     )

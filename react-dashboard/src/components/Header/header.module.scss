@@ -1,1 +1,31 @@
+@import "../../../src//scss/variables.scss";
 
+.header-logo{
+    width:50px;
+   }
+
+.header-wrapper {
+       background:$lightblue;
+       display:flex;
+       justify-content:space-between;
+       align-items: center;
+   }
+
+.header-left{
+    display:flex;
+    align-items: center;
+    background:red;
+    width:25%;
+     
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:12%;
+}
+
+h2 {
+    margin-right:auto;
+}
