@@ -20,27 +20,18 @@
     width:20%;
     span {
         padding-left:10px;
-        @media screen and (max-width: $sm) {
-            display:none;
-          }
     }
-     
 }
 
 .header-right {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width:7%;
-    @media screen and (max-width: $md) {
-        width:20%;
-      }
-
+    
+    
     span{
-        @media screen and (max-width: $sm) {
-            display:none;
-          }
-    }
+        padding-right:8%;
+     }
     
     img{
         background:white;
@@ -53,3 +44,15 @@ h2 {
 }
 
 
+@media screen and (max-width: $sm) {
+    .header-wrapper{
+        padding: 0 5%;
+    }
+
+    .header-left, .header-right{
+        span{
+            display: none;
+        }
+    }
+    
+  }
