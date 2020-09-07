@@ -7,16 +7,16 @@ function Header() {
   return (
     <div className="header-wrapper">
       <div className="header-left">
-        <img className="header-logo" src={LogoPlaceholder} alt="logo" />
-        <span>LOGO</span>
         <button className="burger-btn">
-        <span className="menu-icon" >&#9776;</span>
-      </button>
+          <span className="menu-icon">&#9776;</span>
+        </button>
+        <img className="header-logo" src={LogoPlaceholder} alt="logo" />
+        <span className="logo-txt">LOGO</span>
       </div>
-      
+
       <span className="title">Dashboard</span>
       <div className="header-right">
-        <span>LOGOUT</span>
+        <span className="logout-txt">LOGOUT</span>
         <img src={Avatar} alt="avatar" />
       </div>
     </div>

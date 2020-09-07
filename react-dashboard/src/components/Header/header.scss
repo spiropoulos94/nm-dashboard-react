@@ -15,9 +15,9 @@
    }
 
    .burger-btn {
-       color:red;
-       width:50px;
-       .menu-icon {
+        margin-right:10px;
+        display: none;
+    .menu-icon {
             margin:auto;
        }
    }
@@ -26,7 +26,8 @@
     display:flex;
     align-items: center;
     width:20%;
-    span {
+    
+    .logo-txt {
         padding-left:10px;
     }
 }
@@ -50,7 +51,6 @@
 .title {
     margin-right:auto;
     text-transform: uppercase;
-    
     letter-spacing: 1px;
 }
 
@@ -60,10 +60,16 @@
         padding: 2% 5%;
     }
 
-    .header-left, .header-right{
-        span{
-            display: none;
-        }
+    .title {
+        margin-right:0;
+    }
+
+    .logo-txt,.logout-txt{
+        display: none;
+    }
+
+    .burger-btn {
+        display:block;
     }
     
   }
