@@ -11,13 +11,9 @@ function App() {
   }
 
   function normalizeNavbar() {
-    if(window.innerWidth > 700){
+    if (window.innerWidth > 576) {
       setHiddenNavBar(false);
-    }
-    else(
-      setHiddenNavBar(true)
-    )
-    
+    } else setHiddenNavBar(true);
   }
 
   window.addEventListener("resize", normalizeNavbar);
