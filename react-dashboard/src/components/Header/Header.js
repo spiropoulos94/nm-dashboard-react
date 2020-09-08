@@ -13,9 +13,7 @@ function Header(props) {
         <img className="header-logo" src={LogoPlaceholder} alt="logo" />
         <span className="logo-txt">LOGO</span>
       </div>
-
       <span className="title">Dashboard</span>
-
       <div className="header-right">
         <span className="logout-txt">LOGOUT</span>
         <img src={Avatar} alt="avatar" />
