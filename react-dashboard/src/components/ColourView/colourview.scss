@@ -6,7 +6,6 @@
     padding:15px;
     width:80%;
     margin:auto;
-    z-index: 9999999999999999999999999999;
 }
 
 .color-grid {
@@ -29,6 +28,7 @@
 .color-code {
     position: relative;
     height: 100%;
+    font-size:1.3rem;
     
 }
 
@@ -43,11 +43,9 @@
     opacity: 0.5;
     background: rgba(0, 151, 20, 0.226);
     padding: 0 5%; 
-    z-index:999999999999999999999999999999999999999999999;
-    
     &:hover {
         opacity: 1;
-        font-size:25px;
+        
     }
      
 }
