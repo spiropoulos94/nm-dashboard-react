@@ -35,7 +35,6 @@ function App() {
                 <h2 className="view-title">Welcome</h2>
               </Route>
               <Route path="/users">
-                
                 <UsersView />
               </Route>
               <Route path="/colours">

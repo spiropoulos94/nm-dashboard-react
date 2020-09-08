@@ -16,9 +16,9 @@ function UsersView() {
     },[])
 
     return (
-        <div>
+        <div className="user-view-wrapper">
             <h2 className="view-title">Users Screen</h2>
-            <table>
+            <table className="table">
                     <thead>
                       <tr>
                         <th>ID</th>
