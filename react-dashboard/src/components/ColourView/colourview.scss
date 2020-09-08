@@ -4,3 +4,30 @@
 .color-wrapper {
     color:red;
 }
+
+.color-grid {
+    display: flex;
+    flex-wrap:wrap;
+    
+    
+}
+
+.color-card {
+    background-color:black;
+    width:30%;
+    height:120px;
+    text-align:center;
+    margin:25px;
+}
+
+.color-code {
+    position: relative;
+    top:15px;
+}
+
+.color-info {
+    display:flex;
+    justify-content: space-between;
+    width:70%;
+    margin:auto;
+}
