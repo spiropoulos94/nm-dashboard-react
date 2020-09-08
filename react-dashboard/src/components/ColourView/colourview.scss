@@ -1,7 +1,13 @@
 @import "../../scss/variables.scss";
 
 
-
+.view-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+}
 
 .color-grid {
     display: flex;

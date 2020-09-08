@@ -7,8 +7,8 @@
 
 .data-wrapper {  
     padding:15px;
-    width:90%;
-    border:1px solid red;
+    width:100%;
+    // border:1px solid red;
     margin:auto;
 }
 
@@ -18,7 +18,11 @@ h2 {
     margin-left:5%;  
 }
 
-
+@media screen and (min-width: $sm){
+    .data-wrapper {
+        width:90%;
+    }
+ }
 
 @media screen and (min-width: $md){
     .data-wrapper {

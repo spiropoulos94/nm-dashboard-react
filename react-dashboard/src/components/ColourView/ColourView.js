@@ -29,7 +29,9 @@ function ColourView() {
 
   return (
     <div>
-      <h2>Colours Screen</h2>
+      <div className="view-heading">
+        <h2>Colours Screen</h2> <span>{colorData && `Items : ${colorData.length}`}</span>
+      </div>
       <div className="color-grid">
         {colorData &&
           colorData.map((color, index) => {
