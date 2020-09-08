@@ -7,6 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import ColourView from '../ColourView/ColourView';
 
 function MainView() {
     return (
@@ -20,6 +21,7 @@ function MainView() {
           </Route>
           <Route path="/colours">
               <h2>Colours Screen</h2>
+              <ColourView/>
           </Route>
         </Switch>
     </div>

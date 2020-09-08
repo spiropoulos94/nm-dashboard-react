@@ -3,6 +3,7 @@
 ///////////////////////////////////////////////////////////////////////////////////
 
 .navbar {
+  position:fixed;
   width: 70%;
   background-color: $nav-background-color;
   display: flex;
@@ -26,7 +27,8 @@
 
 .hidden {
   transform: translate3d(-70vw, 0, 0);
-  width:0px;
+  // width:0px;
+
 }
 
 
@@ -63,6 +65,7 @@
 @media screen and (min-width: $md) {
   .navbar {
     width: 20vw;
+    position: relative;
   }
 }
 
