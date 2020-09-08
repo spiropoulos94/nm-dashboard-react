@@ -26,6 +26,7 @@
 
 .hidden {
   transform: translate3d(-70vw, 0, 0);
+  width:0px;
 }
 
 
@@ -48,9 +49,11 @@
 }
 
 @media screen and (min-width: $sm) {
+  
   .navbar {
     width: 25vw;
   }
+
 .footer {
     font-size: 0.85rem;
     padding-bottom: 10%;
@@ -72,6 +75,7 @@
 @media screen and (min-width: $lg) {
   .hidden {
     transform: translate3d(-30vw, 0, 0);
+    width:0px;
   }
 
   .menu-item {
