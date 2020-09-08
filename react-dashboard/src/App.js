@@ -25,8 +25,12 @@ function App() {
     <Router>
       <div className="App">
         <Header hideNavbar={hideNavbar} />
+<<<<<<< HEAD
         <div className="flex-wrapper-main">
         <NavBar navStatus={hiddenNavBar}  />
+=======
+        <NavBar navStatus={hiddenNavBar} />
+>>>>>>> parent of 33ffc64... adding colour components
         <MainView/>
         </div>
       </div>

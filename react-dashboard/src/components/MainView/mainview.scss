@@ -3,7 +3,13 @@
 .main-view-wrapper {
     color:black;
     width:100%;
+<<<<<<< HEAD
     // top:10vh;
+=======
+    position: fixed;
+    left:20vw;
+    top:10vh;
+>>>>>>> parent of 33ffc64... adding colour components
     z-index: -1;
     // margin-left:0%;
     // left:15vw;
@@ -12,6 +18,7 @@
     
 }
 
+<<<<<<< HEAD
 h2 {
     color:black;
     
@@ -20,10 +27,16 @@ h2 {
     
 }
 
+=======
+>>>>>>> parent of 33ffc64... adding colour components
 
 
 @media screen and (min-width: $md){
    .main-view-wrapper{
+<<<<<<< HEAD
      width:100%;
+=======
+    left:30vw;
+>>>>>>> parent of 33ffc64... adding colour components
    } 
 }
