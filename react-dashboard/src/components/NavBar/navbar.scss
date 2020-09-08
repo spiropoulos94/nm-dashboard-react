@@ -51,11 +51,8 @@
   .navbar {
     width: 25vw;
   }
-
- 
-
-  .footer {
-    font-size: 0.65rem;
+.footer {
+    font-size: 0.85rem;
     padding-bottom: 10%;
   }
 }
@@ -64,6 +61,12 @@
   .navbar {
     width: 20vw;
   }
+  footer {
+    text-align: center;
+    padding-bottom: 10%;
+    font-size: 2.1rem;
+  }
+
 }
 
 @media screen and (min-width: $lg) {
@@ -75,9 +78,5 @@
     font-size: 1.5rem;
   }
 
-  footer {
-    text-align: center;
-    padding-bottom: 10%;
-    font-size: 0.9rem;
-  }
+  
 }

@@ -25,7 +25,7 @@ function App() {
     <Router>
       <div className="App">
         <Header hideNavbar={hideNavbar} />
-        <NavBar navStatus={hiddenNavBar} />
+        <NavBar navStatus={hiddenNavBar}  />
         <MainView/>
       </div>
     </Router>
