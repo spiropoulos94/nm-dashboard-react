@@ -2,6 +2,7 @@ import React from "react";
 import "./header.scss";
 import LogoPlaceholder from "../../images/logoplaceholder.png";
 import Avatar from "../../images/accountPhoto.png";
+import { Link } from "react-router-dom";
 
 function Header(props) {
   return (
@@ -10,8 +11,10 @@ function Header(props) {
         <button className="burger-btn" onClick={props.hideNavbar}>
           <span className="menu-icon">&#9776;</span>
         </button>
-        <img className="header-logo" src={LogoPlaceholder} alt="logo" />
-        <span className="logo-txt">LOGO</span>
+        <Link to="/home" className="link">
+          <img className="header-logo" src={LogoPlaceholder} alt="logo" />
+          <span className="logo-txt">LOGO</span>
+        </Link>
       </div>
       <span className="title">Dashboard</span>
       <div className="header-right">

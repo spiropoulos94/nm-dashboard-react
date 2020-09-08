@@ -9,10 +9,10 @@ function NavBar(props) {
     <div  >
       <div className={hiddenNavBar ? "navbar hidden" : "navbar"}>
         <div className="menu-items">
-          <Link to="/#" className="menu-item">
+          <Link to="/colours" className="menu-item">
             Colours
           </Link>
-          <Link to="/#" className="menu-item">
+          <Link to="/users" className="menu-item">
             Users
           </Link>
         </div>
