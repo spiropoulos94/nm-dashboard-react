@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Header from "./components/Header/Header.js";
 import NavBar from "./components/NavBar/NavBar.js";
+import { Switch, Route } from "react-router-dom";
+import ColourView from "./components/ColourView/ColourView.js";
+import UsersView from "./components/UsersView/UsersView.js";
 
 import { BrowserRouter as Router } from "react-router-dom";
-import MainView from "./components/MainView/MainView.js";
-import "./App.scss"
+import "./App.scss";
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
@@ -26,8 +28,21 @@ function App() {
       <div className="App">
         <Header hideNavbar={hideNavbar} />
         <div className="flex-wrapper-main">
-        <NavBar navStatus={hiddenNavBar}  />
-        <MainView/>
+          <NavBar navStatus={hiddenNavBar} />
+          <div className="data-wrapper">
+            <Switch>
+              <Route path="/home">
+                <h2 className="view-title">Welcome</h2>
+              </Route>
+              <Route path="/users">
+                
+                <UsersView />
+              </Route>
+              <Route path="/colours">
+                <ColourView />
+              </Route>
+            </Switch>
+          </div>
         </div>
       </div>
     </Router>

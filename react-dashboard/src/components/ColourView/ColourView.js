@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./colourview.scss";
 
 function ColorCard(props) {
-    let data = props.data
-    console.log(data)
-    
+  let data = props.data;
+
   return (
-    <div className="color-card" style={{background:`${data.color}`}}>
+    <div className="color-card" style={{ background: `${data.color}` }}>
       <p className="color-code">{data.color}</p>
       <div className="color-info">
         <p className="color-year">{data.year}</p>
@@ -18,7 +17,7 @@ function ColorCard(props) {
 
 function ColourView() {
   let [colorData, setColorData] = useState(null);
-  let url = "https://reqres.in/api/products/";
+  let url = "colors.json";
 
   useEffect(() => {
     if (colorData == null) {
@@ -29,13 +28,14 @@ function ColourView() {
   }, [colorData, url]);
 
   return (
-    <div className="color-wrapper">
+    <div>
+      <h2>Colours Screen</h2>
       <div className="color-grid">
-      {colorData &&
-        colorData.map((color, index) => {
-          return <ColorCard data={color} key={index} />;
-        })}
-    </div>
+        {colorData &&
+          colorData.map((color, index) => {
+            return <ColorCard data={color} key={index} />;
+          })}
+      </div>
     </div>
   );
 }

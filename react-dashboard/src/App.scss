@@ -4,3 +4,24 @@
     display: flex;
  
 }
+
+.data-wrapper {  
+    padding:15px;
+    width:90%;
+    border:1px solid red;
+    margin:auto;
+}
+
+h2 {
+    color:black;
+    position:relative;
+    margin-left:5%;  
+}
+
+
+
+@media screen and (min-width: $md){
+    .data-wrapper {
+        margin:0;
+    }
+ }
