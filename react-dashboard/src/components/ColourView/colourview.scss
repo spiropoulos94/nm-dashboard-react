@@ -3,8 +3,6 @@
 
 .color-wrapper {
     
-    color:red;
-    background:blue;
     padding:15px;
     width:100%;
 }
@@ -12,26 +10,37 @@
 .color-grid {
     display: flex;
     flex-wrap:wrap;
+    justify-content: center;
 }
 
 .color-card {
-    background-color:black;
+    background-color:red;
     width:90%;
     height:120px;
     text-align:center;
     margin:15px;
+    display: flex;
+    flex-direction: column;
+    
+    
 }
 
 .color-code {
     position: relative;
-    top:15px;
+    
+    height: 100%;
+    
 }
 
 .color-info {
     display:flex;
     justify-content: space-between;
-    width:70%;
-    margin:auto;
+    width:100%;
+    height:100%;
+    background:blue;
+    padding: 0  10%;
+    color:white;
+     
 }
 
 @media screen and (min-width:$sm) {
