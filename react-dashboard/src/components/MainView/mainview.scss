@@ -3,8 +3,7 @@
 .main-view-wrapper {
     color:black;
     width:100%;
-    position: fixed;
-    top:10vh;
+    // top:10vh;
     z-index: -1;
     // margin-left:0%;
     // left:15vw;
@@ -25,8 +24,6 @@ h2 {
 
 @media screen and (min-width: $md){
    .main-view-wrapper{
-    //  left:22vw;
-     margin:auto;
      width:100%;
    } 
 }
