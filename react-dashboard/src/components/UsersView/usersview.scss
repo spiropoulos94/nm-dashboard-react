@@ -6,9 +6,9 @@
     background-color: $primary;
     text-transform: uppercase;
     color: $table-accent;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border: 1px solid currentColor;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     &:hover {
         cursor: pointer;
     }
@@ -62,3 +62,8 @@ th {
     padding: 1rem;
   }
 
+@media screen and (min-width:$sm){
+    .delete-btn {
+        padding:10px 20px;
+    }
+}
