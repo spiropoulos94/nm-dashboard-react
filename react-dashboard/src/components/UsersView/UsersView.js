@@ -17,9 +17,10 @@ function UsersView() {
         getUsers()
     },[])
 
+    
+
     return (
       <div>
-        
         <div className="view-heading">
         <h2 className="view-title">Users Screen</h2> <button className="delete-btn" >delete</button>
       </div>
