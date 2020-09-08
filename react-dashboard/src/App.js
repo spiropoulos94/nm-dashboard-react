@@ -14,6 +14,12 @@ function App() {
   function hideNavbar() {
     setHiddenNavBar(!hiddenNavBar);
   }
+  //stops scrolling when navbar is open
+  if(hiddenNavBar==false){
+    document.body.style.overflow = "hidden"
+  }else {
+    document.body.style.overflow = ""
+  }
 
   function normalizeNavbar() {
     if (window.innerWidth > 576) {
