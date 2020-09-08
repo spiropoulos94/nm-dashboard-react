@@ -16,11 +16,10 @@
 
 .color-card {
     background-color:black;
-    width:70%;
+    width:90%;
     height:120px;
     text-align:center;
-    margin-top:15px;
-    margin-right:15px;
+    margin:15px;
 }
 
 .color-code {
@@ -37,14 +36,14 @@
 
 @media screen and (min-width:$sm) {
     .color-card {
-        width:40%;
+        width:44.8%;
     }
 }
 
 @media screen and (min-width:$lg) {
     .color-card {
        
-        width:30%;
+        width:29.7%;
         
     }
 }
