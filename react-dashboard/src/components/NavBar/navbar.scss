@@ -1,23 +1,19 @@
 @import "../../scss/variables";
 
+///////////////////////////////////////////////////////////////////////////////////
+
 .navbar {
+  width: 70vw;
   background-color: $nav-background-color;
-  width: 16vw;
-  height: 92vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+  height: 92vh;
   transform: translate3d(0, 0, 0);
-    transition-property: transform;
-    transition-duration: 0.45s;
-    transition-timing-function: ease-in;
-    transition-delay: 0s;
-}
-
-.hidden {
-  transform: translate3d(-30vw, 0, 0);
-  
+  transition-property: transform;
+  transition-duration: 0.45s;
+  transition-timing-function: ease-in;
+  transition-delay: 0s;
 }
 
 .menu-items {
@@ -28,32 +24,34 @@
   }
 }
 
+.hidden {
+  transform: translate3d(-70vw, 0, 0);
+}
+
+.title {
+  font-size: 1.2rem;
+}
+
 .menu-item {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  padding: 5% 15%;
   border-bottom: 1px solid var(--border-color);
-  padding: 7% 10%;
+
   width: 100%;
   border-bottom: 1px solid $border-color;
   text-decoration: none;
   color: white;
 }
 
-footer {
+.footer {
   text-align: center;
+  font-size: 0.75rem;
   padding-bottom: 10%;
-  font-size: 0.9rem;
 }
 
-@media screen and (max-width: $lg) {
-  .navbar {
-    width: 20vw;
-  }
-}
-
-@media screen and (max-width: $md) {
+@media screen and (min-width: $sm) {
   .navbar {
     width: 25vw;
-    
   }
 
   .title {
@@ -66,28 +64,24 @@ footer {
   }
 }
 
-///////////////////////////////////////////////////////////////////////////////////
-
-@media screen and (max-width: $sm) {
+@media screen and (min-width: $md) {
   .navbar {
-    width: 70vw;
+    width: 20vw;
   }
+}
 
+@media screen and (min-width: $lg) {
   .hidden {
-    transform: translate3d(-70vw, 0, 0);
-  }
-
-  .title {
-    font-size: 1.2rem;
+    transform: translate3d(-30vw, 0, 0);
   }
 
   .menu-item {
-    font-size: 1.1rem;
-    padding: 5% 10%;
+    font-size: 1.5rem;
   }
 
-  .footer {
-    font-size: 0.75rem;
+  footer {
+    text-align: center;
     padding-bottom: 10%;
+    font-size: 0.9rem;
   }
 }
