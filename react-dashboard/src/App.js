@@ -25,8 +25,10 @@ function App() {
     <Router>
       <div className="App">
         <Header hideNavbar={hideNavbar} />
+        <div className="flex-wrapper-main">
         <NavBar navStatus={hiddenNavBar}  />
         <MainView/>
+        </div>
       </div>
     </Router>
   );
