@@ -3,7 +3,7 @@
 ///////////////////////////////////////////////////////////////////////////////////
 
 .navbar {
-  width: 100%;
+  width: 70%;
   background-color: $nav-background-color;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,6 @@
   transition-duration: 0.45s;
   transition-timing-function: ease-in;
   transition-delay: 0s;
-  z-index: 700;
 }
 
 .menu-items {
