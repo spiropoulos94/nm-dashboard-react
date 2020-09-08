@@ -4,7 +4,9 @@
 .color-wrapper {
     
     padding:15px;
-    width:100%;
+    width:80%;
+    margin:auto;
+    z-index: 9999999999999999999999999999;
 }
 
 .color-grid {
@@ -14,7 +16,6 @@
 }
 
 .color-card {
-    background-color:red;
     width:90%;
     height:120px;
     text-align:center;
@@ -27,7 +28,6 @@
 
 .color-code {
     position: relative;
-    
     height: 100%;
     
 }
@@ -37,13 +37,34 @@
     justify-content: space-between;
     width:100%;
     height:100%;
-    background:blue;
     padding: 0  10%;
     color:white;
+    font-weight: bold;
+    opacity: 0.5;
+    background: rgba(0, 151, 20, 0.226);
+    padding: 0 5%; 
+    z-index:999999999999999999999999999999999999999999999;
+    
+    &:hover {
+        opacity: 1;
+        font-size:25px;
+    }
      
 }
 
+
+
+
+
+
+
 @media screen and (min-width:$sm) {
+
+    .color-wrapper {
+        padding:15px;
+        width:95%;
+    }
+
     .color-card {
         width:44.8%;
     }

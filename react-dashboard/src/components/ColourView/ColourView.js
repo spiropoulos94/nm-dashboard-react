@@ -6,7 +6,7 @@ function ColorCard(props) {
     console.log(data)
     
   return (
-    <div className="color-card">
+    <div className="color-card" style={{background:`${data.color}`}}>
       <p className="color-code">{data.color}</p>
       <div className="color-info">
         <p className="color-year">{data.year}</p>
@@ -26,7 +26,7 @@ function ColourView() {
         .then((res) => res.json())
         .then((data) => setColorData(data.data));
     }
-  }, [colorData]);
+  }, [colorData, url]);
 
   return (
     <div className="color-wrapper">
