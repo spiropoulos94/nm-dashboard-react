@@ -93,6 +93,7 @@ function UsersView() {
           <tbody className="tbody">
             {users &&
               users.map((user) => {
+                let {avatar}= user;
                 return (
                   <tr key={user.id}>
                     <td>
@@ -109,9 +110,10 @@ function UsersView() {
                     <td>{user["first_name"]}</td>
                     <td>{user["email"]}</td>
                     <td>
-                      {user.avatar.substring(
-                        user.avatar.lastIndexOf("r/") + 2,
-                        user.avatar.lastIndexOf("/128")
+                      {
+                      avatar.substring(
+                        avatar.lastIndexOf("r/") + 2,
+                        avatar.lastIndexOf("/128")
                       )}
                     </td>
                   </tr>
