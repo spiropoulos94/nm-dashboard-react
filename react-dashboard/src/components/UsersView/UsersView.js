@@ -2,20 +2,39 @@ import React, { useState, useEffect } from "react";
 import "./usersview.scss";
 
 function UsersView() {
-  let url = "users.json";
+  let url = "https://reqres.in/api/users/";
   let [userData, setUserData] = useState(null);
+
+  console.log(sessionStorage.getItem('users'))
+
+  
 
   function getUsers() {
     console.log("users run");
-    fetch(url)
+      fetch(url)
       .then((res) => res.json())
-      .then((response) => setUserData(response.data));
-  }
+      .then((response) => {
+        setUserData(response.data)
+        sessionStorage.setItem('users', JSON.stringify(response.data))
+
+      });
+    }
+  
+    function hydrateUsers(){
+      setUserData(JSON.parse(sessionStorage.getItem('users')))
+    }
+
+    
 
   
 
   useEffect(() => {
-    getUsers();
+    if(JSON.parse(sessionStorage.getItem('users').length < 1)){
+      getUsers();
+    } else {
+      hydrateUsers();
+    }
+    
   }, [url]);
 
   function removeUser() {
@@ -32,6 +51,8 @@ function UsersView() {
 
     let filteredArr = userData.filter((user) => user.id != userID);
     setUserData([...filteredArr]);
+    sessionStorage.setItem('users', JSON.stringify(filteredArr))
+    
   }
 
   return (

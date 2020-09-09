@@ -3,7 +3,7 @@ import "./colourview.scss";
 
 function ColorCard(props) {
   let data = props.data;
-
+let url = "https://reqres.in/api/products/"
   return (
     <div className="color-card" style={{ background: `${data.color}` }}>
       <p className="color-code">{data.color}</p>
