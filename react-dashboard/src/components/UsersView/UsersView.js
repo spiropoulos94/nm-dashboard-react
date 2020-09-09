@@ -12,15 +12,28 @@ function UsersView() {
   }
 
   let [userData, setUserData] = useState(null);
+  // let [selectedUserID, setSelectedUserID] = useState(null)
 
   useEffect(() => {
     getUsers();
   }, [url]);
 
   function removeUser() {
-    
+    let radioBtnArr = Array.from(document.querySelectorAll("input"));
+    console.log(radioBtnArr);
+    let userID = null;
+
+    radioBtnArr.forEach((btn) => {
+      if (btn.checked) {
+        userID =
+          btn.parentElement.parentElement.parentElement.children[1].innerText;
+      }
+    });
+
     let newUsers = userData;
-    newUsers.pop();
+    console.log(userID);
+
+    console.log(newUsers);
     setUserData([...newUsers]);
   }
 
@@ -51,7 +64,11 @@ function UsersView() {
                   <tr key={index}>
                     <td>
                       <label htmlFor="radio-btn">
-                        <input type="radio" name="radio-btn"></input>
+                        <input
+                          className="radio-btn"
+                          type="radio"
+                          name="radio-btn"
+                        ></input>
                       </label>
                     </td>
                     <td>{user.id}</td>
