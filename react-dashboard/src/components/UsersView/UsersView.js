@@ -51,7 +51,7 @@ function UsersView() {
       }
     });
 
-    let filteredArr = users.filter((user) => user.id != userID);
+    let filteredArr = users.filter((user) => user.id !== userID);
 
     if (
       window.confirm(`Are you sure you want to delete user number ${userID}?`)
@@ -63,7 +63,7 @@ function UsersView() {
 
   //ENABLE AND DISABLE DELETE BUTTON
   function toggleDeleteBtn() {
-    setDisabledBtn(!disabledBtn);
+    setDisabledBtn(false);
   }
 
   return (

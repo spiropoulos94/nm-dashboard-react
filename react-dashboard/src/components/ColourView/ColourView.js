@@ -1,19 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./colourview.scss";
+import ColorCard from "./../ColourCard/ColourCard.js"
 
-function ColorCard(props) {
-  let data = props.data;
-  let url = "https://reqres.in/api/products/";
-  return (
-    <div className="color-card" style={{ background: `${data.color}` }}>
-      <p className="color-code">{data.color}</p>
-      <div className="color-info">
-        <p className="color-year">{data.year}</p>
-        <p className="color-name">{data.name}</p>
-      </div>
-    </div>
-  );
-}
+
+
 
 function ColourView(props) {
   let [colorData, setColorData] = useState(null);
@@ -42,7 +32,7 @@ function ColourView(props) {
           setColorData(colours);
         });
     }
-  }, [colorData, url]);
+  }, [colorData, url, props]);
 
   return (
     <div>

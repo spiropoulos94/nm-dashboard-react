@@ -10,14 +10,14 @@ import Spinner from "./components/Spinner/Spinner.js";
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
-  let [usersLoading, setUsersLoading] = useState(true)
+  let [usersLoading, setUsersLoading] = useState(false)
   let [coloursLoading, setColoursLoading] = useState(false)
 
   function hideNavbar() {
     setHiddenNavBar(!hiddenNavBar);
   }
   //stops scrolling when navbar is open
-   if (hiddenNavBar == false) {
+   if (hiddenNavBar === false) {
      document.body.classList.add('no-scroll');
    } else {
      document.body.classList.remove('no-scroll');
@@ -34,9 +34,10 @@ function App() {
    onkeydown=clearSessionStorage;
 
    function clearSessionStorage(e){
-    if(e.keyCode == 90 && e.ctrlKey){
+    if(e.keyCode === 90 && e.ctrlKey){
       console.log("data cleared")
      sessionStorage.clear();
+     window.location.reload()
     }
    }
   
