@@ -4,12 +4,18 @@
   display: flex;
 }
 
+body {
+  overflow: scroll;
+}
 
+
+.no-scroll {
+  overflow:hidden;
+}
 
 .data-wrapper {
   padding: 15px;
   width: 100%;
-  // border:1px solid red;
   margin: auto;
 }
 

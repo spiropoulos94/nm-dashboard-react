@@ -3,8 +3,8 @@ import "./usersview.scss";
 
 function UsersView() {
   let url = "https://reqres.in/api/users/";
-  let [userData, setUserData] = useState(null);
-  let [disabledBTn, setDisabledBtn] = useState(true);
+  let [users, setUsers] = useState(null);
+  let [disabledBtn, setDisabledBtn] = useState(true);
 
   //GETTING USERS DATA
   function getUsers() {
@@ -20,22 +20,23 @@ function UsersView() {
           if (keyA > keyB) return +1;
           return 0;
         });
-        setUserData(response.data);
+        setUsers(response.data);
         sessionStorage.setItem("users", JSON.stringify(response.data));
       });
   }
 
   //HYDRATING USERS
-  function hydrateUsers() {
-    setUserData(JSON.parse(sessionStorage.getItem("users")));
-  }
+  // function updateUsers() {
+  //   setUserData(JSON.parse(sessionStorage.getItem("users")));
+  // }
 
   //IF SESSION STORAGE DATA ARE AVAILABLE USE THEM, IF NOT GET DATA
   useEffect(() => {
     if (!JSON.parse(sessionStorage.getItem("users"))) {
       getUsers();
     } else {
-      hydrateUsers();
+      // updateUsers();
+      setUsers(JSON.parse(sessionStorage.getItem("users")))
     }
   }, [url]);
 
@@ -50,19 +51,19 @@ function UsersView() {
       }
     });
 
-    let filteredArr = userData.filter((user) => user.id != userID);
+    let filteredArr = users.filter((user) => user.id != userID);
 
     if (
       window.confirm(`Are you sure you want to delete user number ${userID}?`)
     ) {
-      setUserData([...filteredArr]);
+      setUsers([...filteredArr]);
       sessionStorage.setItem("users", JSON.stringify(filteredArr));
     }
   }
 
   //ENABLE AND DISABLE DELETE BUTTON
   function toggleDeleteBtn() {
-    setDisabledBtn(!disabledBTn);
+    setDisabledBtn(!disabledBtn);
   }
 
   return (
@@ -72,7 +73,7 @@ function UsersView() {
         <button
           onClick={removeUser}
           className="delete-btn"
-          disabled={disabledBTn}
+          disabled={disabledBtn}
         >
           delete
         </button>
@@ -90,10 +91,10 @@ function UsersView() {
             </tr>
           </thead>
           <tbody className="tbody">
-            {userData &&
-              userData.map((user, index) => {
+            {users &&
+              users.map((user) => {
                 return (
-                  <tr key={index}>
+                  <tr key={user.id}>
                     <td>
                       <label htmlFor="radio-btn" onChange={toggleDeleteBtn}>
                         <input

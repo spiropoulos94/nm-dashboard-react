@@ -4,23 +4,24 @@ import NavBar from "./components/NavBar/NavBar.js";
 import { Switch, Route } from "react-router-dom";
 import ColourView from "./components/ColourView/ColourView.js";
 import UsersView from "./components/UsersView/UsersView.js";
-
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
 import Spinner from "./components/Spinner/Spinner.js";
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
+  let [usersLoading, setUsersLoading] = useState(true)
+  let [coloursLoading, setColoursLoading] = useState(false)
 
   function hideNavbar() {
     setHiddenNavBar(!hiddenNavBar);
   }
   //stops scrolling when navbar is open
-  if (hiddenNavBar == false) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "scroll";
-  }
+   if (hiddenNavBar == false) {
+     document.body.classList.add('no-scroll');
+   } else {
+     document.body.classList.remove('no-scroll');
+   }
 
   function normalizeNavbar() {
     if (window.innerWidth > 576) {
@@ -30,9 +31,19 @@ function App() {
 
   window.addEventListener("resize", normalizeNavbar);
 
+   onkeydown=clearSessionStorage;
+
+   function clearSessionStorage(e){
+    if(e.keyCode == 90 && e.ctrlKey){
+      console.log("data cleared")
+     sessionStorage.clear();
+    }
+   }
+  
+
   return (
     <Router>
-      <div className="App">
+      <div className="App" >
         <Header hideNavbar={hideNavbar} />
         <div className="flex-wrapper-main">
           <NavBar navStatus={hiddenNavBar} />
@@ -45,11 +56,11 @@ function App() {
                   <Spinner />
                 )}
               </Route>
-              <Route path="/users">
-                {<UsersView /> ? <UsersView /> : <Spinner />}
-              </Route>
               <Route path="/colours">
-                {<ColourView /> ? <ColourView /> : <Spinner />}
+                {coloursLoading ? <Spinner /> : <ColourView updateLoadingStatus={setColoursLoading}/>}
+              </Route>
+              <Route path="/users">
+                {usersLoading ? <Spinner /> : <UsersView updateLoadingStatus={setUsersLoading}/>}
               </Route>
             </Switch>
           </div>
