@@ -23,7 +23,23 @@ function ColourView() {
     if (colorData == null) {
       fetch(url)
         .then((res) => res.json())
-        .then((data) => setColorData(data.data));
+        .then((data) =>{
+          let colours = data.data;
+
+          //test if the sort function works
+          // colours[3].year = 2020
+
+        colours.sort(function (a, b) {
+          let keyA = a.year,
+            keyB = b.year;
+          // Compare the 2 dates
+          if (keyA < keyB) return 1;
+          if (keyA > keyB) return -1;
+          return 0;
+        });
+
+          console.log(colours)
+          setColorData(colours)});
     }
   }, [colorData, url]);
 

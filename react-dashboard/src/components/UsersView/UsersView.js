@@ -4,8 +4,8 @@ import "./usersview.scss";
 function UsersView() {
   let url = "https://reqres.in/api/users/";
   let [userData, setUserData] = useState(null);
+  let [disabledBTn, setDisabledBtn] = useState(true);
 
-  console.log(sessionStorage.getItem("users"));
 
   function getUsers() {
     console.log("users run");
@@ -38,18 +38,29 @@ function UsersView() {
       }
     });
 
-    console.log(userID);
-
     let filteredArr = userData.filter((user) => user.id != userID);
-    setUserData([...filteredArr]);
-    sessionStorage.setItem("users", JSON.stringify(filteredArr));
+
+    if (
+      window.confirm(`Are you sure you want to delete user number ${userID}?`)
+    ) {
+      setUserData([...filteredArr]);
+      sessionStorage.setItem("users", JSON.stringify(filteredArr));
+    }
+  }
+
+  function toggleDeleteBtn() {
+    setDisabledBtn(!disabledBTn);
   }
 
   return (
     <div>
       <div className="view-heading">
         <h2 className="view-title">Users Screen</h2>{" "}
-        <button onClick={removeUser} className="delete-btn">
+        <button
+          onClick={removeUser}
+          className="delete-btn"
+          disabled={disabledBTn}
+        >
           delete
         </button>
       </div>
@@ -71,7 +82,7 @@ function UsersView() {
                 return (
                   <tr key={index}>
                     <td>
-                      <label htmlFor="radio-btn">
+                      <label htmlFor="radio-btn" onChange={toggleDeleteBtn}>
                         <input
                           className="radio-btn"
                           type="radio"
