@@ -93,11 +93,11 @@ function UsersView() {
           <tbody className="tbody">
             {users &&
               users.map((user) => {
-                let {avatar}= user;
+                let {avatar} = user;
                 return (
                   <tr key={user.id}>
                     <td>
-                      <label htmlFor="radio-btn" onChange={toggleDeleteBtn}>
+                      <label  onChange={toggleDeleteBtn}>
                         <input
                           className="radio-btn"
                           type="radio"
@@ -110,8 +110,7 @@ function UsersView() {
                     <td>{user["first_name"]}</td>
                     <td>{user["email"]}</td>
                     <td>
-                      {
-                      avatar.substring(
+                      {avatar.substring(
                         avatar.lastIndexOf("r/") + 2,
                         avatar.lastIndexOf("/128")
                       )}
