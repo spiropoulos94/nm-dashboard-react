@@ -97,13 +97,14 @@ function UsersView() {
                 return (
                   <tr key={user.id}>
                     <td>
-                      <label  onChange={toggleDeleteBtn}>
+                      {/* <label   */}
                         <input
                           className="radio-btn"
                           type="radio"
                           name="radio-btn"
-                        ></input>
-                      </label>
+                          onChange={toggleDeleteBtn}>
+                        </input>
+                      {/* </label> */}
                     </td>
                     <td>{user.id}</td>
                     <td>{user["last_name"]}</td>
