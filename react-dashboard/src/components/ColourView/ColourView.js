@@ -8,6 +8,7 @@ import Spinner from "./../Spinner/Spinner.js";
 
 function ColourView(props) {
   let [colorData, setColorData] = useState(null);
+  let [isLoading, setIsLoading] = useState(true)
   let url = "https://reqres.in/api/products/";
 
   console.log(props)
@@ -18,6 +19,7 @@ function ColourView(props) {
         .then((res) => res.json())
         .then((data) => {
           let colours = data.data;
+          setIsLoading(false)
 
           //test if the sort function works
           // colours[3].year = 2020
@@ -37,7 +39,8 @@ function ColourView(props) {
   }, [colorData, url, props]);
 
   return (
-    <div>
+    <>
+    {isLoading ? <Spinner/> : <div>
       <div className="view-heading">
         <h2>Colours Screen</h2>{" "}
         <span>{colorData && `Items : ${colorData.length}`}</span>
@@ -48,7 +51,8 @@ function ColourView(props) {
             return <ColorCard data={color} key={color.id} />;
           })}
       </div>
-    </div>
+    </div>}
+    </>
   );
 }
 

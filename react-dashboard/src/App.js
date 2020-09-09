@@ -10,8 +10,8 @@ import Spinner from "./components/Spinner/Spinner.js";
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
-  let [usersLoading, setUsersLoading] = useState(false)
-  let [coloursLoading, setColoursLoading] = useState(false)
+  // let [usersLoading, setUsersLoading] = useState(false)
+  // let [coloursLoading, setColoursLoading] = useState(false)
 
   function hideNavbar() {
     setHiddenNavBar(!hiddenNavBar);
@@ -58,10 +58,10 @@ function App() {
                 )}
               </Route>
               <Route path="/colours">
-                {coloursLoading ? <Spinner /> : <ColourView setColoursLoading={setColoursLoading} coloursLoading={coloursLoading} />}
+                <ColourView />
               </Route>
               <Route path="/users">
-                {usersLoading ? <Spinner /> : <UsersView setUsersLoading={setUsersLoading} usersLoading={usersLoading} />}
+               <UsersView />
               </Route>
             </Switch>
           </div>
