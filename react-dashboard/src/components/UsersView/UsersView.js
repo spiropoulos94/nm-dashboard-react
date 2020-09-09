@@ -6,20 +6,31 @@ function UsersView() {
   let [userData, setUserData] = useState(null);
   let [disabledBTn, setDisabledBtn] = useState(true);
 
-
+  //GETTING USERS DATA
   function getUsers() {
     console.log("users run");
     fetch(url)
       .then((res) => res.json())
       .then((response) => {
+        response.data.sort(function (a, b) {
+          var keyA = a.id,
+            keyB = b.id;
+          // Compare the 2 dates
+          if (keyA < keyB) return -1;
+          if (keyA > keyB) return +1;
+          return 0;
+        });
         setUserData(response.data);
         sessionStorage.setItem("users", JSON.stringify(response.data));
       });
   }
 
+  //HYDRATING USERS
   function hydrateUsers() {
     setUserData(JSON.parse(sessionStorage.getItem("users")));
   }
+
+  //IF SESSION STORAGE DATA ARE AVAILABLE USE THEM, IF NOT GET DATA
   useEffect(() => {
     if (!JSON.parse(sessionStorage.getItem("users"))) {
       getUsers();
