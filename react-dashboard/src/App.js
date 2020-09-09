@@ -7,6 +7,7 @@ import UsersView from "./components/UsersView/UsersView.js";
 
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
+import Spinner from "./components/Spinner/Spinner.js";
 
 
 
@@ -35,25 +36,28 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      {<div className="App">
         <Header hideNavbar={hideNavbar} />
         <div className="flex-wrapper-main">
           <NavBar navStatus={hiddenNavBar} />
           <div className="data-wrapper">
             <Switch>
               <Route path="/home">
-                <h2 className="view-title">Welcome</h2>
+                
+                {<h2 className="view-title">Welcome</h2> ? <h2 className="view-title">Welcome</h2> : <Spinner/>}
               </Route>
               <Route path="/users">
-                <UsersView />
+                
+                {<UsersView /> ? <UsersView /> : <Spinner/>}
               </Route>
               <Route path="/colours">
-                <ColourView />
+                {<ColourView/> ? <ColourView/> : <Spinner/>}
               </Route>
             </Switch>
           </div>
         </div>
-      </div>
+      </div>}
+        
     </Router>
   );
 }
