@@ -9,21 +9,17 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
 import Spinner from "./components/Spinner/Spinner.js";
 
-
-
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
-
-  
 
   function hideNavbar() {
     setHiddenNavBar(!hiddenNavBar);
   }
   //stops scrolling when navbar is open
-  if(hiddenNavBar==false){
-    document.body.style.overflow = "hidden"
-  }else {
-    document.body.style.overflow = "scroll"
+  if (hiddenNavBar == false) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "scroll";
   }
 
   function normalizeNavbar() {
@@ -36,28 +32,29 @@ function App() {
 
   return (
     <Router>
-      {<div className="App">
+      <div className="App">
         <Header hideNavbar={hideNavbar} />
         <div className="flex-wrapper-main">
           <NavBar navStatus={hiddenNavBar} />
           <div className="data-wrapper">
             <Switch>
               <Route path="/home">
-                
-                {<h2 className="view-title">Welcome</h2> ? <h2 className="view-title">Welcome</h2> : <Spinner/>}
+                {<h2 className="view-title">Welcome</h2> ? (
+                  <h2 className="view-title">Welcome</h2>
+                ) : (
+                  <Spinner />
+                )}
               </Route>
               <Route path="/users">
-                
-                {<UsersView /> ? <UsersView /> : <Spinner/>}
+                {<UsersView /> ? <UsersView /> : <Spinner />}
               </Route>
               <Route path="/colours">
-                {<ColourView/> ? <ColourView/> : <Spinner/>}
+                {<ColourView /> ? <ColourView /> : <Spinner />}
               </Route>
             </Switch>
           </div>
         </div>
-      </div>}
-        
+      </div>
     </Router>
   );
 }
