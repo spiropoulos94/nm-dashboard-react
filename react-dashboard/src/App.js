@@ -10,8 +10,8 @@ import Spinner from "./components/Spinner/Spinner.js";
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
-  let [usersLoading, setUsersLoading] = useState(false)
-  let [coloursLoading, setColoursLoading] = useState(false)
+  let [usersLoading, setUsersLoading] = useState(true)
+  let [coloursLoading, setColoursLoading] = useState(true)
 
   function hideNavbar() {
     setHiddenNavBar(!hiddenNavBar);
