@@ -21,6 +21,7 @@ body {
   width: 100%;
   height: 100%;
   margin: auto;
+  position:absolute;
 }
 
 .view-title {
@@ -39,5 +40,6 @@ body {
   .data-wrapper {
     margin: 0;
     width: 80%;
+    position: inherit;
   }
 }

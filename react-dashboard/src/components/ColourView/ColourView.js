@@ -32,7 +32,12 @@ function ColourView(props) {
           });
 
           setColorData(colours);
+        })
+        .catch(err => {
+          console.log(err)
+          setIsLoading(true)
         });
+        
     }
   }, [colorData, url, props]);
 
