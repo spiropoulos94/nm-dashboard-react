@@ -2,36 +2,35 @@ import React, { useState, useEffect } from "react";
 import "./usersview.scss";
 
 function UsersView() {
+  let url = "users.json";
+
   function getUsers() {
-    fetch("users.json")
+    console.log("users run");
+    fetch(url)
       .then((res) => res.json())
       .then((response) => setUserData(response.data));
   }
 
   let [userData, setUserData] = useState(null);
 
-  console.log(userData);
-
   useEffect(() => {
     getUsers();
-  }, [setUserData]);
+  }, [url]);
 
   function removeUser() {
-    console.log('user removed')
-    let newArr = userData
-    newArr.pop()
-    setUserData(newArr)
-    }
     
-    
-    
-  
+    let newUsers = userData;
+    newUsers.pop();
+    setUserData([...newUsers]);
+  }
 
   return (
     <div>
       <div className="view-heading">
         <h2 className="view-title">Users Screen</h2>{" "}
-        <button onClick={removeUser} className="delete-btn">delete</button>
+        <button onClick={removeUser} className="delete-btn">
+          delete
+        </button>
       </div>
       <div className="table-responsive">
         <table id="myTable" className="table" cell-spacing="0" cell-padding="0">

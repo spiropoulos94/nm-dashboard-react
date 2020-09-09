@@ -18,7 +18,7 @@ function App() {
   if(hiddenNavBar==false){
     document.body.style.overflow = "hidden"
   }else {
-    document.body.style.overflow = ""
+    document.body.style.overflow = "scroll"
   }
 
   function normalizeNavbar() {

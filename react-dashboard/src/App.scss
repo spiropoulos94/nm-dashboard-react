@@ -1,36 +1,37 @@
 @import "./scss/variables.scss";
 
-
 .flex-wrapper-main {
-    display: flex;
- 
+  display: flex;
 }
 
-
-.data-wrapper {  
-    padding:15px;
-    width:100%;
-    // border:1px solid red;
-    margin:auto;
+.data-wrapper {
+  padding: 15px;
+  width: 100%;
+  // border:1px solid red;
+  margin: auto;
 }
 
-h2 {
-    color:black;
-    position:relative;
-    margin-left:5%;  
+.view-title {
+  color: black;
+  position: relative;
 }
 
-@media screen and (min-width: $sm){
-    .data-wrapper {
-        width:90%;
-    }
- }
+//setting for colors screen
+// .view-heading {
+//     width: 92%;
+//     position: relative;
+//     left: 4%;
+// }
 
-@media screen and (min-width: $md){
-    .data-wrapper {
-        margin:0;
-        width:80%;
-    }
- }
+@media screen and (min-width: $sm) {
+  .data-wrapper {
+    width: 90%;
+  }
+}
 
- 
+@media screen and (min-width: $md) {
+  .data-wrapper {
+    margin: 0;
+    width: 80%;
+  }
+}
