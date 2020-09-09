@@ -11,8 +11,6 @@ function ColourView(props) {
   let [isLoading, setIsLoading] = useState(true)
   let url = "https://reqres.in/api/products/";
 
-  console.log(props)
-
   useEffect(() => {
     if (colorData === null) {
       fetch(url)

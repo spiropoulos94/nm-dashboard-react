@@ -6,6 +6,7 @@ import Spinner from "./../Spinner/Spinner.js";
 function UsersView() {
   let url = "https://reqres.in/api/users/";
   let [users, setUsers] = useState(null);
+  let [isLoading, setIsLoading] = useState(true)
   let [disabledBtn, setDisabledBtn] = useState(true);
 
   //GETTING USERS DATA
@@ -22,8 +23,14 @@ function UsersView() {
           if (keyA > keyB) return +1;
           return 0;
         });
+        
         setUsers(response.data);
+        
         sessionStorage.setItem("users", JSON.stringify(response.data));
+      })
+      .catch(err => {
+        console.log(err)
+        setIsLoading(true)
       });
   }
 
@@ -34,6 +41,7 @@ function UsersView() {
 
   //IF SESSION STORAGE DATA ARE AVAILABLE USE THEM, IF NOT GET DATA
   useEffect(() => {
+    setIsLoading(false)
     if (!JSON.parse(sessionStorage.getItem("users"))) {
       getUsers();
     } else {
@@ -69,7 +77,8 @@ function UsersView() {
   }
 
   return (
-    <div>
+    <>
+    {isLoading ? <Spinner/> : <div>
       <div className="view-heading">
         <h2 className="view-title">Users Screen</h2>{" "}
         <button
@@ -124,7 +133,8 @@ function UsersView() {
           </tbody>
         </table>
       </div>
-    </div>
+    </div>}
+    </>
   );
 }
 
