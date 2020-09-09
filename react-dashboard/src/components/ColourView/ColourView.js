@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./colourview.scss";
-import ColorCard from "./../ColourCard/ColourCard.js"
+import ColorCard from "./../ColourCard/ColourCard.js";
+import Spinner from "./../Spinner/Spinner.js";
 
 
 
@@ -9,13 +10,14 @@ function ColourView(props) {
   let [colorData, setColorData] = useState(null);
   let url = "https://reqres.in/api/products/";
 
+  console.log(props)
+
   useEffect(() => {
     if (colorData === null) {
       fetch(url)
         .then((res) => res.json())
         .then((data) => {
           let colours = data.data;
-          props.updateLoadingStatus(false);
 
           //test if the sort function works
           // colours[3].year = 2020

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./usersview.scss";
+import Spinner from "./../Spinner/Spinner.js";
+
 
 function UsersView() {
   let url = "https://reqres.in/api/users/";
