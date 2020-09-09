@@ -39,6 +39,7 @@ function UsersView() {
     }
   }, [url]);
 
+  //REMOVE SELECTED USER
   function removeUser() {
     let userID = null;
     Array.from(document.querySelectorAll(".radio-btn")).forEach((button) => {
@@ -59,6 +60,7 @@ function UsersView() {
     }
   }
 
+  //ENABLE AND DISABLE DELETE BUTTON
   function toggleDeleteBtn() {
     setDisabledBtn(!disabledBTn);
   }
