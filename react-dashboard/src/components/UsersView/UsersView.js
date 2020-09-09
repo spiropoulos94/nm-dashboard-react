@@ -12,29 +12,25 @@ function UsersView() {
   }
 
   let [userData, setUserData] = useState(null);
-  // let [selectedUserID, setSelectedUserID] = useState(null)
 
   useEffect(() => {
     getUsers();
   }, [url]);
 
   function removeUser() {
-    let radioBtnArr = Array.from(document.querySelectorAll("input"));
-    console.log(radioBtnArr);
     let userID = null;
-
-    radioBtnArr.forEach((btn) => {
-      if (btn.checked) {
-        userID =
-          btn.parentElement.parentElement.parentElement.children[1].innerText;
+    Array.from(document.querySelectorAll(".radio-btn")).forEach((button) => {
+      if (button.checked) {
+        userID = parseInt(
+          button.parentElement.parentElement.parentElement.children[1].innerText
+        );
       }
     });
 
-    let newUsers = userData;
     console.log(userID);
 
-    console.log(newUsers);
-    setUserData([...newUsers]);
+    let filteredArr = userData.filter((user) => user.id != userID);
+    setUserData([...filteredArr]);
   }
 
   return (
