@@ -8,8 +8,12 @@ import UsersView from "./components/UsersView/UsersView.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
 
+
+
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
+
+  
 
   function hideNavbar() {
     setHiddenNavBar(!hiddenNavBar);
