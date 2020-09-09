@@ -3,6 +3,7 @@ import "./usersview.scss";
 
 function UsersView() {
   let url = "users.json";
+  let [userData, setUserData] = useState(null);
 
   function getUsers() {
     console.log("users run");
@@ -11,7 +12,7 @@ function UsersView() {
       .then((response) => setUserData(response.data));
   }
 
-  let [userData, setUserData] = useState(null);
+  
 
   useEffect(() => {
     getUsers();
