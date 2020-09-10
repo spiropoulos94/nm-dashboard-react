@@ -15,7 +15,10 @@ function App() {
   }
 
   function closeNavbar() {
-    setHiddenNavBar(true);
+    if(window.innerWidth < 768){
+      setHiddenNavBar(true);
+    }
+    
   }
 
   //stops scrolling when navbar is open
@@ -33,7 +36,7 @@ function App() {
       <div className="App" >
         <Header closeNavbar={closeNavbar} toggleNavbar={toggleNavbar} />
         <div className="flex-wrapper-main">
-          <NavBar navStatus={hiddenNavBar} setNavStatus={setHiddenNavBar} />
+          <NavBar navStatus={hiddenNavBar} setNavStatus={setHiddenNavBar} closeNavbar={closeNavbar} />
           <div className="data-wrapper">
             <Switch>
               <Route path="/home">
