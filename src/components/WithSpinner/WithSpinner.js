@@ -8,7 +8,10 @@ import fetchUrl from "../../utilities/fetchFunction.js";
 
 function WithSpinner(Component) {
   return function WithSpinnerComponent({ isLoading, ...props }) {
-    if (!isLoading) return <Component {...props} />;
+    if (!isLoading) {
+      console.log("props", props);
+      return <Component {...props} />;
+    }
     return <Spinner />;
   };
 }

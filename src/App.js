@@ -16,6 +16,11 @@ function App() {
   // let [isLoading, setIsLoading] = useState(true)
   let [coloursIsLoading, setColoursIsLoading] = useState(false);
   let [usersIsLoading, setUsersIsLoading] = useState(false);
+  //perase ta url san pros sto container wste na ferei ta dedomena kai na ta perasei sta children
+  let url = {
+    colors: "https://reqres.in/api/products/",
+    users: "https://reqres.in/api/users/",
+  };
 
   function toggleNavbar() {
     setHiddenNavBar(!hiddenNavBar);
@@ -53,10 +58,15 @@ function App() {
                 <h2 className="view-title">Welcome</h2>
               </Route>
               <Route path="/colours">
-                <ColoursWithSpinner isLoading={coloursIsLoading} />
+                <Container url={url.colors}>
+                  {" "}
+                  <ColoursWithSpinner isLoading={coloursIsLoading} />
+                </Container>
               </Route>
               <Route path="/users">
-                <UsersWithSpinner isLoading={usersIsLoading} />
+                <Container url={url.users}>
+                  <UsersWithSpinner isLoading={usersIsLoading} />
+                </Container>
               </Route>
             </Switch>
           </div>
