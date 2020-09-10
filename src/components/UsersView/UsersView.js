@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./UsersView.scss";
 import Spinner from "./../Spinner/Spinner.js";
+import fetchUrl from "../../utilities/fetchFunction.js"
 
 function UsersView() {
   let url = "https://reqres.in/api/users/";
@@ -11,35 +12,54 @@ function UsersView() {
   //GETTING USERS DATA
   function getUsers() {
     console.log("users run");
-    fetch(url)
-      .then((res) => res.json())
-      .then((response) => {
-        response.data.sort(function (a, b) {
-          var keyA = a.id,
-            keyB = b.id;
-          // Compare the 2 dates
-          if (keyA < keyB) return -1;
-          if (keyA > keyB) return +1;
-          return 0;
-        });
+    fetchUrl(url)
+    .then(responseObj =>{
+      // console.log(responseObj)
+      if(responseObj){
+        setIsLoading(false)
+        responseObj.data.sort(function (a, b) {
+                var keyA = a.id,
+                  keyB = b.id;
+                // Compare the 2 dates
+                if (keyA < keyB) return -1;
+                if (keyA > keyB) return +1;
+                return 0;
+              });
 
-        setUsers(response.data);
+        
+        setUsers(responseObj.data)
 
-        sessionStorage.setItem("users", JSON.stringify(response.data));
-      })
-      .catch((err) => {
-        console.log(err);
-        setIsLoading(true);
-      });
+      }
+    })
+    // fetch(url)
+    //   .then((res) => res.json())
+    //   .then((response) => {
+    //    response.data.sort(function (a, b) {
+    //      var keyA = a.id,
+    //        keyB = b.id;
+    //      // Compare the 2 dates
+    //      if (keyA < keyB) return -1;
+    //      if (keyA > keyB) return +1;
+    //      return 0;
+    //    });
+
+    //     setUsers(response.data);
+
+    //     sessionStorage.setItem("users", JSON.stringify(response.data));
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     setIsLoading(true);
+    //   });
   }
 
   //IF SESSION STORAGE DATA ARE AVAILABLE USE THEM, IF NOT GET DATA
   useEffect(() => {
-    setIsLoading(false);
+    // setIsLoading(false);
     if (!JSON.parse(sessionStorage.getItem("users"))) {
       getUsers();
     } else {
-      // updateUsers();
+      // UPDATE USERS
       setUsers(JSON.parse(sessionStorage.getItem("users")));
     }
   }, []);
@@ -69,6 +89,8 @@ function UsersView() {
   function toggleDeleteBtn() {
     setDisabledBtn(false);
   }
+
+
 
   return (
     <>
