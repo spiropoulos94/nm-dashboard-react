@@ -11,7 +11,6 @@ function UsersView() {
 
   //GETTING USERS DATA
   function getUsers() {
-    console.log("users run");
     fetchUrl(url).then((responseObj) => {
       // console.log(responseObj)
       if (responseObj) {

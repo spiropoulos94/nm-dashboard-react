@@ -4,7 +4,7 @@ import ColorCard from "./../ColourCard/ColourCard.js";
 import Spinner from "./../Spinner/Spinner.js";
 import fetchUrl from "../../utilities/fetchFunction.js";
 
-function ColourView(props) {
+function ColourView() {
   let [colorData, setColorData] = useState(null);
   let [isLoading, setIsLoading] = useState(true)
   let url = "https://reqres.in/api/products/";
