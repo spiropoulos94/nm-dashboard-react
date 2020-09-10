@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./UsersView.scss";
 import Spinner from "./../Spinner/Spinner.js";
-import fetchUrl from "../../utilities/fetchFunction.js"
+import fetchUrl from "../../utilities/fetchFunction.js";
 
 function UsersView() {
   let url = "https://reqres.in/api/users/";
@@ -12,45 +12,22 @@ function UsersView() {
   //GETTING USERS DATA
   function getUsers() {
     console.log("users run");
-    fetchUrl(url)
-    .then(responseObj =>{
+    fetchUrl(url).then((responseObj) => {
       // console.log(responseObj)
-      if(responseObj){
-        setIsLoading(false)
+      if (responseObj) {
+        setIsLoading(false);
         responseObj.data.sort(function (a, b) {
-                var keyA = a.id,
-                  keyB = b.id;
-                // Compare the 2 dates
-                if (keyA < keyB) return -1;
-                if (keyA > keyB) return +1;
-                return 0;
-              });
+          var keyA = a.id,
+            keyB = b.id;
+          // Compare the 2 dates
+          if (keyA < keyB) return -1;
+          if (keyA > keyB) return +1;
+          return 0;
+        });
 
-        
-        setUsers(responseObj.data)
-
+        setUsers(responseObj.data);
       }
-    })
-    // fetch(url)
-    //   .then((res) => res.json())
-    //   .then((response) => {
-    //    response.data.sort(function (a, b) {
-    //      var keyA = a.id,
-    //        keyB = b.id;
-    //      // Compare the 2 dates
-    //      if (keyA < keyB) return -1;
-    //      if (keyA > keyB) return +1;
-    //      return 0;
-    //    });
-
-    //     setUsers(response.data);
-
-    //     sessionStorage.setItem("users", JSON.stringify(response.data));
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     setIsLoading(true);
-    //   });
+    });
   }
 
   //IF SESSION STORAGE DATA ARE AVAILABLE USE THEM, IF NOT GET DATA
@@ -90,8 +67,6 @@ function UsersView() {
     setDisabledBtn(false);
   }
 
-
-
   return (
     <>
       {isLoading ? (
@@ -130,7 +105,7 @@ function UsersView() {
                   users.map((user) => {
                     let { avatar } = user;
                     // let {substring, lastIndexOfAvatar} = avatar;
-                    
+
                     return (
                       <tr key={user.id}>
                         <td>
