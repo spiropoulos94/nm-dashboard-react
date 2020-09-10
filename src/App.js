@@ -24,8 +24,8 @@ function App() {
     : document.body.classList.add('no-scroll');
 
   window.addEventListener("resize", () => {
-    window.innerWidth > 576 && setHiddenNavBar(false);
-    window.innerWidth < 576 && setHiddenNavBar(true);
+    window.innerWidth > 768 && setHiddenNavBar(false);
+    window.innerWidth < 768 && setHiddenNavBar(true);
   });
    
   return (
