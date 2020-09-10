@@ -37,7 +37,7 @@ function ColourView(props) {
         
     }}
   }, [colorData, url, props]);
-
+//
   return (
     <>
     {isLoading ? <Spinner/> : <div>
