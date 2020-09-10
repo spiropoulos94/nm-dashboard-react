@@ -19,7 +19,7 @@ body {
 .data-wrapper {
   padding: 15px;
   width: 100%;
-  // height: 100%;
+  height: 92vh;
   margin: auto;
   position:absolute;
 }
@@ -41,7 +41,6 @@ body {
   .data-wrapper {
     margin: 0;
     width: 80%;
-    // padding:0 20%;
     position: inherit;
   }
 }

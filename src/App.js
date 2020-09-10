@@ -10,7 +10,9 @@ import Spinner from "./components/Spinner/Spinner.js";
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
-  let [isLoading, setIsLoading] = useState(false)
+  // let [isLoading, setIsLoading] = useState(true)
+  let [coloursIsLoading, setColoursIsLoading] = useState(true)
+  let [usersIsLoading, setUsersIsLoading] = useState(true)
 
   function toggleNavbar() {
     setHiddenNavBar(!hiddenNavBar);
@@ -20,7 +22,6 @@ function App() {
     if(window.innerWidth < 768){
       setHiddenNavBar(true);
     }
-    
   }
 
   //stops scrolling when navbar is open
@@ -45,10 +46,10 @@ function App() {
                 <h2 className="view-title">Welcome</h2>
               </Route>
               <Route path="/colours">
-                {isLoading ? <Spinner /> :<ColourView setIsLoading={setIsLoading} isLoading={isLoading}/>}
+                {coloursIsLoading ? <Spinner /> :<ColourView />}
               </Route>
               <Route path="/users">
-               {isLoading ? <Spinner /> :<UsersView setIsLoading={setIsLoading}/>}
+               {usersIsLoading ? <Spinner /> :<UsersView />}
               </Route>
             </Switch>
           </div>
