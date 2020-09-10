@@ -11,33 +11,43 @@ function ColourView(props) {
 
   useEffect(() => {
     if (colorData === null){ 
-      {
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-          let colours = data.data;
-          setIsLoading(false)
-          //test if the sort function works
-          // colours[3].year = 2020
-          colours.sort(function (a, b) {
-            let keyA = a.year,
-              keyB = b.year;
-            // Compare the 2 dates
-            if (keyA < keyB) return 1;
-            if (keyA > keyB) return -1;
-            return 0;
-          });
 
-          setColorData(colours);
-        })
-        .catch(err => {
-          console.log(err)
-          setIsLoading(true)
-        });
-        
-    }}
-  }, [colorData, url, props]);
-//
+      fetchUrl(url)
+      .then(responseObj => {
+        if(responseObj){
+          setIsLoading(false)
+        setColorData(responseObj.data)
+        }  
+      })
+
+ //     {
+ //     fetch(url)
+ //       .then((res) => res.json())
+ //       .then((data) => {
+ //         let colours = data.data;
+ //         setIsLoading(false)
+ //         //test if the sort function works
+ //         // colours[3].year = 2020
+ //         colours.sort(function (a, b) {
+ //           let keyA = a.year,
+ //             keyB = b.year;
+ //           // Compare the 2 dates
+ //           if (keyA < keyB) return 1;
+ //           if (keyA > keyB) return -1;
+ //           return 0;
+ //         });
+ //
+ //         setColorData(colours);
+ //       })
+ //       .catch(err => {
+ //         console.log(err)
+ //         setIsLoading(true)
+ //       });
+ //       
+ //   }
+  }
+  }, []);
+
   return (
     <>
     {isLoading ? <Spinner/> : <div>

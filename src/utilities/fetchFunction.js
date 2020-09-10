@@ -1,4 +1,4 @@
-export default function fetchUrl(endpoint,setState, setLoadingState, boolean) {
+export default function fetchUrl(endpoint) {
   
     console.log("imported function runs");
 
@@ -10,7 +10,7 @@ export default function fetchUrl(endpoint,setState, setLoadingState, boolean) {
     })
     .catch(err => {
         console.error(err)
-        setLoadingState(boolean);
+        // setLoadingState(boolean);
     })
 
     return fetchedData;
