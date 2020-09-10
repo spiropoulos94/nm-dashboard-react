@@ -11,8 +11,24 @@ import Spinner from "./components/Spinner/Spinner.js";
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
   // let [isLoading, setIsLoading] = useState(true)
-  let [coloursIsLoading, setColoursIsLoading] = useState(false)
+  let [coloursIsLoading, setColoursIsLoading] = useState(true)
   let [usersIsLoading, setUsersIsLoading] = useState(true)
+
+  function checkDataAvailability(){
+    fetch("https://reqres.in/api/products/").then(res => {
+      if(res.ok){
+        setColoursIsLoading(false)
+      }
+    })
+
+    fetch("https://reqres.in/api/users/").then(res => {
+      if(res.ok){
+        setUsersIsLoading(false)
+      }
+    })
+  }
+
+  checkDataAvailability();
 
   function toggleNavbar() {
     setHiddenNavBar(!hiddenNavBar);

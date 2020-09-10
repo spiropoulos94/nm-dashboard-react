@@ -23,7 +23,6 @@ function UsersView() {
           if (keyA > keyB) return +1;
           return 0;
         });
-
         setUsers(responseObj.data);
       }
     });
