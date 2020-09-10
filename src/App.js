@@ -9,6 +9,7 @@ import "./App.scss";
 import Spinner from "./components/Spinner/Spinner.js";
 import WithSpinner from "./components/WithSpinner/WithSpinner"
 let ColoursWithSpinner = WithSpinner(ColourView);
+let UsersWithSpinner = WithSpinner(UsersView)
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
@@ -65,13 +66,14 @@ function App() {
             <Switch>
               <Route path="/home">
                 <h2 className="view-title">Welcome</h2>
-                 <ColoursWithSpinner  />
               </Route> 
               <Route path="/colours">
-                {coloursIsLoading ? <Spinner /> :<ColourView />}
+              <ColoursWithSpinner isLoading  />
+                {/* {coloursIsLoading ? <Spinner /> :<ColourView />} */}
               </Route>
               <Route path="/users">
-               {usersIsLoading ? <Spinner /> :<UsersView />}
+              <UsersWithSpinner  isLoading />
+               {/* {usersIsLoading ? <Spinner /> :<UsersView />} */}
               </Route>
             </Switch>
           </div>
