@@ -53,14 +53,10 @@ function App() {
                 <h2 className="view-title">Welcome</h2>
               </Route>
               <Route path="/colours">
-                <Container>
-                  <ColoursWithSpinner isLoading={coloursIsLoading} />
-                </Container>
+                <ColoursWithSpinner isLoading={coloursIsLoading} />
               </Route>
               <Route path="/users">
-                <Container>
-                  <UsersWithSpinner isLoading={usersIsLoading} />
-                </Container>
+                <UsersWithSpinner isLoading={usersIsLoading} />
               </Route>
             </Switch>
           </div>
