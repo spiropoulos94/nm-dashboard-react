@@ -11,9 +11,15 @@ import Spinner from "./components/Spinner/Spinner.js";
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
 
-  function hideNavbar() {
+  function toggleNavbar() {
     setHiddenNavBar(!hiddenNavBar);
   }
+
+  function closeNavbar() {
+    setHiddenNavBar(true);
+  }
+
+
   //stops scrolling when navbar is open
    if (hiddenNavBar === false) {
      document.body.classList.add('no-scroll');
@@ -43,7 +49,7 @@ function App() {
   return (
     <Router>
       <div className="App" >
-        <Header hideNavbar={hideNavbar} />
+        <Header closeNavbar={closeNavbar} toggleNavbar={toggleNavbar} />
         <div className="flex-wrapper-main">
           <NavBar navStatus={hiddenNavBar} setNavStatus={setHiddenNavBar} />
           <div className="data-wrapper">
