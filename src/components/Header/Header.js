@@ -14,7 +14,7 @@ function Header(props) {
         <button className="burger-btn" onClick={props.toggleNavbar}>
           <span className="menu-icon">&#9776;</span>
         </button>
-        <Link to="/home" className="link"  >
+        <Link to="/home" className="link" onClick={props.closeNavbar} >
           <img className="header-logo" src={LogoPlaceholder} alt="logo" />
           <span className="logo-txt">LOGO</span>
         </Link>
