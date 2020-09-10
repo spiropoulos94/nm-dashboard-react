@@ -10,8 +10,6 @@ import Spinner from "./components/Spinner/Spinner.js";
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
-  // let [usersLoading, setUsersLoading] = useState(false)
-  // let [coloursLoading, setColoursLoading] = useState(false)
 
   function hideNavbar() {
     setHiddenNavBar(!hiddenNavBar);
@@ -48,7 +46,7 @@ function App() {
       <div className="App" >
         <Header hideNavbar={hideNavbar} />
         <div className="flex-wrapper-main">
-          <NavBar navStatus={hiddenNavBar} />
+          <NavBar navStatus={hiddenNavBar} setNavStatus={setHiddenNavBar} />
           <div className="data-wrapper">
             <Switch>
               <Route path="/home">
