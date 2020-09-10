@@ -6,9 +6,9 @@ function NavBar(props) {
   let hiddenNavBar = props.navStatus;
   // let setHiddenNavbar = props.setNavStatus
 
-  // function closeNavbar(){
-  //   setHiddenNavbar(true)
-  // }
+   //function resetLoadingState(){
+   //  setIsLoading(true)
+   //}
 
   return (
     <div>

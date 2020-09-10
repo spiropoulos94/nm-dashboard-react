@@ -6,9 +6,11 @@ import ColourView from "./components/ColourView/ColourView.js";
 import UsersView from "./components/UsersView/UsersView.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
+import Spinner from "./components/Spinner/Spinner.js";
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
+  let [isLoading, setIsLoading] = useState(true)
 
   function toggleNavbar() {
     setHiddenNavBar(!hiddenNavBar);
@@ -43,10 +45,10 @@ function App() {
                 <h2 className="view-title">Welcome</h2>
               </Route>
               <Route path="/colours">
-                <ColourView />
+                {isLoading ? <Spinner /> :<ColourView setIsLoading={setIsLoading} isLoading={isLoading}/>}
               </Route>
               <Route path="/users">
-               <UsersView />
+               {isLoading ? <Spinner /> :<UsersView setIsLoading={setIsLoading}/>}
               </Route>
             </Switch>
           </div>
