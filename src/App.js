@@ -39,8 +39,7 @@ function App() {
      window.location.reload()
     }
    }
-  
-
+   
   return (
     <Router>
       <div className="App" >

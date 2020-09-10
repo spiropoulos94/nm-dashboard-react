@@ -37,6 +37,7 @@ function UsersView() {
     } else {
       // UPDATE USERS
       setUsers(JSON.parse(sessionStorage.getItem("users")));
+      setIsLoading(false)
     }
   }, []);
 
