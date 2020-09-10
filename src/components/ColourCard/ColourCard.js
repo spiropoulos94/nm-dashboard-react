@@ -1,5 +1,5 @@
 import React from "react";
-import "./colourcard.scss";
+import "./ColourCard.scss";
 
 function ColorCard(props) {
   let {data} = props;

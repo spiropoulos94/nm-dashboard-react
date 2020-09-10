@@ -1,5 +1,5 @@
 import React from "react";
-import "./header.scss";
+import "./Header.scss";
 import LogoPlaceholder from "../../images/logoplaceholder.png";
 import Avatar from "../../images/accountPhoto.png";
 import { Link } from "react-router-dom";

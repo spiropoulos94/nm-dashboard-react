@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./usersview.scss";
+import "./UsersView.scss";
 import Spinner from "./../Spinner/Spinner.js";
 
 function UsersView() {

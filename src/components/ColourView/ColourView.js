@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./colourview.scss";
+import "./ColourView.scss";
 import ColorCard from "./../ColourCard/ColourCard.js";
 import Spinner from "./../Spinner/Spinner.js";
 
