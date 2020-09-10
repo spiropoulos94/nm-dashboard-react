@@ -1,7 +1,5 @@
 @import "../../scss/variables";
 
-///////////////////////////////////////////////////////////////////////////////////
-
 .navbar {
   position:relative;
   width: 70vw;
@@ -29,17 +27,11 @@
 
 .hidden {
   transform: translate3d(-70vw, 0, 0);
-  // width:0px;
-
 }
-
-
 
 .menu-item {
   font-size: 1.1rem;
   padding: 5% 15%;
-  border-bottom: 1px solid var(--border-color);
-
   width: 100%;
   border-bottom: 1px solid $border-color;
   text-decoration: none;
@@ -53,12 +45,11 @@
 }
 
 @media screen and (min-width: $sm) {
-  
   .navbar {
     width: 25vw;
   }
 
-.footer {
+  .footer {
     font-size: 0.85rem;
     padding-bottom: 10%;
   }

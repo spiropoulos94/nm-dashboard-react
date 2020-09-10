@@ -11,7 +11,7 @@ function NavBar(props) {
   }
 
   return (
-    <div  >
+    <div>
       <div className={hiddenNavBar ? "navbar hidden" : "navbar"}>
         <div className="menu-items">
           <Link to="/colours" className="menu-item" onClick={closeNavbar}>

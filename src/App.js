@@ -6,7 +6,6 @@ import ColourView from "./components/ColourView/ColourView.js";
 import UsersView from "./components/UsersView/UsersView.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
-import Spinner from "./components/Spinner/Spinner.js";
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
@@ -19,32 +18,15 @@ function App() {
     setHiddenNavBar(true);
   }
 
-
   //stops scrolling when navbar is open
-   if (hiddenNavBar === false) {
-     document.body.classList.add('no-scroll');
-   } else {
-     document.body.classList.remove('no-scroll');
-   }
+  hiddenNavBar 
+    ? document.body.classList.remove('no-scroll')
+    : document.body.classList.add('no-scroll');
 
-   //todo improvement.
-  function normalizeNavbar() {
-    if (window.innerWidth > 576) {
-      setHiddenNavBar(false);
-    } else setHiddenNavBar(true);
-  }
-
-  window.addEventListener("resize", normalizeNavbar);
-
-   onkeydown=clearSessionStorage;
-
-   function clearSessionStorage(e){
-    if(e.keyCode === 90 && e.ctrlKey){
-      console.log("data cleared")
-     sessionStorage.clear();
-     window.location.reload()
-    }
-   }
+  window.addEventListener("resize", () => {
+    window.innerWidth > 576 && setHiddenNavBar(false);
+    window.innerWidth < 576 && setHiddenNavBar(true);
+  });
    
   return (
     <Router>
@@ -55,11 +37,7 @@ function App() {
           <div className="data-wrapper">
             <Switch>
               <Route path="/home">
-                {<h2 className="view-title">Welcome</h2> ? (
-                  <h2 className="view-title">Welcome</h2>
-                ) : (
-                  <Spinner />
-                )}
+                <h2 className="view-title">Welcome</h2>
               </Route>
               <Route path="/colours">
                 <ColourView />
