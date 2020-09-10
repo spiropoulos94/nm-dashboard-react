@@ -10,7 +10,7 @@ import Spinner from "./components/Spinner/Spinner.js";
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
-  let [isLoading, setIsLoading] = useState(true)
+  let [isLoading, setIsLoading] = useState(false)
 
   function toggleNavbar() {
     setHiddenNavBar(!hiddenNavBar);
