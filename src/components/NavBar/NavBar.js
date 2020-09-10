@@ -24,7 +24,7 @@ function NavBar(props) {
         <footer className="footer">© 2020 Netmechanics</footer>
       </div>
     </div>
-  );
+  );//
 }
 
 export default NavBar;
