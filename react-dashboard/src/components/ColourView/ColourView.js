@@ -3,9 +3,6 @@ import "./colourview.scss";
 import ColorCard from "./../ColourCard/ColourCard.js";
 import Spinner from "./../Spinner/Spinner.js";
 
-
-
-
 function ColourView(props) {
   let [colorData, setColorData] = useState(null);
   let [isLoading, setIsLoading] = useState(true)

@@ -23,6 +23,7 @@ function App() {
      document.body.classList.remove('no-scroll');
    }
 
+   //todo improvement.
   function normalizeNavbar() {
     if (window.innerWidth > 576) {
       setHiddenNavBar(false);
