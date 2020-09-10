@@ -107,6 +107,8 @@ function UsersView() {
                 {users &&
                   users.map((user) => {
                     let { avatar } = user;
+                    // let {substring, lastIndexOfAvatar} = avatar;
+                    
                     return (
                       <tr key={user.id}>
                         <td>
