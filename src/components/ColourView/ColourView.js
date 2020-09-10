@@ -6,7 +6,7 @@ import fetchUrl from "../../utilities/fetchFunction.js";
 
 function ColourView(props) {
   let [colorData, setColorData] = useState(null);
-  console.log(props.isLoading)
+ 
   
   // let [isLoading, setIsLoading] = useState(true)
   let url = "https://reqres.in/api/products/";
@@ -16,7 +16,7 @@ function ColourView(props) {
       fetchUrl(url)
       .then(responseObj => {
         if(responseObj){
-          props.setIsLoading(false)
+          // props.setIsLoading(false)
           setColorData(responseObj.data)
         }  
       })

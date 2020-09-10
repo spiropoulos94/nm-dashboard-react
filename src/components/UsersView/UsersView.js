@@ -6,7 +6,7 @@ import fetchUrl from "../../utilities/fetchFunction.js";
 function UsersView() {
   let url = "https://reqres.in/api/users/";
   let [users, setUsers] = useState(null);
-  let [isLoading, setIsLoading] = useState(true);
+  // let [isLoading, setIsLoading] = useState(true);
   let [disabledBtn, setDisabledBtn] = useState(true);
 
   //GETTING USERS DATA
@@ -14,7 +14,7 @@ function UsersView() {
     fetchUrl(url).then((responseObj) => {
       // console.log(responseObj)
       if (responseObj) {
-        setIsLoading(false);
+        // setIsLoading(false);
         responseObj.data.sort(function (a, b) {
           var keyA = a.id,
             keyB = b.id;
@@ -37,7 +37,7 @@ function UsersView() {
     } else {
       // UPDATE USERS
       setUsers(JSON.parse(sessionStorage.getItem("users")));
-      setIsLoading(false)
+      // setIsLoading(false)
     }
   }, []);
 
@@ -69,9 +69,7 @@ function UsersView() {
 
   return (
     <Fragment>
-      {isLoading ? (
-        <Spinner />
-      ) : (
+     
         <div>
           <div className="view-heading">
             <h2 className="view-title">Users Screen</h2>{" "}
@@ -135,7 +133,7 @@ function UsersView() {
             </table>
           </div>
         </div>
-      )}
+     
     </Fragment>
   );
 }
