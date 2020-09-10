@@ -14,21 +14,21 @@ function App() {
   let [coloursIsLoading, setColoursIsLoading] = useState(true)
   let [usersIsLoading, setUsersIsLoading] = useState(true)
 
-  function checkDataAvailability(){
-    fetch("https://reqres.in/api/products/").then(res => {
-      if(res.ok){
-        setColoursIsLoading(false)
-      }
-    })
+  // function checkDataAvailability(){
+  //   fetch("https://reqres.in/api/products/").then(res => {
+  //     if(res.ok){
+  //       setColoursIsLoading(false)
+  //     }
+  //   })
 
-    fetch("https://reqres.in/api/users/").then(res => {
-      if(res.ok){
-        setUsersIsLoading(false)
-      }
-    })
-  }
+  //   fetch("https://reqres.in/api/users/").then(res => {
+  //     if(res.ok){
+  //       setUsersIsLoading(false)
+  //     }
+  //   })
+  // }
 
-  checkDataAvailability();
+  // checkDataAvailability();
 
   function toggleNavbar() {
     setHiddenNavBar(!hiddenNavBar);
