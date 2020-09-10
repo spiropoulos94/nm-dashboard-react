@@ -7,12 +7,16 @@ import UsersView from "./components/UsersView/UsersView.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
 import Spinner from "./components/Spinner/Spinner.js";
+import WithSpinner from "./components/WithSpinner/WithSpinner"
+let ColoursWithSpinner = WithSpinner(ColourView);
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
   // let [isLoading, setIsLoading] = useState(true)
   let [coloursIsLoading, setColoursIsLoading] = useState(true)
   let [usersIsLoading, setUsersIsLoading] = useState(true)
+
+
 
   // function checkDataAvailability(){
   //   fetch("https://reqres.in/api/products/").then(res => {
@@ -54,13 +58,15 @@ function App() {
     <Router>
       <div className="App" >
         <Header closeNavbar={closeNavbar} toggleNavbar={toggleNavbar} />
+        
         <div className="flex-wrapper-main">
           <NavBar navStatus={hiddenNavBar} setNavStatus={setHiddenNavBar} closeNavbar={closeNavbar} />
           <div className="data-wrapper">
             <Switch>
               <Route path="/home">
                 <h2 className="view-title">Welcome</h2>
-              </Route>
+                 <ColoursWithSpinner  />
+              </Route> 
               <Route path="/colours">
                 {coloursIsLoading ? <Spinner /> :<ColourView />}
               </Route>
