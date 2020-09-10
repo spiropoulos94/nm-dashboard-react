@@ -6,15 +6,16 @@ import ColourView from "./components/ColourView/ColourView.js";
 import UsersView from "./components/UsersView/UsersView.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
-import WithSpinner from "./components/WithSpinner/WithSpinner"
+import Container from "./components/Container/Container";
+import WithSpinner from "./components/WithSpinner/WithSpinner";
 let ColoursWithSpinner = WithSpinner(ColourView);
-let UsersWithSpinner = WithSpinner(UsersView)
+let UsersWithSpinner = WithSpinner(UsersView);
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
   // let [isLoading, setIsLoading] = useState(true)
-  let [coloursIsLoading, setColoursIsLoading] = useState(true);
-  let [usersIsLoading, setUsersIsLoading] = useState(true);
+  let [coloursIsLoading, setColoursIsLoading] = useState(false);
+  let [usersIsLoading, setUsersIsLoading] = useState(false);
 
   function toggleNavbar() {
     setHiddenNavBar(!hiddenNavBar);
@@ -44,17 +45,22 @@ function App() {
           <NavBar
             navStatus={hiddenNavBar}
             setNavStatus={setHiddenNavBar}
-            closeNavbar={closeNavbar}/>
+            closeNavbar={closeNavbar}
+          />
           <div className="data-wrapper">
             <Switch>
               <Route path="/home">
                 <h2 className="view-title">Welcome</h2>
               </Route>
               <Route path="/colours">
-                <ColoursWithSpinner isLoading={coloursIsLoading} />
+                <Container>
+                  <ColoursWithSpinner isLoading={coloursIsLoading} />
+                </Container>
               </Route>
               <Route path="/users">
-                <UsersWithSpinner isLoading={usersIsLoading} />
+                <Container>
+                  <UsersWithSpinner isLoading={usersIsLoading} />
+                </Container>
               </Route>
             </Switch>
           </div>

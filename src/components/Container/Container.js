@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Container(props) {
-    return (
-        <div>
-            {props.children}
-        </div>
-    )
+  return <div style={{ color: "red" }}>{props.children}</div>;
 }
 
-export default Container
+export default Container;
