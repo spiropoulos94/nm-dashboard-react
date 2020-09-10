@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import "./UsersView.scss";
-import Spinner from "./../Spinner/Spinner.js";
+// import Spinner from "./../Spinner/Spinner.js";
 import fetchUrl from "../../utilities/fetchFunction.js";
 
 function UsersView() {
