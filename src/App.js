@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header/Header.js";
 import NavBar from "./components/NavBar/NavBar.js";
 import { Switch, Route } from "react-router-dom";
@@ -7,6 +7,7 @@ import UsersView from "./components/UsersView/UsersView.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
 import ColourContainer from "./components/ColourView/ColourContainer";
+import UsersContainer from "./components/UsersView/UserContainer"
 import WithSpinner from "./components/WithSpinner/WithSpinner";
 // let ColoursWithSpinner = WithSpinner(ColourView);
 // let UsersWithSpinner = WithSpinner(UsersView);
@@ -22,6 +23,8 @@ function App() {
     colors: "https://reqres.in/api/products/",
     users: "https://reqres.in/api/users/",
   };
+
+  //TODO RETURN isLoading TO STATE OF TRUE WHEN NAVIGATING BACK TO HOME PAGE ???
 
   console.log(isLoading)
 
@@ -66,9 +69,9 @@ function App() {
                 </ColourContainer>
               </Route>
               <Route path="/users">
-                {/* <Container url={url.users}>
-                  <UsersWithSpinner isLoading={usersIsLoading} />
-                </Container> */}
+                 <UsersContainer url={url.users} setIsLoading={setIsLoading} isLoading={isLoading} >
+                  
+                </UsersContainer> 
               </Route>
             </Switch>
           </div>

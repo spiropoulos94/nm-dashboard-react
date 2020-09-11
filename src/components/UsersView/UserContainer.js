@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import fetchUrl from "../../utilities/fetchFunction.js";
-import ColourView from "./ColourView.js";
+import UsersView from "./UsersView.js";
 import Spinner from "./../Spinner/Spinner";
 
-function ColourContainer({ url, setIsLoading, isLoading }) {
+function UsersContainer({ url, setIsLoading, isLoading }) {
   
   let [data, setData] = useState(null);
   
@@ -11,15 +11,15 @@ function ColourContainer({ url, setIsLoading, isLoading }) {
     //do we need the spinner to display always before rendering component???
     setIsLoading(true)
     fetchUrl(url).then((response) => {
-      if(response.data){}
       setData(response.data);
       setIsLoading(false);
+      console.log(response.data)
     });
   }, []);
 
   if (isLoading) return <Spinner />;
 
-  return <ColourView data={data} />;
+  return <UsersView data={data} />
 }
 
-export default ColourContainer;
+export default UsersContainer;

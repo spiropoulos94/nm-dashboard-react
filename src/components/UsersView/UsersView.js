@@ -1,44 +1,24 @@
 import React, { useState, useEffect, Fragment } from "react";
 import "./UsersView.scss";
-// import Spinner from "./../Spinner/Spinner.js";
-import fetchUrl from "../../utilities/fetchFunction.js";
 
-function UsersView() {
-  let url = "https://reqres.in/api/users/";
-  let [users, setUsers] = useState(null);
-  // let [isLoading, setIsLoading] = useState(true);
+
+function UsersView (props) {
+
+  let [users, setUsers ] = useState(props.data)
+ 
   let [disabledBtn, setDisabledBtn] = useState(true);
 
-  //GETTING USERS DATA
-  function getUsers() {
-    fetchUrl(url).then((responseObj) => {
-      // console.log(responseObj)
-      if (responseObj) {
-        // setIsLoading(false);
-        responseObj.data.sort(function (a, b) {
-          var keyA = a.id,
-            keyB = b.id;
-          // Compare the 2 dates
-          if (keyA < keyB) return -1;
-          if (keyA > keyB) return +1;
-          return 0;
-        });
-        setUsers(responseObj.data);
-      }
-    });
-  }
-
-  //IF SESSION STORAGE DATA ARE AVAILABLE USE THEM, IF NOT GET DATA
-  useEffect(() => {
-    // setIsLoading(false);
-    if (!JSON.parse(sessionStorage.getItem("users"))) {
-      getUsers();
-    } else {
-      // UPDATE USERS
-      setUsers(JSON.parse(sessionStorage.getItem("users")));
-      // setIsLoading(false)
-    }
-  }, []);
+  // //IF SESSION STORAGE DATA ARE AVAILABLE USE THEM, IF NOT GET DATA
+  // useEffect(() => {
+  //   // setIsLoading(false);
+  //   if (!JSON.parse(sessionStorage.getItem("users"))) {
+  //     getUsers();
+  //   } else {
+  //     // UPDATE USERS
+  //     setUsers(JSON.parse(sessionStorage.getItem("users")));
+  //     // setIsLoading(false)
+  //   }
+  // }, []);
 
   //REMOVE SELECTED USER
   function removeUser() {
@@ -68,7 +48,6 @@ function UsersView() {
 
   return (
     <Fragment>
-     
         <div>
           <div className="view-heading">
             <h2 className="view-title">Users Screen</h2>{" "}
@@ -132,7 +111,6 @@ function UsersView() {
             </table>
           </div>
         </div>
-     
     </Fragment>
   );
 }
