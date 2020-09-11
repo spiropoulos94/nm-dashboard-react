@@ -6,21 +6,24 @@ import ColourView from "./components/ColourView/ColourView.js";
 import UsersView from "./components/UsersView/UsersView.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
-import Container from "./components/Container/Container";
+import ColourContainer from "./components/ColourView/ColourContainer";
 import WithSpinner from "./components/WithSpinner/WithSpinner";
-let ColoursWithSpinner = WithSpinner(ColourView);
-let UsersWithSpinner = WithSpinner(UsersView);
+// let ColoursWithSpinner = WithSpinner(ColourView);
+// let UsersWithSpinner = WithSpinner(UsersView);
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
-  // let [isLoading, setIsLoading] = useState(true)
-  let [coloursIsLoading, setColoursIsLoading] = useState(false);
-  let [usersIsLoading, setUsersIsLoading] = useState(false);
+  let [isLoading, setIsLoading] = useState(true)
+  
+  // let [coloursIsLoading, setColoursIsLoading] = useState(false);
+  // let [usersIsLoading, setUsersIsLoading] = useState(false);
   //perase ta url san pros sto container wste na ferei ta dedomena kai na ta perasei sta children
   let url = {
     colors: "https://reqres.in/api/products/",
     users: "https://reqres.in/api/users/",
   };
+
+  console.log(isLoading)
 
   function toggleNavbar() {
     setHiddenNavBar(!hiddenNavBar);
@@ -58,15 +61,14 @@ function App() {
                 <h2 className="view-title">Welcome</h2>
               </Route>
               <Route path="/colours">
-                <Container url={url.colors}>
-                  {" "}
-                  <ColoursWithSpinner isLoading={coloursIsLoading} />
-                </Container>
+                <ColourContainer url={url.colors} setIsLoading={setIsLoading} isLoading={isLoading}>
+                  {/* inside here lives the colourViewContainer */}
+                </ColourContainer>
               </Route>
               <Route path="/users">
-                <Container url={url.users}>
+                {/* <Container url={url.users}>
                   <UsersWithSpinner isLoading={usersIsLoading} />
-                </Container>
+                </Container> */}
               </Route>
             </Switch>
           </div>

@@ -1,30 +1,13 @@
 import React, { useState, useEffect, Fragment } from "react";
 import "./ColourView.scss";
 import ColorCard from "./../ColourCard/ColourCard.js";
-// import Spinner from "./../Spinner/Spinner.js";
-import fetchUrl from "../../utilities/fetchFunction.js";
+
 
 function ColourView(props) {
-  let [colorData, setColorData] = useState(null);
- 
   
-  // let [isLoading, setIsLoading] = useState(true)
-  let url = "https://reqres.in/api/products/";
-
-  useEffect(() => {
-    if (colorData === null) {
-      fetchUrl(url)
-      .then(responseObj => {
-        if(responseObj){
-          // props.setIsLoading(false)
-          setColorData(responseObj.data)
-        }  
-      })
-  }
-  }, []);
+  let colorData = props.data
 
   return (
-    <Fragment>
     <div>
       <div className="view-heading">
         <h2>Colours Screen</h2>{" "}
@@ -36,7 +19,6 @@ function ColourView(props) {
           })}
       </div>
     </div>
-    </Fragment>
   );
 }
 
