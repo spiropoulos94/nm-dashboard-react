@@ -6,17 +6,18 @@ function UsersView(props) {
 
   let [disabledBtn, setDisabledBtn] = useState(true);
 
-  // //IF SESSION STORAGE DATA ARE AVAILABLE USE THEM, IF NOT GET DATA
-  // useEffect(() => {
-  //   // setIsLoading(false);
-  //   if (!JSON.parse(sessionStorage.getItem("users"))) {
-  //     getUsers();
-  //   } else {
-  //     // UPDATE USERS
-  //     setUsers(JSON.parse(sessionStorage.getItem("users")));
-  //     // setIsLoading(false)
-  //   }
-  // }, []);
+   //IF SESSION STORAGE DATA ARE AVAILABLE USE THEM, IF NOT GET DATA
+   useEffect(() => {
+     
+     if (!JSON.parse(sessionStorage.getItem("users"))) {
+       console.log("new data fetched")
+     } else {
+       // UPDATE USERS
+       console.log('data imported from session storage')
+       setUsers(JSON.parse(sessionStorage.getItem("users")));
+       
+     }
+   }, []);
 
   //REMOVE SELECTED USER
   function removeUser() {
