@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import Header from "./components/Header/Header.js";
 import NavBar from "./components/NavBar/NavBar.js";
 import { Switch, Route } from "react-router-dom";

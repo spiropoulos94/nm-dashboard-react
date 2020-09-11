@@ -14,8 +14,6 @@ function UsersContainer({ url, setIsLoading, isLoading }) {
         setData(response.data);
         setIsLoading(false);
       }
-
-      console.log(response.data);
     });
   }, []);
 

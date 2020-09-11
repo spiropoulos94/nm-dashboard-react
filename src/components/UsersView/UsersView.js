@@ -15,7 +15,6 @@ function UsersView(props) {
        // UPDATE USERS
        console.log('data imported from session storage')
        setUsers(JSON.parse(sessionStorage.getItem("users")));
-       
      }
    }, []);
 
