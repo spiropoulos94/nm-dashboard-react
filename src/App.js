@@ -2,23 +2,20 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header/Header.js";
 import NavBar from "./components/NavBar/NavBar.js";
 import { Switch, Route } from "react-router-dom";
-import ColourView from "./components/ColourView/ColourView.js";
-import UsersView from "./components/UsersView/UsersView.js";
+// import ColourView from "./components/ColourView/ColourView.js";
+// import UsersView from "./components/UsersView/UsersView.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
 import ColourContainer from "./components/ColourView/ColourContainer";
-import UsersContainer from "./components/UsersView/UserContainer"
-import WithSpinner from "./components/WithSpinner/WithSpinner";
+import UsersContainer from "./components/UsersView/UserContainer";
+// import WithSpinner from "./components/WithSpinner/WithSpinner";
 // let ColoursWithSpinner = WithSpinner(ColourView);
 // let UsersWithSpinner = WithSpinner(UsersView);
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
-  let [isLoading, setIsLoading] = useState(true)
-  
-  // let [coloursIsLoading, setColoursIsLoading] = useState(false);
-  // let [usersIsLoading, setUsersIsLoading] = useState(false);
-  //perase ta url san pros sto container wste na ferei ta dedomena kai na ta perasei sta children
+  let [isLoading, setIsLoading] = useState(true);
+
   let url = {
     colors: "https://reqres.in/api/products/",
     users: "https://reqres.in/api/users/",
@@ -26,7 +23,7 @@ function App() {
 
   //TODO RETURN isLoading TO STATE OF TRUE WHEN NAVIGATING BACK TO HOME PAGE ???
 
-  console.log(isLoading)
+  console.log(isLoading);
 
   function toggleNavbar() {
     setHiddenNavBar(!hiddenNavBar);
@@ -64,14 +61,20 @@ function App() {
                 <h2 className="view-title">Welcome</h2>
               </Route>
               <Route path="/colours">
-                <ColourContainer url={url.colors} setIsLoading={setIsLoading} isLoading={isLoading}>
+                <ColourContainer
+                  url={url.colors}
+                  setIsLoading={setIsLoading}
+                  isLoading={isLoading}
+                >
                   {/* inside here lives the colourViewContainer */}
                 </ColourContainer>
               </Route>
               <Route path="/users">
-                 <UsersContainer url={url.users} setIsLoading={setIsLoading} isLoading={isLoading} >
-                  
-                </UsersContainer> 
+                <UsersContainer
+                  url={url.users}
+                  setIsLoading={setIsLoading}
+                  isLoading={isLoading}
+                ></UsersContainer>
               </Route>
             </Switch>
           </div>

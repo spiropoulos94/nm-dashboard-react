@@ -11,8 +11,12 @@ function UsersContainer({ url, setIsLoading, isLoading }) {
     //do we need the spinner to display always before rendering component???
     setIsLoading(true)
     fetchUrl(url).then((response) => {
-      setData(response.data);
-      setIsLoading(false);
+      
+      if(response.data){
+        setData(response.data);
+        setIsLoading(false);
+      }
+      
       console.log(response.data)
     });
   }, []);

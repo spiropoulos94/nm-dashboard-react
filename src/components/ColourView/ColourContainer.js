@@ -11,9 +11,11 @@ function ColourContainer({ url, setIsLoading, isLoading }) {
     //do we need the spinner to display always before rendering component???
     setIsLoading(true)
     fetchUrl(url).then((response) => {
-      if(response.data){}
-      setData(response.data);
+      if(response.data){
+        setData(response.data);
       setIsLoading(false);
+      }
+      
     })
     // .catch(err => console.log(err));
   }, []);
