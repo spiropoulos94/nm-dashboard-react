@@ -2,7 +2,7 @@ import React from "react";
 import "./ColourCard.scss";
 
 function ColorCard(props) {
-  let {data} = props;
+  let { data } = props;
 
   return (
     <div className="color-card" style={{ background: `${data.color}` }}>

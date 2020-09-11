@@ -23,7 +23,6 @@ function App() {
 
   //TODO RETURN isLoading TO STATE OF TRUE WHEN NAVIGATING BACK TO HOME PAGE ???
 
-
   function toggleNavbar() {
     setHiddenNavBar(!hiddenNavBar);
   }

@@ -8,22 +8,23 @@
   align-items: center;
   height: 8vh;
   text-transform: uppercase;
-  color:white;
+  color: white;
 }
 
-.header-left, .link {
+.header-left,
+.link {
   display: flex;
   align-items: center;
   width: 15%;
   text-decoration: none;
-  font-size:1.5rem;
+  font-size: 1.5rem;
   :hover {
     cursor: pointer;
   }
 
   .burger-btn {
     margin-right: 10px;
-    
+
     :hover {
       cursor: pointer;
     }
@@ -39,7 +40,7 @@
 
   .logo-txt {
     padding-left: 10px;
-    color:white;
+    color: white;
   }
 }
 
@@ -48,8 +49,7 @@
 }
 
 .title {
-  
-  font-size:0.95rem;
+  font-size: 0.95rem;
 }
 
 .logo-txt,
@@ -69,7 +69,6 @@
 
   .header-wrapper {
     padding: 0 20px;
-    
   }
 
   .header-right {
@@ -90,23 +89,19 @@
   }
 }
 
-@media screen and (min-width:$md){
+@media screen and (min-width: $md) {
   .burger-btn {
     display: none;
   }
 }
 
 @media screen and (min-width: $lg) {
-.logo-txt,
-.logout-txt {
-  display: inline;
+  .logo-txt,
+  .logout-txt {
+    display: inline;
+  }
+
+  .header-left {
+    width: 20%;
+  }
 }
-
-.header-left {
-  width:20%;
-}
-
-
-}
-
-

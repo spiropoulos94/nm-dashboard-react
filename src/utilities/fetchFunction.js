@@ -6,7 +6,7 @@ export default function fetchUrl(endpoint) {
     })
     .catch((err) => {
       console.log(err);
-      return {}
+      return {};
     });
 
   return fetchedData;

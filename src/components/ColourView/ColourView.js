@@ -2,10 +2,8 @@ import React, { useState, useEffect, Fragment } from "react";
 import "./ColourView.scss";
 import ColorCard from "./../ColourCard/ColourCard.js";
 
-
 function ColourView(props) {
-  
-  let colorData = props.data
+  let colorData = props.data;
 
   return (
     <div>
@@ -14,7 +12,8 @@ function ColourView(props) {
         <span>{colorData && `Items : ${colorData.length}`}</span>
       </div>
       <div className="color-grid">
-        {colorData && colorData.map((color) => {
+        {colorData &&
+          colorData.map((color) => {
             return <ColorCard data={color} key={color.id} />;
           })}
       </div>
