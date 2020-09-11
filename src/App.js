@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header/Header.js";
 import NavBar from "./components/NavBar/NavBar.js";
 import { Switch, Route } from "react-router-dom";
-// import ColourView from "./components/ColourView/ColourView.js";
-// import UsersView from "./components/UsersView/UsersView.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
 import ColourContainer from "./components/ColourView/ColourContainer";
 import UsersContainer from "./components/UsersView/UserContainer";
+// import ColourView from "./components/ColourView/ColourView.js";
+// import UsersView from "./components/UsersView/UsersView.js";
 // import WithSpinner from "./components/WithSpinner/WithSpinner";
 // let ColoursWithSpinner = WithSpinner(ColourView);
 // let UsersWithSpinner = WithSpinner(UsersView);
@@ -23,7 +23,6 @@ function App() {
 
   //TODO RETURN isLoading TO STATE OF TRUE WHEN NAVIGATING BACK TO HOME PAGE ???
 
-  console.log(isLoading);
 
   function toggleNavbar() {
     setHiddenNavBar(!hiddenNavBar);
