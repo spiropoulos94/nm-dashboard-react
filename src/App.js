@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Header from "./components/Header/Header.js";
 import NavBar from "./components/NavBar/NavBar.js";
 import { Switch, Route } from "react-router-dom";
@@ -55,9 +55,6 @@ function App() {
           />
           <div className="data-wrapper">
             <Switch>
-              <Route path="/home">
-                <h2 className="view-title">Welcome</h2>
-              </Route>
               <Route path="/colours">
                 <ColourContainer
                   url={url.colors}
@@ -73,6 +70,9 @@ function App() {
                   setIsLoading={setIsLoading}
                   isLoading={isLoading}
                 ></UsersContainer>
+              </Route>
+              <Route path="/">
+                <h2 className="view-title">Welcome</h2>
               </Route>
             </Switch>
           </div>
