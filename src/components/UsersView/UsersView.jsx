@@ -33,8 +33,12 @@ function UsersView({ users, setUsers }) {
   //ENABLE AND DISABLE DELETE BUTTON
   function toggleDeleteBtn(e) {
     setDisabledBtn(false);
-    console.log(e.target)
+    // console.log(e.target.getAttribute('data-id'))
+    console.log(e.target.parentElement.parentElement.parentElement.getAttribute('data-id'))
+    setSelectedUser(e.target.parentElement.parentElement.parentElement.getAttribute('data-id'))
   }
+
+  console.log(selectedUser)
 
   return (
     <div className="view-wrapper">
