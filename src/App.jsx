@@ -26,8 +26,8 @@ function App() {
   function toggleNavbar(param) {
     if(window.innerWidth < 768) {
       switch (param) {
-        case "show":
-          return setHiddenNavBar(false);
+        // case "show":
+          // return setHiddenNavBar(false);
         case "hide":
           return setHiddenNavBar(true);
         default:
