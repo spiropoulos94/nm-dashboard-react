@@ -14,9 +14,7 @@ function UsersView({ users, setUsers }) {
 
   //REMOVE SELECTED USER
   function removeUser(selectedOption) {
-    console.log(users)  
-
-    console.log(selectedOption)
+    
     
     
     // Array.from(document.querySelectorAll(".radio-btn")).forEach((radio) => {
@@ -27,7 +25,8 @@ function UsersView({ users, setUsers }) {
     //   }
     // });
 
-    let filteredArr = users.filter((user) => console.log(user.id, selectedOption));
+    let filteredArr = users.filter(user => user.id !== selectedOption);
+    
 
     if (
       window.confirm(`Are you sure you want to delete user number ${selectedOption}?`)
@@ -45,7 +44,6 @@ function UsersView({ users, setUsers }) {
     setSelectedOption(parseInt(e.target.parentElement.parentElement.parentElement.getAttribute('data-id')))
   }
 
-  console.log(selectedOption)
 
   return (
     <div className="view-wrapper">
