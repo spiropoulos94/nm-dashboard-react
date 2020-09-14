@@ -4,7 +4,7 @@ import "./UsersView.scss";
 function UsersView({ users, setUsers }) {
   let [disabledBtn, setDisabledBtn] = useState(true);
 
-  if (!users) {
+  if (!users && (!Array.isArray(users))) {
     users = [];
   }
 

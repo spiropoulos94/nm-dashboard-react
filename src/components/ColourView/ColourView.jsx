@@ -5,14 +5,14 @@ import ColorCard from "../ColourCard/ColourCard.jsx";
 function ColourView(props) {
   let colorData = props.data;
 
-  if (!colorData) {
+  if (!colorData && (!Array.isArray(colorData))) {
     colorData = [];
   }
 
   return (
     <div className="view-wrapper">
       <div className="view-heading">
-        <h2>Colours Screen</h2> {/* tsekare type of data */}
+        <h2>Colours Screen</h2>
         <span>{`Items : ${colorData.length}`}</span>
       </div>
       <div className="color-grid">
