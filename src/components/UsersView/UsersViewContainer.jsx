@@ -3,21 +3,23 @@ import fetchUrl from "../../utilities/fetchUrl.js";
 import UsersView from "./UsersView.jsx";
 import Spinner from "../Spinner/Spinner";
 
-function UsersViewContainer({ url, setIsLoading, isLoading }) {
+function UsersViewContainer({ url, setIsLoading }) {
   let [data, setData] = useState(null);
+  let [_isLoading, _setIsLoading] = useState(true);
 
   useEffect(() => {
     //do we need the spinner to display always before rendering component???
-    setIsLoading(true);
+
     fetchUrl(url).then((response) => {
       if (response.data) {
         setData(response.data);
-        setIsLoading(false);
+        _setIsLoading(false);
+        setIsLoading(_isLoading);
       }
     });
   }, []);
 
-  if (isLoading) return <Spinner />;
+  if (_isLoading) return <Spinner />;
 
   return <UsersView data={data} />;
 }

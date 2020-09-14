@@ -3,19 +3,22 @@ import "./UsersView.scss";
 
 function UsersView(props) {
   let [users, setUsers] = useState(props.data);
-
   let [disabledBtn, setDisabledBtn] = useState(true);
 
-   //IF SESSION STORAGE DATA ARE AVAILABLE USE THEM, IF NOT GET DATA
-   useEffect(() => {
-     if (!JSON.parse(sessionStorage.getItem("users"))) {
-       console.log("new data fetched")
-     } else {
-       // UPDATE USERS
-       console.log('data imported from session storage')
-       setUsers(JSON.parse(sessionStorage.getItem("users")));
-     }
-   }, []);
+  if (!users) {
+    users = [];
+  }
+
+  //IF SESSION STORAGE DATA ARE AVAILABLE USE THEM, IF NOT GET DATA
+  useEffect(() => {
+    if (!JSON.parse(sessionStorage.getItem("users"))) {
+      console.log("new data fetched");
+    } else {
+      // UPDATE USERS
+      console.log("data imported from session storage");
+      setUsers(JSON.parse(sessionStorage.getItem("users")));
+    }
+  }, []);
 
   //REMOVE SELECTED USER
   function removeUser() {
@@ -44,69 +47,63 @@ function UsersView(props) {
   }
 
   return (
-      <div>
-        <div className="view-heading">
-          <h2 className="view-title">Users Screen</h2>{" "}
-          <button
-            onClick={removeUser}
-            className="delete-btn"
-            disabled={disabledBtn}
-          >
-            delete
-          </button>
-        </div>
-        <div className="table-responsive">
-          <table
-            id="myTable"
-            className="table"
-            cell-spacing="0"
-            cell-padding="0"
-          >
-            <thead className="table-head">
-              <tr>
-                <th></th>
-                <th>ID</th>
-                <th>LAST NAME</th>
-                <th>FIST NAME</th>
-                <th>EMAIL</th>
-                <th>AVATAR</th>
-              </tr>
-            </thead>
-            <tbody className="tbody">
-              {users &&
-                users.map((user) => {
-                  let { avatar } = user;
-                  // let {substring, lastIndexOfAvatar} = avatar;
-
-                  return (
-                    <tr key={user.id}>
-                      <td>
-                        <label>
-                          <input
-                            className="radio-btn"
-                            type="radio"
-                            name="radio-btn"
-                            onChange={toggleDeleteBtn}
-                          />
-                        </label>
-                      </td>
-                      <td>{user.id}</td>
-                      <td>{user["last_name"]}</td>
-                      <td>{user["first_name"]}</td>
-                      <td>{user["email"]}</td>
-                      <td>
-                        {avatar.substring(
-                          avatar.lastIndexOf("r/") + 2,
-                          avatar.lastIndexOf("/128")
-                        )}
-                      </td>
-                    </tr>
-                  );
-                })}
-            </tbody>
-          </table>
-        </div>
+    <div>
+      <div className="view-heading">
+        <h2 className="view-title">Users Screen</h2>{" "}
+        <button
+          onClick={removeUser}
+          className="delete-btn"
+          disabled={disabledBtn}
+        >
+          delete
+        </button>
       </div>
+      <div className="table-responsive">
+        <table id="myTable" className="table" cell-spacing="0" cell-padding="0">
+          <thead className="table-head">
+            <tr>
+              <th></th>
+              <th>ID</th>
+              <th>LAST NAME</th>
+              <th>FIST NAME</th>
+              <th>EMAIL</th>
+              <th>AVATAR</th>
+            </tr>
+          </thead>
+          <tbody className="tbody">
+            {users.map((user) => {
+              let { avatar } = user;
+              // let {substring, lastIndexOfAvatar} = avatar;
+
+              return (
+                <tr key={user.id}>
+                  <td>
+                    <label>
+                      <input
+                        className="radio-btn"
+                        type="radio"
+                        name="radio-btn"
+                        onChange={toggleDeleteBtn}
+                      />
+                    </label>
+                  </td>
+                  <td>{user.id}</td>
+                  <td>{user["last_name"]}</td>
+                  <td>{user["first_name"]}</td>
+                  <td>{user["email"]}</td>
+                  <td>
+                    {avatar.substring(
+                      avatar.lastIndexOf("r/") + 2,
+                      avatar.lastIndexOf("/128")
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 }
 

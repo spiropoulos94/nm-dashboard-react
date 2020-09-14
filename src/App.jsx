@@ -59,7 +59,6 @@ function App() {
                 <ColourViewContainer
                   url={url.colors}
                   setIsLoading={setIsLoading}
-                  isLoading={isLoading}
                 >
                   {/* inside here lives the colourViewContainer */}
                 </ColourViewContainer>
@@ -68,7 +67,6 @@ function App() {
                 <UsersViewContainer
                   url={url.users}
                   setIsLoading={setIsLoading}
-                  isLoading={isLoading}
                 ></UsersViewContainer>
               </Route>
               <Route path="/">
