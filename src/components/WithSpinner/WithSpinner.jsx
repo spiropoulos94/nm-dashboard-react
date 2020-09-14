@@ -1,5 +1,5 @@
 import React from "react";
-import Spinner from "./../Spinner/Spinner";
+import Spinner from "../Spinner/Spinner";
 import fetchUrl from "../../utilities/fetchFunction.js";
 
 //TODO

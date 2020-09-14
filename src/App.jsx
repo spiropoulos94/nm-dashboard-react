@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Header from "./components/Header/Header.js";
-import NavBar from "./components/NavBar/NavBar.js";
+import Header from "./components/Header/Header.jsx";
+import NavBar from "./components/NavBar/NavBar.jsx";
 import { Switch, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
-import ColourContainer from "./components/ColourView/ColourContainer";
-import UsersContainer from "./components/UsersView/UserContainer";
+import ColourViewContainer from "./components/ColourView/ColourViewContainer";
+import UsersViewContainer from "./components/UsersView/UsersViewContainer";
 // import ColourView from "./components/ColourView/ColourView.js";
 // import UsersView from "./components/UsersView/UsersView.js";
 // import WithSpinner from "./components/WithSpinner/WithSpinner";
@@ -56,20 +56,20 @@ function App() {
           <div className="data-wrapper">
             <Switch>
               <Route path="/colours">
-                <ColourContainer
+                <ColourViewContainer
                   url={url.colors}
                   setIsLoading={setIsLoading}
                   isLoading={isLoading}
                 >
                   {/* inside here lives the colourViewContainer */}
-                </ColourContainer>
+                </ColourViewContainer>
               </Route>
               <Route path="/users">
-                <UsersContainer
+                <UsersViewContainer
                   url={url.users}
                   setIsLoading={setIsLoading}
                   isLoading={isLoading}
-                ></UsersContainer>
+                ></UsersViewContainer>
               </Route>
               <Route path="/">
                 <h2 className="view-title">Welcome</h2>

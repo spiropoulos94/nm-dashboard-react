@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import fetchUrl from "../../utilities/fetchFunction.js";
-import UsersView from "./UsersView.js";
-import Spinner from "./../Spinner/Spinner";
+import fetchUrl from "../../utilities/fetchUrl.js";
+import UsersView from "./UsersView.jsx";
+import Spinner from "../Spinner/Spinner";
 
-function UsersContainer({ url, setIsLoading, isLoading }) {
+function UsersViewContainer({ url, setIsLoading, isLoading }) {
   let [data, setData] = useState(null);
 
   useEffect(() => {
@@ -22,4 +22,4 @@ function UsersContainer({ url, setIsLoading, isLoading }) {
   return <UsersView data={data} />;
 }
 
-export default UsersContainer;
+export default UsersViewContainer;

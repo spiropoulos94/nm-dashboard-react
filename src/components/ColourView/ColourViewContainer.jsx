@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import fetchUrl from "../../utilities/fetchFunction.js";
-import ColourView from "./ColourView.js";
-import Spinner from "./../Spinner/Spinner";
+import fetchUrl from "../../utilities/fetchUrl.js";
+import ColourView from "./ColourView.jsx";
+import Spinner from "../Spinner/Spinner";
 
-function ColourContainer({ url, setIsLoading, isLoading }) {
+function ColourViewContainer({ url, setIsLoading, isLoading }) {
   let [data, setData] = useState(null);
 
   useEffect(() => {
@@ -23,4 +23,4 @@ function ColourContainer({ url, setIsLoading, isLoading }) {
   
 }
 
-export default ColourContainer;
+export default ColourViewContainer;
