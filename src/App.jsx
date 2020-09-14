@@ -13,13 +13,13 @@ import UsersViewContainer from "./components/UsersView/UsersViewContainer";
 // let UsersWithSpinner = WithSpinner(UsersView);
 
 function App() {
-  let [hiddenNavBar, setHiddenNavBar] = useState(false);
+  let [hiddenNavBar, setHiddenNavBar] = useState(window.innerWidth<768);
   let [isLoading, setIsLoading] = useState(true);
   let [colours, setColours] = useState(null);
   let [users, setUsers] = useState(null);
 
   let url = {
-    colors:"colors.json",      //"https://reqres.in/api/products/",
+    colors:"colors.json",      //"https://reqres.in/api/products/", 
     users: "users.json"      //"https://reqres.in/api/users/",
   };
 
