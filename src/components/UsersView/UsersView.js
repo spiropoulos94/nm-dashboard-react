@@ -46,7 +46,7 @@ function UsersView(props) {
 
   return (
     <Fragment>
-      <div className="view-wrapper">
+      <div>
         <div className="view-heading">
           <h2 className="view-title">Users Screen</h2>{" "}
           <button
