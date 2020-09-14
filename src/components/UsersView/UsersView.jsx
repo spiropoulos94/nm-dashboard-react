@@ -3,7 +3,7 @@ import "./UsersView.scss";
 
 function UsersView({ users, setUsers }) {
   let [disabledBtn, setDisabledBtn] = useState(true);
-  let [selectedUser, setSelectedUser] = useState(null);
+  let [selectedOption, setSelectedOption] = useState(null);
 
 
   if (!users && (!Array.isArray(users))) {
@@ -11,7 +11,8 @@ function UsersView({ users, setUsers }) {
   }
 
   //REMOVE SELECTED USER
-  function removeUser() {
+  function removeUser(user) {
+    console.log(users)
     let userID = null;
     Array.from(document.querySelectorAll(".radio-btn")).forEach((radio) => {
       if (radio.checked) {
@@ -26,7 +27,8 @@ function UsersView({ users, setUsers }) {
     if (
       window.confirm(`Are you sure you want to delete user number ${userID}?`)
     ) {
-      setUsers([...filteredArr]);
+      setUsers(filteredArr);
+      setDisabledBtn(true)
     }
   }
 
@@ -35,10 +37,10 @@ function UsersView({ users, setUsers }) {
     setDisabledBtn(false);
     // console.log(e.target.getAttribute('data-id'))
     console.log(e.target.parentElement.parentElement.parentElement.getAttribute('data-id'))
-    setSelectedUser(e.target.parentElement.parentElement.parentElement.getAttribute('data-id'))
+    setSelectedOption(e.target.parentElement.parentElement.parentElement.getAttribute('data-id'))
   }
 
-  console.log(selectedUser)
+  console.log(selectedOption)
 
   return (
     <div className="view-wrapper">
