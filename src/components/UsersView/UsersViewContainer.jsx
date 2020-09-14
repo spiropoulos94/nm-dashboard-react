@@ -28,7 +28,7 @@ function UsersViewContainer({ url, setIsLoading, users, setUsers }) {
 
   if (_isLoading) return <Spinner />;
 
-  return <UsersView data={users} />;
+  return <UsersView users={users} setUsers={setUsers} />;
 }
 
 export default UsersViewContainer;

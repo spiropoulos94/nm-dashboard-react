@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./UsersView.scss";
 
-function UsersView(props) {
-  let [users, setUsers] = useState(props.data);
+function UsersView({users, setUsers}) {
+  
   let [disabledBtn, setDisabledBtn] = useState(true);
 
   if (!users) {
