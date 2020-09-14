@@ -20,7 +20,7 @@ function ColourContainer({ url, setIsLoading, isLoading }) {
   if (isLoading) return <Spinner />;
 
   return <ColourView data={data} />;
-  // return <Spinner />;
+  
 }
 
 export default ColourContainer;

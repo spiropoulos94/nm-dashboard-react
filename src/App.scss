@@ -24,6 +24,10 @@ body {
   position:absolute;
 }
 
+.data-wrapper > * {
+  padding: 1% 3%;
+}
+
 .view-title {
   color: black;
   position: relative;
@@ -38,7 +42,7 @@ body {
 @media screen and (min-width: $sm) {
   .data-wrapper {
     // width: 90%;
-    padding:1% 3%;
+    // padding:1% 3%;
   }
 }
 
