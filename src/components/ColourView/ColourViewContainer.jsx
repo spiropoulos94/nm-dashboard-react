@@ -7,7 +7,7 @@ function ColourViewContainer({ url, setIsLoading, colours, setColours }) {
   let [_isLoading, _setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log(colours)// at this point colours is null
+    console.log(colours)// on first ever render at this point colours is NULL
     if (colours) {
       setColours(colours);
     } else {
@@ -21,6 +21,7 @@ function ColourViewContainer({ url, setIsLoading, colours, setColours }) {
     }
     if(colours){
       _setIsLoading(false)
+      setIsLoading(_isLoading)
     }
     //added colours in dependency array because on mount the colours is null
     //but after the useEffect it has a value.
