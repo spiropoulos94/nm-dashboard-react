@@ -7,6 +7,7 @@ function ColourViewContainer({ url, setIsLoading, colours, setColours }) {
   let [_isLoading, _setIsLoading] = useState(true);
 
   useEffect(() => {
+    console.log(colours)// at this point colours is null
     if (colours) {
       setColours(colours);
     } else {
@@ -18,7 +19,6 @@ function ColourViewContainer({ url, setIsLoading, colours, setColours }) {
         }
       });
     }
-    // console.log(colours)
     if(colours){
       _setIsLoading(false)
     }
