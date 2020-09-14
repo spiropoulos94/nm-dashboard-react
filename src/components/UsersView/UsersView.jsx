@@ -10,6 +10,8 @@ function UsersView({ users, setUsers }) {
     users = [];
   }
 
+  // to toggleDeletebtn prepei na enimerwnei thn selectedOption gia ton epilegmeno xrhsth prokeimenou na svistei
+
   
 
   //REMOVE SELECTED USER
@@ -42,6 +44,7 @@ function UsersView({ users, setUsers }) {
     // console.log(e.target.getAttribute('data-id'))
     console.log(e.target.parentElement.parentElement.parentElement.getAttribute('data-id'))
     setSelectedOption(parseInt(e.target.parentElement.parentElement.parentElement.getAttribute('data-id')))
+    console.log(selectedOption)
   }
 
 
