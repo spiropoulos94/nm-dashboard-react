@@ -34,16 +34,7 @@ function App() {
           return setHiddenNavBar(!hiddenNavBar);
       }
     }
-    
   }
-
-  
-
-  // function closeNavbar() {
-  //   if (window.innerWidth < 768) {
-  //     setHiddenNavBar(true);
-  //   }
-  // }
 
   //stops scrolling when navbar is open
   hiddenNavBar

@@ -9,17 +9,7 @@ function UsersView(props) {
     users = [];
   }
 
-  //IF SESSION STORAGE DATA ARE AVAILABLE USE THEM, IF NOT GET DATA
-  useEffect(() => {
-    if (!JSON.parse(sessionStorage.getItem("users"))) {
-      console.log("new data fetched");
-    } else {
-      // UPDATE USERS
-      console.log("data imported from session storage");
-      setUsers(JSON.parse(sessionStorage.getItem("users")));
-    }
-  }, []);
-
+ 
   //REMOVE SELECTED USER
   function removeUser() {
     let userID = null;
@@ -37,7 +27,7 @@ function UsersView(props) {
       window.confirm(`Are you sure you want to delete user number ${userID}?`)
     ) {
       setUsers([...filteredArr]);
-      sessionStorage.setItem("users", JSON.stringify(filteredArr));
+      // sessionStorage.setItem("users", JSON.stringify(filteredArr));
     }
   }
 
