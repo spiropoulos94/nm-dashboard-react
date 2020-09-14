@@ -10,22 +10,27 @@ function UsersView({ users, setUsers }) {
     users = [];
   }
 
-  //REMOVE SELECTED USER
-  function removeUser(user) {
-    console.log(users)
-    let userID = null;
-    Array.from(document.querySelectorAll(".radio-btn")).forEach((radio) => {
-      if (radio.checked) {
-        userID = parseInt(
-          radio.parentElement.parentElement.parentElement.children[1].innerText
-        );
-      }
-    });
+  
 
-    let filteredArr = users.filter((user) => user.id !== userID);
+  //REMOVE SELECTED USER
+  function removeUser(selectedOption) {
+    console.log(users)  
+
+    console.log(selectedOption)
+    
+    
+    // Array.from(document.querySelectorAll(".radio-btn")).forEach((radio) => {
+    //   if (radio.checked) {
+    //     userID = parseInt(
+    //       radio.parentElement.parentElement.parentElement.children[1].innerText
+    //     );
+    //   }
+    // });
+
+    let filteredArr = users.filter((user) => console.log(user.id, selectedOption));
 
     if (
-      window.confirm(`Are you sure you want to delete user number ${userID}?`)
+      window.confirm(`Are you sure you want to delete user number ${selectedOption}?`)
     ) {
       setUsers(filteredArr);
       setDisabledBtn(true)
@@ -37,7 +42,7 @@ function UsersView({ users, setUsers }) {
     setDisabledBtn(false);
     // console.log(e.target.getAttribute('data-id'))
     console.log(e.target.parentElement.parentElement.parentElement.getAttribute('data-id'))
-    setSelectedOption(e.target.parentElement.parentElement.parentElement.getAttribute('data-id'))
+    setSelectedOption(parseInt(e.target.parentElement.parentElement.parentElement.getAttribute('data-id')))
   }
 
   console.log(selectedOption)
