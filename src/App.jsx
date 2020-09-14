@@ -65,7 +65,8 @@ function App() {
                   colours = {colours}
                   setColours = {setColours}
                   url={url.colors}
-                  setIsLoading={setIsLoading}>
+                  setIsLoading={setIsLoading}
+                  >
                 </ColourViewContainer>
               </Route>
               <Route path="/users">

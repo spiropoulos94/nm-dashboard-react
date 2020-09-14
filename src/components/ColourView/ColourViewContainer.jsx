@@ -15,11 +15,13 @@ function ColourViewContainer({ url, setIsLoading, colours, setColours }) {
           // setData(response.data);
           setColours(response.data)
           _setIsLoading(false);
+          setIsLoading(_isLoading)
         }
       });
     } else {
       setColours(colours)
       _setIsLoading(false);
+      setIsLoading(_isLoading)
     }
     
   }, []);
