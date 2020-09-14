@@ -7,7 +7,6 @@ function ColourViewContainer({ url, setIsLoading, isLoading }) {
   let [data, setData] = useState(null);
 
   useEffect(() => {
-    //do we need the spinner to display always before rendering View???
     setIsLoading(true);
     fetchUrl(url).then((response) => {
       if (response.data) {
@@ -20,7 +19,6 @@ function ColourViewContainer({ url, setIsLoading, isLoading }) {
   if (isLoading) return <Spinner />;
 
   return <ColourView data={data} />;
-  
 }
 
 export default ColourViewContainer;

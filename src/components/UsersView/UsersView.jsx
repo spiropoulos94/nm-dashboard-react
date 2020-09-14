@@ -8,7 +8,6 @@ function UsersView(props) {
 
    //IF SESSION STORAGE DATA ARE AVAILABLE USE THEM, IF NOT GET DATA
    useEffect(() => {
-     
      if (!JSON.parse(sessionStorage.getItem("users"))) {
        console.log("new data fetched")
      } else {

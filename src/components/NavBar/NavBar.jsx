@@ -4,11 +4,6 @@ import "./NavBar.scss";
 
 function NavBar(props) {
   let hiddenNavBar = props.navStatus;
-  // let setHiddenNavbar = props.setNavStatus
-
-  //function resetLoadingState(){
-  //  setIsLoading(true)
-  //}
 
   return (
     <div>
@@ -24,7 +19,7 @@ function NavBar(props) {
         <footer className="footer">© 2020 Netmechanics</footer>
       </div>
     </div>
-  ); //
+  ); 
 }
 
 export default NavBar;
