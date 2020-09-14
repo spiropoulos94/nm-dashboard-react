@@ -4,25 +4,24 @@ import ColourView from "./ColourView.jsx";
 import Spinner from "../Spinner/Spinner";
 
 function ColourViewContainer({ url, setIsLoading, colours, setColours }) {
-  let [_isLoading, _setIsLoading] = useState(true)
+  let [_isLoading, _setIsLoading] = useState(true);
 
   useEffect(() => {
-    if(!colours){
+    if (colours) {
+      setColours(colours);
+      _setIsLoading(false);
+      setIsLoading(_isLoading);
+    } else {
       fetchUrl(url).then((response) => {
-        console.log("Colors endpoint request was made!")
+        console.log("Colors endpoint request was made!");
         //edw tsekare ta data, kane ta normalize
-        if (response.hasOwnProperty('data')) {
-          setColours(response.data)
+        if (response.hasOwnProperty("data")) {
+          setColours(response.data);
           _setIsLoading(false);
-          setIsLoading(_isLoading)
+          setIsLoading(_isLoading);
         }
       });
-    } else {
-      setColours(colours)
-      _setIsLoading(false);
-      setIsLoading(_isLoading)
     }
-    
   }, []);
 
   if (_isLoading) return <Spinner />;
