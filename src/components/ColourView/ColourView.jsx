@@ -10,7 +10,7 @@ function ColourView(props) {
   }
 
   return (
-    <div>
+    <div className="view-wrapper">
       <div className="view-heading">
         <h2>Colours Screen</h2> {/* tsekare type of data */}
         <span>{`Items : ${colorData.length}`}</span>

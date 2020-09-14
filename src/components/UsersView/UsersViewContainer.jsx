@@ -4,25 +4,21 @@ import UsersView from "./UsersView.jsx";
 import Spinner from "../Spinner/Spinner";
 
 function UsersViewContainer({ url, setIsLoading, users, setUsers }) {
-  let [_isLoading, _setIsLoading] = useState(true);
+  let [_isLoading, _setIsLoading] = useState(users===null);
 
   useEffect(() => {
-    if (users) {
-      setUsers(users);
-    } else {
+    if (!users) {
       fetchUrl(url).then((response) => {
         console.log("Users endpoint request was made!");
         if (response.hasOwnProperty("data")) {
           setUsers(response.data);
         }
       });
-    }
-    if(users){
-      _setIsLoading(false)
-      setIsLoading(_isLoading)
+    } 
+    _setIsLoading(false)
+    setIsLoading(_isLoading)
 
-    }
-  }, [users]);
+  }, []);
 
   if (_isLoading) return <Spinner />;
 

@@ -1,29 +1,26 @@
 @import "./scss/variables.scss";
 
-
-
 .flex-wrapper-main {
   display: flex;
-  height:92vh;
+  height: 92vh;
 }
 
 body {
   overflow: scroll;
 }
 
-
 .no-scroll {
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .data-wrapper {
   width: 100%;
   height: 92vh;
   margin: auto;
-  position:absolute;
+  position: absolute;
 }
 
-.data-wrapper > * {
+.view-wrapper {
   padding: 1% 3%;
 }
 
@@ -31,9 +28,6 @@ body {
   color: black;
   position: relative;
 }
-
-
-
 
 // @media screen and (min-width: $sm) {
 //   .data-wrapper {
@@ -49,4 +43,3 @@ body {
     position: inherit;
   }
 }
-

@@ -19,38 +19,32 @@ function App() {
   let [users, setUsers] = useState(null);
 
   let url = {
-    colors:"colors.json",      //"https://reqres.in/api/products/", 
-    users: "users.json"      //"https://reqres.in/api/users/",
+    colors: "colors.json", //"https://reqres.in/api/products/",
+    users: "users.json", //"https://reqres.in/api/users/",
   };
-
-  
-
-  
 
   //TODO RETURN isLoading TO STATE OF TRUE WHEN NAVIGATING BACK TO HOME PAGE ???
 
-   function toggleNavbar(param) {
-     if (window.innerWidth < 768) {
-       switch (param) {
-         case "hide":
-           return setHiddenNavBar(true);
-         default:
-           return setHiddenNavBar(!hiddenNavBar);
-       }
-     }
-   }
-
-  
+  function toggleNavbar(param) {
+    if (window.innerWidth < 768) {
+      switch (param) {
+        case "hide":
+          return setHiddenNavBar(true);
+        default:
+          return setHiddenNavBar(!hiddenNavBar);
+      }
+    }
+  }
 
   //stops scrolling when navbar is open
   hiddenNavBar
     ? document.body.classList.remove("no-scroll")
     : document.body.classList.add("no-scroll");
 
-   window.addEventListener("resize", () => {
-     window.innerWidth >= 768 && setHiddenNavBar(false);
-     window.innerWidth < 768 && setHiddenNavBar(true);
-   });
+  window.addEventListener("resize", () => {
+    window.innerWidth >= 768 && setHiddenNavBar(false);
+    window.innerWidth < 768 && setHiddenNavBar(true);
+  });
 
   return (
     <Router>
@@ -81,7 +75,9 @@ function App() {
                 ></UsersViewContainer>
               </Route>
               <Route path="/">
-                <h2 className="view-title">Welcome</h2>
+                <div className="view-wrapper">
+                  <h2 className="view-title">Welcome</h2>
+                </div>
               </Route>
             </Switch>
           </div>

@@ -11,10 +11,10 @@ function UsersView({ users, setUsers }) {
   //REMOVE SELECTED USER
   function removeUser() {
     let userID = null;
-    Array.from(document.querySelectorAll(".radio-btn")).forEach((button) => {
-      if (button.checked) {
+    Array.from(document.querySelectorAll(".radio-btn")).forEach((radio) => {
+      if (radio.checked) {
         userID = parseInt(
-          button.parentElement.parentElement.parentElement.children[1].innerText
+          radio.parentElement.parentElement.parentElement.children[1].innerText
         );
       }
     });
@@ -34,7 +34,7 @@ function UsersView({ users, setUsers }) {
   }
 
   return (
-    <div>
+    <div className="view-wrapper">
       <div className="view-heading">
         <h2 className="view-title">Users Screen</h2>{" "}
         <button
@@ -59,29 +59,28 @@ function UsersView({ users, setUsers }) {
           </thead>
           <tbody className="tbody">
             {users.map((user) => {
-              let { avatar } = user;
+              
+              let userAvatar = user.avatar.substring(
+                user.avatar.lastIndexOf("r/") + 2,
+                user.avatar.lastIndexOf("/128")
+              );
+              
               return (
-                <tr key={user.id}>
+                <tr key={user.id} data-id={user.id}>
                   <td>
                     <label>
                       <input
                         className="radio-btn"
                         type="radio"
                         name="radio-btn"
-                        onChange={toggleDeleteBtn}
-                      />
+                        onChange={toggleDeleteBtn}/>
                     </label>
                   </td>
                   <td>{user.id}</td>
                   <td>{user["last_name"]}</td>
                   <td>{user["first_name"]}</td>
                   <td>{user["email"]}</td>
-                  <td>
-                    {avatar.substring(
-                      avatar.lastIndexOf("r/") + 2,
-                      avatar.lastIndexOf("/128")
-                    )}
-                  </td>
+                  <td>{userAvatar}</td>
                 </tr>
               );
             })}
