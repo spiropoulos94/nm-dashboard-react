@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import "./UsersView.scss";
 
 function UsersView(props) {
@@ -44,7 +44,6 @@ function UsersView(props) {
   }
 
   return (
-    <Fragment>
       <div>
         <div className="view-heading">
           <h2 className="view-title">Users Screen</h2>{" "}
@@ -108,7 +107,6 @@ function UsersView(props) {
           </table>
         </div>
       </div>
-    </Fragment>
   );
 }
 
