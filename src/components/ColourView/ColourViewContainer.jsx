@@ -9,20 +9,22 @@ function ColourViewContainer({ url, setIsLoading, colours, setColours }) {
   useEffect(() => {
     if (colours) {
       setColours(colours);
-      _setIsLoading(false);
-      setIsLoading(_isLoading);
     } else {
       fetchUrl(url).then((response) => {
         console.log("Colors endpoint request was made!");
         //edw tsekare ta data, kane ta normalize
         if (response.hasOwnProperty("data")) {
           setColours(response.data);
-          _setIsLoading(false);
-          setIsLoading(_isLoading);
         }
       });
     }
-  }, []);
+    // console.log(colours)
+    if(colours){
+      _setIsLoading(false)
+    }
+    //added colours in dependency array because on mount the colours is null
+    //but after the useEffect it has a value.
+  }, [colours]);
 
   if (_isLoading) return <Spinner />;
 
