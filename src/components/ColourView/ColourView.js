@@ -6,7 +6,7 @@ function ColourView(props) {
   let colorData = props.data;
 
   return (
-    <div>
+    <div className="view-wrapper">
       <div className="view-heading">
         <h2>Colours Screen</h2>{" "}
         <span>{colorData && `Items : ${colorData.length}`}</span>
