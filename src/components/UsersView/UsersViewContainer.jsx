@@ -9,15 +9,11 @@ function UsersViewContainer({ url, setIsLoading, users, setUsers }) {
   useEffect(() => {
     if (users) {
       setUsers(users);
-      // _setIsLoading(false);
-      // setIsLoading(_isLoading);
     } else {
       fetchUrl(url).then((response) => {
         console.log("Users endpoint request was made!");
         if (response.hasOwnProperty("data")) {
           setUsers(response.data);
-          // _setIsLoading(false);
-          // setIsLoading(_isLoading);
         }
       });
     }
