@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header/Header.jsx";
 import NavBar from "./components/NavBar/NavBar.jsx";
 import { Switch, Route } from "react-router-dom";
@@ -13,7 +13,7 @@ import UsersViewContainer from "./components/UsersView/UsersViewContainer";
 // let UsersWithSpinner = WithSpinner(UsersView);
 
 function App() {
-  let [hiddenNavBar, setHiddenNavBar] = useState(window.innerWidth<768);
+  let [hiddenNavBar, setHiddenNavBar] = useState(null);
   let [isLoading, setIsLoading] = useState(true);
   let [colours, setColours] = useState(null);
   let [users, setUsers] = useState(null);
@@ -23,28 +23,34 @@ function App() {
     users: "users.json"      //"https://reqres.in/api/users/",
   };
 
+  
+
+  
+
   //TODO RETURN isLoading TO STATE OF TRUE WHEN NAVIGATING BACK TO HOME PAGE ???
 
-  function toggleNavbar(param) {
-    if (window.innerWidth < 768) {
-      switch (param) {
-        case "hide":
-          return setHiddenNavBar(true);
-        default:
-          return setHiddenNavBar(!hiddenNavBar);
-      }
-    }
-  }
+   function toggleNavbar(param) {
+     if (window.innerWidth < 768) {
+       switch (param) {
+         case "hide":
+           return setHiddenNavBar(true);
+         default:
+           return setHiddenNavBar(!hiddenNavBar);
+       }
+     }
+   }
+
+  
 
   //stops scrolling when navbar is open
   hiddenNavBar
     ? document.body.classList.remove("no-scroll")
     : document.body.classList.add("no-scroll");
 
-  window.addEventListener("resize", () => {
-    window.innerWidth >= 768 && setHiddenNavBar(false);
-    window.innerWidth < 768 && setHiddenNavBar(true);
-  });
+   window.addEventListener("resize", () => {
+     window.innerWidth >= 768 && setHiddenNavBar(false);
+     window.innerWidth < 768 && setHiddenNavBar(true);
+   });
 
   return (
     <Router>
@@ -53,7 +59,7 @@ function App() {
         <div className="flex-wrapper-main">
           <NavBar
             navStatus={hiddenNavBar}
-            setNavStatus={setHiddenNavBar}
+            // setNavStatus={setHiddenNavBar}
             toggleNavbar={toggleNavbar}
           />
           <div className="data-wrapper">
