@@ -16,6 +16,7 @@ function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
   let [isLoading, setIsLoading] = useState(true);
   let [colours, setColours] = useState (null)
+  let [users, setUsers] = useState(null)
 
   let url = {
     colors: "https://reqres.in/api/products/",
@@ -61,12 +62,16 @@ function App() {
             <Switch>
               <Route path="/colours">
                 <ColourViewContainer
+                  colours = {colours}
+                  setColours = {setColours}
                   url={url.colors}
                   setIsLoading={setIsLoading}>
                 </ColourViewContainer>
               </Route>
               <Route path="/users">
                 <UsersViewContainer
+                  users = {users}
+                  setUsers = {setUsers}
                   url={url.users}
                   setIsLoading={setIsLoading}
                 ></UsersViewContainer>
