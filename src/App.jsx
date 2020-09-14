@@ -15,6 +15,7 @@ import UsersViewContainer from "./components/UsersView/UsersViewContainer";
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
   let [isLoading, setIsLoading] = useState(true);
+  let [colours, setColours] = useState (null)
 
   let url = {
     colors: "https://reqres.in/api/products/",
@@ -61,9 +62,7 @@ function App() {
               <Route path="/colours">
                 <ColourViewContainer
                   url={url.colors}
-                  setIsLoading={setIsLoading}
-                >
-                  {/* inside here lives the colourViewContainer */}
+                  setIsLoading={setIsLoading}>
                 </ColourViewContainer>
               </Route>
               <Route path="/users">

@@ -27,7 +27,6 @@ function UsersView(props) {
       window.confirm(`Are you sure you want to delete user number ${userID}?`)
     ) {
       setUsers([...filteredArr]);
-      // sessionStorage.setItem("users", JSON.stringify(filteredArr));
     }
   }
 
@@ -63,8 +62,6 @@ function UsersView(props) {
           <tbody className="tbody">
             {users.map((user) => {
               let { avatar } = user;
-              // let {substring, lastIndexOfAvatar} = avatar;
-
               return (
                 <tr key={user.id}>
                   <td>

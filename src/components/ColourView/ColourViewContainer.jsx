@@ -10,6 +10,7 @@ function ColourViewContainer({ url, setIsLoading }) {
   useEffect(() => {
     //todo vevaiwsou oti to response exei mesa ena prop. data kai an einai gemato h adeio(den mas afora edw)
     fetchUrl(url).then((response) => {
+      console.log("Colors endpoint request was made!")
       if (response.data) {
         setData(response.data);
         _setIsLoading(false);

@@ -8,9 +8,8 @@ function UsersViewContainer({ url, setIsLoading }) {
   let [_isLoading, _setIsLoading] = useState(true);
 
   useEffect(() => {
-    //do we need the spinner to display always before rendering component???
-
     fetchUrl(url).then((response) => {
+      console.log("Users endpoint request was made!")
       if (response.data) {
         setData(response.data);
         _setIsLoading(false);
