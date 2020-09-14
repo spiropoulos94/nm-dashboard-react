@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./UsersView.scss";
 
-function UsersView({users, setUsers}) {
-  
+function UsersView({ users, setUsers }) {
   let [disabledBtn, setDisabledBtn] = useState(true);
 
   if (!users) {
     users = [];
   }
 
- 
   //REMOVE SELECTED USER
   function removeUser() {
     let userID = null;

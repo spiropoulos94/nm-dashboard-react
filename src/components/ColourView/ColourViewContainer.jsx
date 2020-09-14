@@ -11,7 +11,7 @@ function ColourViewContainer({ url, setIsLoading, colours, setColours }) {
       fetchUrl(url).then((response) => {
         console.log("Colors endpoint request was made!")
         //edw tsekare ta data, kane ta normalize
-        if (response.data) {
+        if (response.hasOwnProperty('data')) {
           // setData(response.data);
           setColours(response.data)
           _setIsLoading(false);
