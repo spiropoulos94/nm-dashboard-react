@@ -15,8 +15,8 @@ import UsersViewContainer from "./components/UsersView/UsersViewContainer";
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(false);
   let [isLoading, setIsLoading] = useState(true);
-  let [colours, setColours] = useState (null)
-  let [users, setUsers] = useState(null)
+  let [colours, setColours] = useState(null);
+  let [users, setUsers] = useState(null);
 
   let url = {
     colors: "https://reqres.in/api/products/",
@@ -26,10 +26,8 @@ function App() {
   //TODO RETURN isLoading TO STATE OF TRUE WHEN NAVIGATING BACK TO HOME PAGE ???
 
   function toggleNavbar(param) {
-    if(window.innerWidth < 768) {
+    if (window.innerWidth < 768) {
       switch (param) {
-        // case "show":
-          // return setHiddenNavBar(false);
         case "hide":
           return setHiddenNavBar(true);
         default:
@@ -44,14 +42,14 @@ function App() {
     : document.body.classList.add("no-scroll");
 
   window.addEventListener("resize", () => {
-    window.innerWidth > 768 && setHiddenNavBar(false);
+    window.innerWidth >= 768 && setHiddenNavBar(false);
     window.innerWidth < 768 && setHiddenNavBar(true);
   });
 
   return (
     <Router>
       <div className="App">
-        <Header  toggleNavbar={toggleNavbar} />
+        <Header toggleNavbar={toggleNavbar} />
         <div className="flex-wrapper-main">
           <NavBar
             navStatus={hiddenNavBar}
@@ -62,17 +60,16 @@ function App() {
             <Switch>
               <Route path="/colours">
                 <ColourViewContainer
-                  colours = {colours}
-                  setColours = {setColours}
+                  colours={colours}
+                  setColours={setColours}
                   url={url.colors}
                   setIsLoading={setIsLoading}
-                  >
-                </ColourViewContainer>
+                ></ColourViewContainer>
               </Route>
               <Route path="/users">
                 <UsersViewContainer
-                  users = {users}
-                  setUsers = {setUsers}
+                  users={users}
+                  setUsers={setUsers}
                   url={url.users}
                   setIsLoading={setIsLoading}
                 ></UsersViewContainer>
