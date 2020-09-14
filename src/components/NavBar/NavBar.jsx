@@ -9,10 +9,10 @@ function NavBar(props) {
     <div>
       <div className={hiddenNavBar ? "navbar hidden" : "navbar"}>
         <div className="menu-items">
-          <Link to="/colours" className="menu-item" onClick={props.closeNavbar}>
+          <Link to="/colours" className="menu-item" onClick={props.toggleNavbar}>
             Colours
           </Link>
-          <Link to="/users" className="menu-item" onClick={props.closeNavbar}>
+          <Link to="/users" className="menu-item" onClick={props.toggleNavbar}>
             Users
           </Link>
         </div>

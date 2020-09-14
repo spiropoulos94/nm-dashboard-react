@@ -11,7 +11,7 @@ function Header(props) {
         <button className="burger-btn" onClick={props.toggleNavbar}>
           <span className="menu-icon">&#9776;</span>
         </button>
-        <Link to="/" className="link" onClick={props.closeNavbar}>
+        <Link to="/" className="link" onClick={() => props.toggleNavbar("hide")}>
           <img className="header-logo" src={LogoPlaceholder} alt="logo" />
           <span className="logo-txt">LOGO</span>
         </Link>
