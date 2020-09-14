@@ -3,6 +3,8 @@ import "./UsersView.scss";
 
 function UsersView({ users, setUsers }) {
   let [disabledBtn, setDisabledBtn] = useState(true);
+  let [selectedUser, setSelectedUser] = useState(null);
+
 
   if (!users && (!Array.isArray(users))) {
     users = [];
@@ -29,8 +31,9 @@ function UsersView({ users, setUsers }) {
   }
 
   //ENABLE AND DISABLE DELETE BUTTON
-  function toggleDeleteBtn() {
+  function toggleDeleteBtn(e) {
     setDisabledBtn(false);
+    console.log(e.target)
   }
 
   return (
@@ -66,14 +69,14 @@ function UsersView({ users, setUsers }) {
               );
               
               return (
-                <tr key={user.id} data-id={user.id}>
+                <tr key={user.id} data-id={user.id} onChange={toggleDeleteBtn}>
                   <td>
                     <label>
                       <input
                         className="radio-btn"
                         type="radio"
                         name="radio-btn"
-                        onChange={toggleDeleteBtn}/>
+                        />
                     </label>
                   </td>
                   <td>{user.id}</td>

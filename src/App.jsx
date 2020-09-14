@@ -53,7 +53,6 @@ function App() {
         <div className="flex-wrapper-main">
           <NavBar
             navStatus={hiddenNavBar}
-            // setNavStatus={setHiddenNavBar}
             toggleNavbar={toggleNavbar}
           />
           <div className="data-wrapper">
