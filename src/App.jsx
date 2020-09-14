@@ -19,8 +19,8 @@ function App() {
   let [users, setUsers] = useState(null);
 
   let url = {
-    colors: "https://reqres.in/api/products/",
-    users: "https://reqres.in/api/users/",
+    colors:"colors.json",      //"https://reqres.in/api/products/",
+    users: "users.json"      //"https://reqres.in/api/users/",
   };
 
   //TODO RETURN isLoading TO STATE OF TRUE WHEN NAVIGATING BACK TO HOME PAGE ???
