@@ -25,7 +25,7 @@ function UsersView({ users, setUsers }) {
     //   }
     // });
 
-    let filteredArr = users.filter(user => user.id !== selectedOption);
+    let filteredArr = users.filter(user => user.id != selectedOption);
     
 
     if (
