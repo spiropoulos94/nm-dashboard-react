@@ -13,7 +13,6 @@ function UsersView({ users, setUsers }) {
 
   //REMOVE SELECTED USER
   function removeUser() {
-    console.log(setSelectedOption)
     let filteredArr = users.filter((user) => user.id != selectedOption);
 
     if (
@@ -28,8 +27,14 @@ function UsersView({ users, setUsers }) {
 
   //ENABLE AND DISABLE DELETE BUTTON
   function handleOnChange(e) {
-    let userID = parseInt(e.target.parentElement.parentElement.parentElement.children[1].innerText)
-    setSelectedOption(userID)
+    //let userID = parseInt(
+    //  e.target.parentElement.parentElement.parentElement.children[1].innerText
+    //);
+    
+    console.log('event target', e.target)
+    console.log('event current target', e.currentTarget)
+    let userID = parseInt(e.currentTarget.children[1].innerText)
+    setSelectedOption(userID);
     setDisabledBtn(false);
   }
 
@@ -40,8 +45,7 @@ function UsersView({ users, setUsers }) {
         <button
           onClick={removeUser}
           className="delete-btn"
-          disabled={disabledBtn}
-        >
+          disabled={disabledBtn}>
           delete
         </button>
       </div>
@@ -64,16 +68,15 @@ function UsersView({ users, setUsers }) {
                 user.avatar.lastIndexOf("/128")
               );
 
-              return (  
-                //onchange sthn input, sto handler tha perasei to userID
-                <tr key={user.id}>
+              return (
+                <tr key={user.id} onChange={handleOnChange}>
                   <td>
                     <label>
                       <input
                         className="radio-btn"
                         type="radio"
                         name="radio-btn"
-                        onChange={handleOnChange}
+                        
                       />
                     </label>
                   </td>
