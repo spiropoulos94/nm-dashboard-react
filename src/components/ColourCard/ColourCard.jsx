@@ -1,8 +1,7 @@
 import React from "react";
 import "./ColourCard.scss";
 
-function ColorCard(props) {
-  let { data } = props;
+function ColorCard({data}) {
 
   return (
     <div className="color-card" style={{ background: `${data.color}` }}>

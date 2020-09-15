@@ -2,21 +2,20 @@ import React from "react";
 import "./ColourView.scss";
 import ColorCard from "../ColourCard/ColourCard.jsx";
 
-function ColourView(props) {
-  let colorData = props.data;
+function ColourView({data}) {
 
-  if (!colorData && (!Array.isArray(colorData))) {
-    colorData = [];
+  if (!data && (!Array.isArray(data))) {
+    data = [];
   }
 
   return (
     <div className="view-wrapper">
       <div className="view-heading">
         <h2>Colours Screen</h2>
-        <span>{`Items : ${colorData.length}`}</span>
+        <span>{`Items : ${data.length}`}</span>
       </div>
       <div className="color-grid">
-        {colorData.map((color) => {
+        {data.map((color) => {
           return <ColorCard data={color} key={color.id} />;
         })}
       </div>

@@ -5,14 +5,15 @@ import Avatar from "../../images/accountPhoto.png";
 import { Link } from "react-router-dom";
 
 //todo DESTRUCTURE PROPS
-function Header(props) {
+function Header({toggleNavbar}) {
+  
   return (
     <div className="header-wrapper">
       <div className="header-left">
-        <button className="burger-btn" onClick={props.toggleNavbar}>
+        <button className="burger-btn" onClick={toggleNavbar}>
           <span className="menu-icon">&#9776;</span>
         </button>
-        <Link to="/" className="link" onClick={() => props.toggleNavbar("hide")}>
+        <Link to="/" className="link" onClick={() => toggleNavbar("hide")}>
           <img className="header-logo" src={LogoPlaceholder} alt="logo" />
           <span className="logo-txt">LOGO</span>
         </Link>
