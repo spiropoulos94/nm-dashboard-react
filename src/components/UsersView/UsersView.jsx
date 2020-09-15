@@ -5,48 +5,32 @@ function UsersView({ users, setUsers }) {
   let [disabledBtn, setDisabledBtn] = useState(true);
   let [selectedOption, setSelectedOption] = useState(null);
 
-
-  if (!users && (!Array.isArray(users))) {
+  if (!users && !Array.isArray(users)) {
     users = [];
   }
 
   // to toggleDeletebtn prepei na enimerwnei thn selectedOption gia ton epilegmeno xrhsth prokeimenou na svistei
 
-  
-
   //REMOVE SELECTED USER
   function removeUser(selectedOption) {
-    
-    
-    
-    // Array.from(document.querySelectorAll(".radio-btn")).forEach((radio) => {
-    //   if (radio.checked) {
-    //     userID = parseInt(
-    //       radio.parentElement.parentElement.parentElement.children[1].innerText
-    //     );
-    //   }
-    // });
-
-    let filteredArr = users.filter(user => user.id != selectedOption);
-    
+    let filteredArr = users.filter((user) => user.id != selectedOption);
 
     if (
-      window.confirm(`Are you sure you want to delete user number ${selectedOption}?`)
+      window.confirm(
+        `Are you sure you want to delete user number ${selectedOption}?`
+      )
     ) {
       setUsers(filteredArr);
-      setDisabledBtn(true)
+      setDisabledBtn(true);
     }
   }
 
   //ENABLE AND DISABLE DELETE BUTTON
-  function toggleDeleteBtn(e) {
+  function toggleDeleteBtn(x) {
     setDisabledBtn(false);
-    // console.log(e.target.getAttribute('data-id'))
-    console.log(e.target.parentElement.parentElement.parentElement.getAttribute('data-id'))
-    setSelectedOption(parseInt(e.target.parentElement.parentElement.parentElement.getAttribute('data-id')))
-    console.log(selectedOption)
+    setSelectedOption(x);
+    console.log(selectedOption);
   }
-
 
   return (
     <div className="view-wrapper">
@@ -74,21 +58,22 @@ function UsersView({ users, setUsers }) {
           </thead>
           <tbody className="tbody">
             {users.map((user) => {
-              
               let userAvatar = user.avatar.substring(
                 user.avatar.lastIndexOf("r/") + 2,
                 user.avatar.lastIndexOf("/128")
               );
-              
-              return (
-                <tr key={user.id} data-id={user.id} onChange={toggleDeleteBtn}>
+
+              return (  
+                //onchange sthn input, sto handler tha perasei to userID
+                <tr key={user.id}>
                   <td>
                     <label>
                       <input
                         className="radio-btn"
                         type="radio"
                         name="radio-btn"
-                        />
+                        onChange={toggleDeleteBtn}
+                      />
                     </label>
                   </td>
                   <td>{user.id}</td>
