@@ -5,18 +5,21 @@ import Spinner from "../Spinner/Spinner";
 
 function ColourViewContainer({ url, setIsLoading, colours, setColours }) {
   let [_isLoading, _setIsLoading] = useState(colours===null);
+// TODO same approach in UserViewContainer
+  function updateStateOnFetch(response) {
+    const _data = response && response.hasOwnProperty('data') && response['data'] || [];
+    setColours(_data);
+    _setIsLoading(false);
+    setIsLoading(false);
+  }
 
   useEffect(() => {
     if (!colours) {
       fetchUrl(url).then((response) => {
         console.log("Colors endpoint request was made!");
-        if (response.hasOwnProperty("data")) {
-          setColours(response.data);
-        }
+        updateStateOnFetch(response); 
       });
     }
-    _setIsLoading(false);
-    setIsLoading(_isLoading);
   }, []);
 
   if (_isLoading) return <Spinner />;

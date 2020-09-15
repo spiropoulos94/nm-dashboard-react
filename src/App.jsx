@@ -13,7 +13,7 @@ import UsersViewContainer from "./components/UsersView/UsersViewContainer";
 // let UsersWithSpinner = WithSpinner(UsersView);
 
 function App() {
-  let [hiddenNavBar, setHiddenNavBar] = useState(null);
+  let [hiddenNavBar, setHiddenNavBar] = useState(window.innerWidth < 768);
   let [isLoading, setIsLoading] = useState(true);
   let [colours, setColours] = useState(null);
   let [users, setUsers] = useState(null);
@@ -36,11 +36,6 @@ function App() {
     }
   }
 
-  //stops scrolling when navbar is open
-  hiddenNavBar
-    ? document.body.classList.remove("no-scroll")
-    : document.body.classList.add("no-scroll");
-
   window.addEventListener("resize", () => {
     if(window.innerWidth >=768){
       setHiddenNavBar(false)
@@ -56,7 +51,7 @@ function App() {
         <Header toggleNavbar={toggleNavbar} />
         <div className="flex-wrapper-main">
           <NavBar
-            navStatus={hiddenNavBar}
+            hiddenNavBar={hiddenNavBar}
             toggleNavbar={toggleNavbar}
           />
           <div className="data-wrapper">

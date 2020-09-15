@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
 
-function NavBar(props) {
- let {navStatus, toggleNavbar} = props
+function NavBar({hiddenNavBar, toggleNavbar}) {
+
   return (
     <div>
-      <div className={navStatus ? "navbar hidden" : "navbar"}>
+      <div className={hiddenNavBar ? "navbar hidden" : "navbar"}>
         <div className="menu-items">
           <Link to="/colours" className="menu-item" onClick={toggleNavbar}>
             Colours

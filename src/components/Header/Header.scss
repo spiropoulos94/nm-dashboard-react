@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 8vh;
+  height: 6vh;
   text-transform: uppercase;
   color: white;
 }
@@ -18,14 +18,14 @@
   width: 15%;
   text-decoration: none;
   font-size: 1.5rem;
-  :hover {
+  &:hover {
     cursor: pointer;
   }
 
   .burger-btn {
     margin-right: 10px;
 
-    :hover {
+    &:hover {
       cursor: pointer;
     }
     .menu-icon {
