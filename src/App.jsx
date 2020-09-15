@@ -42,8 +42,12 @@ function App() {
     : document.body.classList.add("no-scroll");
 
   window.addEventListener("resize", () => {
-    window.innerWidth >= 768 && setHiddenNavBar(false);
-    window.innerWidth < 768 && setHiddenNavBar(true);
+    if(window.innerWidth >=768){
+      setHiddenNavBar(false)
+    }
+    else {
+      setHiddenNavBar(true)
+    }
   });
 
   return (
@@ -63,7 +67,7 @@ function App() {
                   setColours={setColours}
                   url={url.colors}
                   setIsLoading={setIsLoading}
-                ></ColourViewContainer>
+                />
               </Route>
               <Route path="/users">
                 <UsersViewContainer
@@ -71,7 +75,7 @@ function App() {
                   setUsers={setUsers}
                   url={url.users}
                   setIsLoading={setIsLoading}
-                ></UsersViewContainer>
+                />
               </Route>
               <Route path="/">
                 <div className="view-wrapper">
