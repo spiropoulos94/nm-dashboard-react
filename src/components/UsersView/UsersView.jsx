@@ -40,8 +40,7 @@ function UsersView({ users, setUsers }) {
         <button
           onClick={removeUser}
           className="delete-btn"
-          disabled={disabledBtn}
-        >
+          disabled={disabledBtn}>
           delete
         </button>
       </div>
@@ -65,18 +64,14 @@ function UsersView({ users, setUsers }) {
               );
 
               return (
-                <tr key={user.id}>
+                <tr key={user.id}  >
                   <td>
                     <label>
                       <input
                         className="radio-btn"
                         type="radio"
                         name="radio-btn"
-                        onChange={() =>
-                          handleOnChange(
-                            document.querySelector("tr").getAttribute("key")
-                          )
-                        }
+                        onChange={() => handleOnChange(user.id) }
                       />
                     </label>
                   </td>
