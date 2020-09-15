@@ -30,7 +30,6 @@ function UsersView({ users, setUsers }) {
   function handleOnChange(userID) {
     setSelectedOption(userID);
     setDisabledBtn(false);
-    console.log(userID);
   }
 
   return (
