@@ -1,6 +1,6 @@
 import React from "react";
 import Spinner from "../Spinner/Spinner";
-import fetchUrl from "../../utilities/fetchFunction.js";
+import fetchUrl from "../../utilities/fetchFunction";
 
 //TODO
 //how to pass each component endpoint on fetchUrl in order

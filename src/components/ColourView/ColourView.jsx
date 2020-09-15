@@ -1,6 +1,6 @@
 import React from "react";
 import "./ColourView.scss";
-import ColorCard from "../ColourCard/ColourCard.jsx";
+import ColorCard from "../ColourCard/ColourCard";
 
 function ColourView({data}) {
 

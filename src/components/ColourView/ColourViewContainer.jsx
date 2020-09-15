@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import fetchUrl from "../../utilities/fetchUrl.js";
-import ColourView from "./ColourView.jsx";
+import fetchUrl from "../../utilities/fetchUrl";
+import ColourView from "./ColourView";
 import Spinner from "../Spinner/Spinner";
 
 function ColourViewContainer({ url, setIsLoading, colours, setColours }) {
