@@ -45,7 +45,6 @@ function App() {
   function closeNavBar() {
     if (window.innerWidth < 768 && hiddenNavBar === false) {
       setHiddenNavBar(true);
-      console.log("close navbar()");
     }
   }
   //the following function re-adapts the navbar status based on window size
