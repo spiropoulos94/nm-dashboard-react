@@ -62,11 +62,12 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header toggleNavbar={toggleNavbar} closeNavBar={closeNavBar} />
+        <Header 
+        toggleNavbar={toggleNavbar} 
+        closeNavBar={closeNavBar}/>
         <div className="flex-wrapper-main">
           <NavBar
             hiddenNavBar={hiddenNavBar}
-            toggleNavbar={toggleNavbar}
             closeNavBar={closeNavBar}/>
           <div className="data-wrapper">
             <Switch>
