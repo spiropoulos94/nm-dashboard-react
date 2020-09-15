@@ -12,7 +12,8 @@ function UsersView({ users, setUsers }) {
   // to toggleDeletebtn prepei na enimerwnei thn selectedOption gia ton epilegmeno xrhsth prokeimenou na svistei
 
   //REMOVE SELECTED USER
-  function removeUser(selectedOption) {
+  function removeUser() {
+    console.log(setSelectedOption)
     let filteredArr = users.filter((user) => user.id != selectedOption);
 
     if (
@@ -26,10 +27,10 @@ function UsersView({ users, setUsers }) {
   }
 
   //ENABLE AND DISABLE DELETE BUTTON
-  function toggleDeleteBtn(x) {
+  function handleOnChange(e) {
+    let userID = parseInt(e.target.parentElement.parentElement.parentElement.children[1].innerText)
+    setSelectedOption(userID)
     setDisabledBtn(false);
-    setSelectedOption(x);
-    console.log(selectedOption);
   }
 
   return (
@@ -72,7 +73,7 @@ function UsersView({ users, setUsers }) {
                         className="radio-btn"
                         type="radio"
                         name="radio-btn"
-                        onChange={toggleDeleteBtn}
+                        onChange={handleOnChange}
                       />
                     </label>
                   </td>
