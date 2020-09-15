@@ -26,26 +26,22 @@ function UsersView({ users, setUsers }) {
   }
 
   //ENABLE AND DISABLE DELETE BUTTON
-  function handleOnChange(e) {
-    //let userID = parseInt(
-    //  e.target.parentElement.parentElement.parentElement.children[1].innerText
-    //);
-    
-    console.log('event target', e.target)
-    console.log('event current target', e.currentTarget)
-    let userID = parseInt(e.currentTarget.children[1].innerText)
+  //στην onchange tha pernaei san argument to userID
+  function handleOnChange(userID) {
     setSelectedOption(userID);
     setDisabledBtn(false);
+    console.log(userID);
   }
 
   return (
     <div className="view-wrapper">
       <div className="view-heading">
-        <h2 className="view-title">Users Screen</h2>{" "}
+        <h2 className="view-title">Users Screen</h2>
         <button
           onClick={removeUser}
           className="delete-btn"
-          disabled={disabledBtn}>
+          disabled={disabledBtn}
+        >
           delete
         </button>
       </div>
@@ -69,14 +65,18 @@ function UsersView({ users, setUsers }) {
               );
 
               return (
-                <tr key={user.id} onChange={handleOnChange}>
+                <tr key={user.id}>
                   <td>
                     <label>
                       <input
                         className="radio-btn"
                         type="radio"
                         name="radio-btn"
-                        
+                        onChange={() =>
+                          handleOnChange(
+                            document.querySelector("tr").getAttribute("key")
+                          )
+                        }
                       />
                     </label>
                   </td>
