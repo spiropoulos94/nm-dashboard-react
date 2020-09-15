@@ -36,18 +36,19 @@ function App() {
   //   }
   // }
 
+  //the following function is used on burger button navbar to open and close navbar
   function toggleNavbar(){
     setHiddenNavBar(!hiddenNavBar)
   }
 
-
-  function closeNavBar(){
-    console.log('close navbar()')
-    if(window.innerWidth < 768 ){
+  //the following function is used when clicking on nav items, to make navbar close
+  function closeNavBar(){  
+    if(window.innerWidth < 768 && hiddenNavBar===false ){
       setHiddenNavBar(true)
+      console.log('close navbar()')
     }
   }
-
+  //the following function re-adapts the navbar status based on window size
   function adaptNavBar(){
     if(window.innerWidth >=768){
       setHiddenNavBar(false)
