@@ -25,14 +25,26 @@ function App() {
 
   //TODO RETURN isLoading TO STATE OF TRUE WHEN NAVIGATING BACK TO HOME PAGE ???
 
-  function toggleNavbar(param) {
-    if (window.innerWidth < 768) {
-      switch (param) {
-        case "hide":
-          return setHiddenNavBar(true);
-        default:
-          return setHiddenNavBar(!hiddenNavBar);
-      }
+  // function toggleNavbar(param) {
+  //   if (window.innerWidth < 768) {
+  //     switch (param) {
+  //       case "hide":
+  //         return setHiddenNavBar(true);
+  //       default:
+  //         return setHiddenNavBar(!hiddenNavBar);
+  //     }
+  //   }
+  // }
+
+  function toggleNavbar(){
+    setHiddenNavBar(!hiddenNavBar)
+  }
+
+
+  function closeNavBar(){
+    console.log('close navbar()')
+    if(window.innerWidth < 768 ){
+      setHiddenNavBar(true)
     }
   }
 
@@ -48,11 +60,12 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header toggleNavbar={toggleNavbar} />
+        <Header  toggleNavbar={toggleNavbar} closeNavBar={closeNavBar} />
         <div className="flex-wrapper-main">
           <NavBar
             hiddenNavBar={hiddenNavBar}
             toggleNavbar={toggleNavbar}
+            
           />
           <div className="data-wrapper">
             <Switch>
