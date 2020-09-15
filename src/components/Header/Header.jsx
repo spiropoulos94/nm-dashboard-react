@@ -13,7 +13,7 @@ function Header({toggleNavbar}) {
         <button className="burger-btn" onClick={toggleNavbar}>
           <span className="menu-icon">&#9776;</span>
         </button>
-        <Link to="/" className="link" onClick={() => toggleNavbar("hide")}>
+        <Link to="/" className="link" onClick={toggleNavbar}>
           <img className="header-logo" src={LogoPlaceholder} alt="logo" />
           <span className="logo-txt">LOGO</span>
         </Link>
