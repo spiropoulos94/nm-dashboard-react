@@ -37,48 +37,37 @@ function App() {
   // }
 
   //the following function is used on burger button navbar to open and close navbar
-  function toggleNavbar(){
-    setHiddenNavBar(!hiddenNavBar)
+  function toggleNavbar() {
+    setHiddenNavBar(!hiddenNavBar);
   }
 
   //the following function is used when clicking on nav items, to make navbar close
-  function closeNavBar(){  
-    if(window.innerWidth < 768 && hiddenNavBar===false ){
-      setHiddenNavBar(true)
-      console.log('close navbar()')
+  function closeNavBar() {
+    if (window.innerWidth < 768 && hiddenNavBar === false) {
+      setHiddenNavBar(true);
+      console.log("close navbar()");
     }
   }
   //the following function re-adapts the navbar status based on window size
-  function adaptNavBar(){
-    if(window.innerWidth >=768){
-      setHiddenNavBar(false)
-    }else{
-      setHiddenNavBar(true)
+  function adaptNavBar() {
+    if (window.innerWidth >= 768) {
+      setHiddenNavBar(false);
+    } else {
+      setHiddenNavBar(true);
     }
   }
 
-  window.addEventListener('resize', adaptNavBar)
-
-  //window.addEventListener("resize", () => {
-  //  if(window.innerWidth >=768){
-  //    setHiddenNavBar(false)
-  //  }
-  //  else {
-  //    setHiddenNavBar(true)
-  //  }
-  //});
+  window.addEventListener("resize", adaptNavBar);
 
   return (
     <Router>
       <div className="App">
-        <Header  toggleNavbar={toggleNavbar} closeNavBar={closeNavBar} />
+        <Header toggleNavbar={toggleNavbar} closeNavBar={closeNavBar} />
         <div className="flex-wrapper-main">
           <NavBar
             hiddenNavBar={hiddenNavBar}
             toggleNavbar={toggleNavbar}
-            closeNavBar={closeNavBar}
-            
-          />
+            closeNavBar={closeNavBar}/>
           <div className="data-wrapper">
             <Switch>
               <Route path="/colours">
@@ -86,16 +75,14 @@ function App() {
                   colours={colours}
                   setColours={setColours}
                   url={url.colors}
-                  setIsLoading={setIsLoading}
-                />
+                  setIsLoading={setIsLoading}/>
               </Route>
               <Route path="/users">
                 <UsersViewContainer
                   users={users}
                   setUsers={setUsers}
                   url={url.users}
-                  setIsLoading={setIsLoading}
-                />
+                  setIsLoading={setIsLoading}/>
               </Route>
               <Route path="/">
                 <div className="view-wrapper">
