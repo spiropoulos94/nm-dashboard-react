@@ -48,14 +48,24 @@ function App() {
     }
   }
 
-  window.addEventListener("resize", () => {
+  function adaptNavBar(){
     if(window.innerWidth >=768){
       setHiddenNavBar(false)
-    }
-    else {
+    }else{
       setHiddenNavBar(true)
     }
-  });
+  }
+
+  window.addEventListener('resize', adaptNavBar)
+
+  //window.addEventListener("resize", () => {
+  //  if(window.innerWidth >=768){
+  //    setHiddenNavBar(false)
+  //  }
+  //  else {
+  //    setHiddenNavBar(true)
+  //  }
+  //});
 
   return (
     <Router>
@@ -65,6 +75,7 @@ function App() {
           <NavBar
             hiddenNavBar={hiddenNavBar}
             toggleNavbar={toggleNavbar}
+            closeNavBar={closeNavBar}
             
           />
           <div className="data-wrapper">
