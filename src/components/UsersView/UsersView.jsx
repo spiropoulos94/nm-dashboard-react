@@ -13,7 +13,7 @@ function UsersView({ users, setUsers }) {
 
   //REMOVE SELECTED USER
   function removeUser() {
-    let filteredArr = users.filter((user) => user.id != selectedOption);
+    let filteredArr = users.filter((user) => user.id !== selectedOption);
 
     if (
       window.confirm(
@@ -64,14 +64,14 @@ function UsersView({ users, setUsers }) {
               );
 
               return (
-                <tr key={user.id}  >
+                <tr key={user.id}>
                   <td>
                     <label>
                       <input
                         className="radio-btn"
                         type="radio"
                         name="radio-btn"
-                        onChange={() => handleOnChange(user.id) }
+                        onChange={() => handleOnChange(user.id)}
                       />
                     </label>
                   </td>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import fetchUrl from "../../utilities/fetchUrl.js";
-import UsersView from "./UsersView.jsx";
+import fetchUrl from "../../utilities/fetchUrl";
+import UsersView from "./UsersView";
 import Spinner from "../Spinner/Spinner";
 
 function UsersViewContainer({ url, setIsLoading, users, setUsers }) {
