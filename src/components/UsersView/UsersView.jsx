@@ -7,7 +7,7 @@ function UsersView({ users, setUsers }) {
 
   if (!users && !Array.isArray(users)) {
     users = [];
-  }
+  };
 
   // to toggleDeletebtn prepei na enimerwnei thn selectedOption gia ton epilegmeno xrhsth prokeimenou na svistei
 
