@@ -2,16 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
 
-function NavBar({hiddenNavBar, closeNavBar}) {
+function NavBar({hiddenNavBar, updateNavBar}) {
 
   return (
     <div>
       <div className={hiddenNavBar ? "navbar hidden" : "navbar"}>
         <div className="menu-items">
-          <Link to="/colours" className="menu-item" onClick={closeNavBar}>
+          <Link to="/colours" className="menu-item" onClick={() => updateNavBar(true)}>
             Colours
           </Link>
-          <Link to="/users" className="menu-item" onClick={closeNavBar}>
+          <Link to="/users" className="menu-item" onClick={() => updateNavBar(true)}>
             Users
           </Link>
         </div>
