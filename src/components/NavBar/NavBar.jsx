@@ -4,7 +4,6 @@ import "./NavBar.scss";
 
 function NavBar({hiddenNavBar, updateNavBar}) {
 
-
     return (
         <div className={hiddenNavBar ? "navbar hidden" : "navbar"}>
             <div className="menu-items">

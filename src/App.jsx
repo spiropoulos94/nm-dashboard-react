@@ -18,23 +18,20 @@ function App() {
         users: "users.json", //"https://reqres.in/api/users/",
     };
 
-
+    //todo css in css
     document.body.style.overflow = !hiddenNavBar ? "hidden" : ""
 
 
     function updateNavBar(value) {
         if (window.innerWidth >= 768) return;
-        setHiddenNavBar(value)
-
+        setHiddenNavBar(value);
     }
 
-
-    function updateNavBarOnWindowResize() {
-        setHiddenNavBar(window.innerWidth < 768)
+    function updateNavBarOnResize() {
+        setHiddenNavBar(window.innerWidth < 768);
     }
 
-
-    window.addEventListener("resize", updateNavBarOnWindowResize);
+    window.addEventListener("resize", updateNavBarOnResize);
 
     return (
         <Router>

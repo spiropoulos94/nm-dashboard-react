@@ -83,7 +83,7 @@
   }
 
   .title {
-    margin-right: auto;
+
     letter-spacing: 1px;
     font-size: 1.7rem;
   }
@@ -96,6 +96,11 @@
 }
 
 @media screen and (min-width: $lg) {
+
+  .title {
+    margin-right: auto;
+  }
+
   .logo-txt,
   .logout-txt {
     display: inline;
