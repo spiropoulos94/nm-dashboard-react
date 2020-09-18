@@ -6,11 +6,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
 import ColourViewContainer from "./components/ColourView/ColourViewContainer";
 import UsersViewContainer from "./components/UsersView/UsersViewContainer";
-// import ColourView from "./components/ColourView/ColourView.js";
-// import UsersView from "./components/UsersView/UsersView.js";
-// import WithSpinner from "./components/WithSpinner/WithSpinner";
-// let ColoursWithSpinner = WithSpinner(ColourView);
-// let UsersWithSpinner = WithSpinner(UsersView);
 
 function App() {
   let [hiddenNavBar, setHiddenNavBar] = useState(window.innerWidth < 768);
