@@ -18,18 +18,16 @@ function App() {
         users: "users.json", //"https://reqres.in/api/users/",
     };
 
-    //TODO RETURN isLoading TO STATE OF TRUE WHEN NAVIGATING BACK TO HOME PAGE ???
+
 
 
     function updateNavBar(value) {
         if (window.innerWidth >= 768) {
             return;
         }
-        console.log(hiddenNavBar)
         setHiddenNavBar(value)
 
     }
-
 
 
     function updateNavBarOnWindowResize() {

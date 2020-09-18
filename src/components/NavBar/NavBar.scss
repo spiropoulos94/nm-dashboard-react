@@ -10,7 +10,7 @@
   height: 92vh;
   transform: translate3d(0, 0, 0);
   transition-property: transform;
-  transition-duration: 0.45s;
+  transition-duration: 0.25s;
   transition-timing-function: ease-in;
   transition-delay: 0s;
   z-index: 2;
@@ -27,6 +27,7 @@
 
 .hidden {
   transform: translate3d(-70vw, 0, 0);
+  //display: none;
 }
 
 .menu-item {
