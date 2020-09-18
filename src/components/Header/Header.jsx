@@ -4,7 +4,6 @@ import LogoPlaceholder from "../../images/logoplaceholder.png";
 import Avatar from "../../images/accountPhoto.png";
 import {Link} from "react-router-dom";
 
-//todo DESTRUCTURE PROPS
 function Header({updateNavBar, hiddenNavBar}) {
 
     return (
