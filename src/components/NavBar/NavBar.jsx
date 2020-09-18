@@ -7,13 +7,15 @@ function NavBar({hiddenNavBar, updateNavBar}) {
     let navbar = document.querySelector(".navbar")
     console.log(navbar)
 
-    navbar && navbar.addEventListener('transitionend', (e) => {
-        if (navbar.classList.contains(" hidden")) {
-            navbar.parentElement.style.display = "none";
-        } else {
-            navbar.style.display = "flex";
-        }
-    })
+
+     // useEffect(()=>{
+     //   navbar && navbar.addEventListener('transitionend', (e) => {
+     //     if(navbar.classList.contains("hidden")) {
+     //       console.log("navbar is hidden")
+     //       navbar.style.position = "unset"
+     //     }
+     //   })
+     // },[navbar])
 
 
     return (

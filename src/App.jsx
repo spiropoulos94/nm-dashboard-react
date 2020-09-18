@@ -19,12 +19,11 @@ function App() {
     };
 
 
+    document.body.style.overflow = !hiddenNavBar ? "hidden" : ""
 
 
     function updateNavBar(value) {
-        if (window.innerWidth >= 768) {
-            return;
-        }
+        if (window.innerWidth >= 768) return;
         setHiddenNavBar(value)
 
     }
