@@ -25,7 +25,8 @@
 
 .hidden {
   transform: translate3d(-70vw, 0, 0);
-  height:0px;
+  position:absolute;
+  height:90vh;
 }
 
 .menu-item {

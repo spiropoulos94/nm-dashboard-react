@@ -38,7 +38,7 @@ function App() {
 
     return (
         <Router>
-            <div className="App">
+            <div  className="App">
                 <Header
                     updateNavBar={updateNavBar}
                     hiddenNavBar={hiddenNavBar}/>
@@ -66,7 +66,7 @@ function App() {
                             </Route>
                             <Route path="/">
                                 <div className="view-wrapper">
-                                    <h2 className="view-title">Welcome</h2>
+                                    <h2  className="view-title">Welcome</h2>
                                 </div>
                             </Route>
                         </Switch>
