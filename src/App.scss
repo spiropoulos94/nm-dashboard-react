@@ -1,8 +1,7 @@
 @import "./scss/variables.scss";
 
 .flex-wrapper-main {
-  display: flex;
-  //height: 90vh;
+  height: 94vh;
   position: relative;
 }
 
@@ -14,9 +13,11 @@
 
 .data-wrapper {
   width: 100%;
-  height: 92vh;
+  height: 100%;
+  //height: 92vh;
   margin: auto;
   position: absolute;
+  float: right;
 }
 
 .view-wrapper {
