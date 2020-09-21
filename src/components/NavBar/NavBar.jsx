@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
 import "./NavBar.scss";
 
 function NavBar({hiddenNavBar, updateNavBar}) {
+
+   // useEffect(()=>{
+   //     console.log("navbar mounted")
+   //     document.body.style.overflow = !hiddenNavBar ? "hidden" : ""
+   // },[updateNavBar])
 
     return (
         <div className={hiddenNavBar ? "navbar hidden" : "navbar"}>

@@ -2,17 +2,15 @@
 
 .flex-wrapper-main {
   display: flex;
-  height: 90vh;
-  position:relative;
+  //height: 90vh;
+  position: relative;
 }
 
-body {
-  overflow: auto;
-}
 
 .no-scroll {
   overflow: hidden;
 }
+
 
 .data-wrapper {
   width: 100%;

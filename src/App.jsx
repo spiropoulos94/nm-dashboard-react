@@ -18,8 +18,13 @@ function App() {
         users: "users.json", //"https://reqres.in/api/users/",
     };
 
+
+
     //todo css in css
-    document.body.style.overflow = !hiddenNavBar ? "hidden" : ""
+    //document.body.style.overflow = !hiddenNavBar ? "hidden" : ""
+    //used classes instead of modifying styling
+
+    document.body.className = !hiddenNavBar ? "no-scroll" : "";
 
 
     function updateNavBar(value) {
