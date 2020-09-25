@@ -18,7 +18,7 @@ function App() {
         users: "users.json", //"https://reqres.in/api/users/",
     };
 
-    //todo to view wrapper sto mobile prepei na kentrarei
+    //DONE to view wrapper sto mobile prepei na kentrarei
 
     //todo fix sidebar resize on screen resize
 
