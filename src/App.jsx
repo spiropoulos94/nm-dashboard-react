@@ -24,9 +24,7 @@ function App() {
 
     //todo diafora position absolute kai float
 
-    //todo css in css
-    //document.body.style.overflow = !hiddenNavBar ? "hidden" : ""
-    //used classes instead of modifying styling
+    //todo flex-wrapper-main na mhn exw height 94 vh opws twra
 
     document.body.className = !hiddenNavBar ? "no-scroll" : "";
 
