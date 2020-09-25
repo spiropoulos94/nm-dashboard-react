@@ -4,16 +4,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding:0 3%;
 }
 
-.color-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
 
 @media screen and (min-width: $sm) {
   .color-card {
     width: 44.8%;
+  }
+}
+
+@media screen and (min-width: $md) {
+  .color-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

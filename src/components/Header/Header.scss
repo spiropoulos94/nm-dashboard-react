@@ -9,15 +9,15 @@
   height: 6vh;
   text-transform: uppercase;
   color: white;
+  font-size: 1.5rem;
 }
 
 .header-left,
 .link {
   display: flex;
   align-items: center;
-  width: 15%;
+  //width: 15%;
   text-decoration: none;
-  font-size: 1.5rem;
   &:hover {
     cursor: pointer;
   }
@@ -83,7 +83,7 @@
   }
 
   .title {
-    margin-right: auto;
+
     letter-spacing: 1px;
     font-size: 1.7rem;
   }
@@ -96,6 +96,11 @@
 }
 
 @media screen and (min-width: $lg) {
+
+  .title {
+    margin-right: auto;
+  }
+
   .logo-txt,
   .logout-txt {
     display: inline;

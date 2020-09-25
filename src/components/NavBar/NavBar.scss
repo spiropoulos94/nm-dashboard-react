@@ -1,25 +1,26 @@
 @import "../../scss/variables";
 
 .navbar {
-  position: relative;
+  position: absolute;
   width: 70vw;
   background-color: $nav-background-color;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 92vh;
+  //display: flex;
+  //flex-direction: column;
+  //justify-content: space-between;
+  height: 100%;
   transform: translate3d(0, 0, 0);
   transition-property: transform;
-  transition-duration: 0.45s;
+  transition-duration: 0.25s;
   transition-timing-function: ease-in;
   transition-delay: 0s;
   z-index: 2;
   color: white;
+  float: left;
+  font-size: 1.1rem;
 }
 
+
 .menu-items {
-  display: flex;
-  flex-direction: column;
   :hover {
     background: $nav-accent;
   }
@@ -27,27 +28,39 @@
 
 .hidden {
   transform: translate3d(-70vw, 0, 0);
+  position: absolute;
 }
 
 .menu-item {
-  font-size: 1.1rem;
   padding: 5% 15%;
-  width: 100%;
   border-bottom: 1px solid $border-color;
   text-decoration: none;
   color: white;
+  display: block;
 }
 
 .footer {
-  text-align: center;
   font-size: 0.75rem;
-  padding-bottom: 10%;
+  padding-bottom: 5vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 @media screen and (min-width: $sm) {
   .navbar {
     width: 25vw;
   }
+
+  .hidden {
+    transform: translate3d(-25vw, 0, 0);
+    //position:absolute;
+    //height:90vh;
+
+  }
+
 
   .footer {
     font-size: 0.85rem;
@@ -58,7 +71,9 @@
 @media screen and (min-width: $md) {
   .navbar {
     width: 20vw;
+    //sets navbar position to relative for larger screens
     position: relative;
+
   }
 }
 
@@ -68,8 +83,9 @@
     width: 0px;
   }
 
-  .menu-item {
+  .navbar {
     font-size: 1.5rem;
+
   }
 
   footer {
