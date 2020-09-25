@@ -68,7 +68,8 @@ function App() {
                             </Route>
                             <Route path="/">
                                 <div className="view-wrapper">
-                                    <h2  className="view-title">Welcome</h2>
+                                    <div className="view-heading"><h2  className="view-title">Welcome</h2></div>
+
                                 </div>
                             </Route>
                         </Switch>

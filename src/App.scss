@@ -12,16 +12,16 @@
 
 
 .data-wrapper {
-  width: 100%;
-  height: 100%;
-  //height: 92vh;
-  margin: auto;
-  position: absolute;
-  float: right;
+  //width: 100%;
+  //height: 100%;
+  ////height: 92vh;
+  //margin: auto;
+  //position: absolute;
+  //float: right;
 }
 
 .view-wrapper {
-  padding: 1% 3%;
+  //padding: 1% 3%;
 }
 
 .view-title {
@@ -31,8 +31,6 @@
 
 @media screen and (min-width: $md) {
   .data-wrapper {
-    margin: 0;
-    width: 80%;
-    position: inherit;
+    //margin: 0;
   }
 }

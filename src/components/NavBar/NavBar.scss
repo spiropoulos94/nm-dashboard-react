@@ -4,9 +4,9 @@
   position: absolute;
   width: 70vw;
   background-color: $nav-background-color;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  //display: flex;
+  //flex-direction: column;
+  //justify-content: space-between;
   height: 100%;
   transform: translate3d(0, 0, 0);
   transition-property: transform;
@@ -16,8 +16,9 @@
   z-index: 2;
   color: white;
   float: left;
-
+  font-size: 1.1rem;
 }
+
 
 .menu-items {
   :hover {
@@ -27,23 +28,25 @@
 
 .hidden {
   transform: translate3d(-70vw, 0, 0);
-  position:absolute;
+  position: absolute;
 }
 
 .menu-item {
-  font-size: 1.1rem;
   padding: 5% 15%;
-  width: 100%;
   border-bottom: 1px solid $border-color;
   text-decoration: none;
   color: white;
-  display:block;
+  display: block;
 }
 
 .footer {
-  text-align: center;
   font-size: 0.75rem;
   padding-bottom: 5vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 @media screen and (min-width: $sm) {
@@ -70,6 +73,7 @@
     width: 20vw;
     //sets navbar position to relative for larger screens
     position: relative;
+
   }
 }
 
@@ -79,8 +83,9 @@
     width: 0px;
   }
 
-  .menu-item {
+  .navbar {
     font-size: 1.5rem;
+
   }
 
   footer {
