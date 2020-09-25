@@ -18,7 +18,11 @@ function App() {
         users: "users.json", //"https://reqres.in/api/users/",
     };
 
+    //todo to view wrapper sto mobile prepei na kentrarei
 
+    //todo fix sidebar resize on screen resize
+
+    //todo diafora position absolute kai float
 
     //todo css in css
     //document.body.style.overflow = !hiddenNavBar ? "hidden" : ""
