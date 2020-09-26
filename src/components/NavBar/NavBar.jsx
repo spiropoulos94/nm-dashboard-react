@@ -4,10 +4,6 @@ import "./NavBar.scss";
 
 function NavBar({hiddenNavBar, updateNavBar}) {
 
-   // useEffect(()=>{
-   //     console.log("navbar mounted")
-   //     document.body.style.overflow = !hiddenNavBar ? "hidden" : ""
-   // },[updateNavBar])
 
     return (
         <div className={hiddenNavBar ? "navbar hidden" : "navbar"}>
