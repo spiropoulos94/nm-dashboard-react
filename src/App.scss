@@ -1,8 +1,12 @@
 @import "./scss/variables.scss";
 
 .flex-wrapper-main {
-  height: 94vh;
-  position: relative;
+  position: absolute;
+  top:6vh;
+  left:0%;
+  right:0%;
+  bottom: 0%
+
 }
 
 
