@@ -20,6 +20,8 @@ function App() {
 
     //DONE to view wrapper sto mobile prepei na kentrarei
 
+    //DONE footer sto mobile na kentraristei
+
     //todo fix sidebar resize on screen resize
 
     //todo diafora position absolute kai float

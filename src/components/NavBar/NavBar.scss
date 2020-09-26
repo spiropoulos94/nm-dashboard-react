@@ -4,9 +4,6 @@
   position: absolute;
   width: 70vw;
   background-color: $nav-background-color;
-  //display: flex;
-  //flex-direction: column;
-  //justify-content: space-between;
   height: 100%;
   transform: translate3d(0, 0, 0);
   transition-property: transform;
@@ -47,6 +44,7 @@
   left: 0;
   right: 0;
   margin: auto;
+  text-align: center;
 }
 
 @media screen and (min-width: $sm) {
@@ -56,9 +54,6 @@
 
   .hidden {
     transform: translate3d(-25vw, 0, 0);
-    //position:absolute;
-    //height:90vh;
-
   }
 
 
@@ -89,7 +84,7 @@
   }
 
   footer {
-    text-align: center;
+
     padding-bottom: 10%;
     font-size: 0.9rem;
   }
