@@ -2,11 +2,13 @@
 
 .flex-wrapper-main {
    display: flex;
+  align-content: stretch;
+  align-content: stretch;
+  height: calc(100vh - 6vh);
 }
 
 .data-wrapper {
   width: 100%;
-  padding:10px;
 }
 
 

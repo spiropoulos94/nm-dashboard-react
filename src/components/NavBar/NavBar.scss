@@ -4,7 +4,6 @@
   position: absolute;
   width: 70vw;
   background-color: $nav-background-color;
-  height: 100%;
   transform: translate3d(0, 0, 0);
   transition-property: transform;
   transition-duration: 0.25s;
@@ -13,6 +12,7 @@
   z-index: 2;
   color: white;
   font-size: 1.1rem;
+  //height: calc(100vh - 6vh);
 }
 
 
@@ -73,7 +73,7 @@
 @media screen and (min-width: $lg) {
   .hidden {
     transform: translate3d(-30vw, 0, 0);
-    width: 0px;
+    //width: 0px;
   }
 
   .navbar {
@@ -82,7 +82,6 @@
   }
 
   footer {
-
     padding-bottom: 10%;
     font-size: 0.9rem;
   }
