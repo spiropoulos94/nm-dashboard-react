@@ -1,5 +1,7 @@
 @import "../../scss/variables";
 
+//TODO ADD FIXED NAVBAR FROM MARINAS PROJECT
+
 .navbar {
   position: absolute;
   width: 70vw;
@@ -65,7 +67,7 @@
 @media screen and (min-width: $md) {
   .navbar {
     max-width: 20%;
-    position: relative;
+    position: static;
     flex : 0 0 20%;
 
   }
