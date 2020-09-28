@@ -28,7 +28,7 @@ function App() {
 
     //DONE flex-wrapper-main na mhn exw height 94 vh opws twra
 
-    document.body.className = !hiddenNavBar ? "no-scroll" : "";
+    // document.body.className = !hiddenNavBar ? "no-scroll" : "";
 
 
 

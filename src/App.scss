@@ -1,12 +1,12 @@
 @import "./scss/variables.scss";
 
 .flex-wrapper-main {
-  position: absolute;
-  top:6vh;
-  left:0%;
-  right:0%;
-  bottom: 0%
+   display: flex;
+}
 
+.data-wrapper {
+  width: 100%;
+  padding:10px;
 }
 
 
@@ -23,6 +23,7 @@
 
 @media screen and (min-width: $md) {
   .data-wrapper {
-    //margin: 0;
+    max-width: 80%;
+    flex: 0 0 80%;
   }
 }

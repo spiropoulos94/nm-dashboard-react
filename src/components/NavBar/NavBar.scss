@@ -12,7 +12,6 @@
   transition-delay: 0s;
   z-index: 2;
   color: white;
-  //float: left;
   font-size: 1.1rem;
 }
 
@@ -49,7 +48,7 @@
 
 @media screen and (min-width: $sm) {
   .navbar {
-    width: 25vw;
+    width: 25%;
   }
 
   .hidden {
@@ -64,9 +63,9 @@
 
 @media screen and (min-width: $md) {
   .navbar {
-    width: 20vw;
-    //sets navbar position to relative for larger screens
+    max-width: 20%;
     position: relative;
+    flex : 0 0 20%;
 
   }
 }
