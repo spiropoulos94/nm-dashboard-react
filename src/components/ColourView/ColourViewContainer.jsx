@@ -24,7 +24,8 @@ function ColourViewContainer({ url, setIsLoading, colours, setColours }) {
 
   if (_isLoading) return <Spinner />;
 
-  return <ColourView data={colours} />;
+  // return <ColourView data={colours} />;
+  return <Spinner/>
 }
 
 export default ColourViewContainer;

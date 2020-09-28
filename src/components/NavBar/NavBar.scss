@@ -12,7 +12,7 @@
   transition-delay: 0s;
   z-index: 2;
   color: white;
-  float: left;
+  //float: left;
   font-size: 1.1rem;
 }
 
@@ -55,7 +55,6 @@
   .hidden {
     transform: translate3d(-25vw, 0, 0);
   }
-
 
   .footer {
     font-size: 0.85rem;

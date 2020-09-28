@@ -31,6 +31,7 @@ function App() {
     document.body.className = !hiddenNavBar ? "no-scroll" : "";
 
 
+
     function updateNavBar(value) {
         if (window.innerWidth >= 768) return;
         setHiddenNavBar(value);
