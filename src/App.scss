@@ -2,21 +2,21 @@
 
 .flex-wrapper-main {
    display: flex;
-  align-content: stretch;
-  align-content: stretch;
-  min-height: calc(100vh - 6vh);
+  //align-content: stretch;
+  //align-content: stretch;
+  //min-height: calc(100vh - 6vh);
 }
 
 .data-wrapper {
   width: 100%;
+  position: relative;
+  top:6vh;
+  padding: 10px;
 }
-
 
 .no-scroll {
   overflow: hidden;
 }
-
-
 
 .view-title {
   color: black;
